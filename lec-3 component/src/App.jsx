@@ -1,13 +1,13 @@
 import './App.css'
-import { Component, Home } from './component'
+
+import About from './About'
 
 function App() {
 
   return (
     <>
       <h1>hello</h1>
-      <Component />
-      <Home />
+      <About />
     </>
   )
 }
