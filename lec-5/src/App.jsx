@@ -1,5 +1,6 @@
-import { Counter } from './Counter'
-import { useState } from 'react'
+import { FaPlus } from "react-icons/fa";
+import { FaMinus } from "react-icons/fa";
+import { useState } from "react";
 
 import './App.css'
 
@@ -19,7 +20,11 @@ function App() {
 
   return (
     <>
-      <Counter cnt={cnt} plus={plus} minus={minus} reset={reset} />
+      <h1>Counter app</h1>
+      <h2>Count :{cnt}</h2>
+      <button onClick={() => plus()}><FaPlus /></button>
+      <button onClick={() => minus()}><FaMinus /></button>
+      <button onClick={() => reset()}>reset</button>
     </>
   )
 }
