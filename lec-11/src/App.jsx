@@ -1,17 +1,14 @@
 import './App.css'
-import DD from './Home'
+import Counter from './Counter'
+
 
 function App() {
 
   return (
     <>
-      <h1>hello</h1>
-      <DD/>
+    <Counter/>
     </>
-
   )
 }
 
-
 export default App
-

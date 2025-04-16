@@ -1,9 +1,15 @@
-import { Component } from "react"
+import { Component } from "react";
 
-class Home extends Component {
+class DD extends Component {
     render() {
-        return <h1>home</h1>
+        return (
+            <>
+                <h1>ddd</h1>
+                <h1>ddd</h1>
+                <h1>ddd</h1>
+            </>
+        )
     }
 }
 
-export default Home
+export default DD
