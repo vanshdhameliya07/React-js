@@ -96,6 +96,44 @@ function App() {
 
                     </div>
 
+                    <br />
+                    <div className="text-right text-sm text-gray-500">
+                    gambir :- {g.gambir.author}
+                      <br />
+                      {g.gambir.et}
+
+                    </div>
+
+                    <br />
+                    <div className="text-right text-sm text-gray-500">
+                    madhav :- {g.madhav.author}
+                      <br />
+                      {g.madhav.sc}
+
+                    </div>
+
+
+
+                    <br />
+                    <div className="text-right text-sm text-gray-500">
+                    anand :- {g.anand.author}
+                      <br />
+                      {g.anand.sc}
+
+                    </div>
+
+
+
+                    <br />
+                    <div className="text-right text-sm text-gray-500">
+                    rams :- {g.rams.author}
+                      <br />
+                      {g.rams.ht}
+                      <br />
+                      {g.rams.hc}
+
+
+                    </div>
 
                   </div>
 
