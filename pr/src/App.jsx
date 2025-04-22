@@ -80,7 +80,7 @@ function App() {
 
                     <br />
                     <div className="text-right text-sm text-gray-500">
-                    san :- {g.san.author}
+                      san :- {g.san.author}
                       <br />
                       {g.san.et}
 
@@ -90,7 +90,7 @@ function App() {
 
                     <br />
                     <div className="text-right text-sm text-gray-500">
-                    adi :- {g.adi.author}
+                      adi :- {g.adi.author}
                       <br />
                       {g.adi.et}
 
@@ -98,7 +98,7 @@ function App() {
 
                     <br />
                     <div className="text-right text-sm text-gray-500">
-                    gambir :- {g.gambir.author}
+                      gambir :- {g.gambir.author}
                       <br />
                       {g.gambir.et}
 
@@ -106,7 +106,7 @@ function App() {
 
                     <br />
                     <div className="text-right text-sm text-gray-500">
-                    madhav :- {g.madhav.author}
+                      madhav :- {g.madhav.author}
                       <br />
                       {g.madhav.sc}
 
@@ -116,7 +116,7 @@ function App() {
 
                     <br />
                     <div className="text-right text-sm text-gray-500">
-                    anand :- {g.anand.author}
+                      anand :- {g.anand.author}
                       <br />
                       {g.anand.sc}
 
@@ -126,7 +126,7 @@ function App() {
 
                     <br />
                     <div className="text-right text-sm text-gray-500">
-                    rams :- {g.rams.author}
+                      rams :- {g.rams.author}
                       <br />
                       {g.rams.ht}
                       <br />
