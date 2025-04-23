@@ -1,0 +1,130 @@
+{
+    "img": [
+        {
+            "img": "https://www.rnwmultimedia.edu.in/assets/img/photos/rnw-logo.png"
+        }
+    ],
+    "home": [
+        "home",
+        {
+            "std 10th & 12th": [
+                "ITA-CS+",
+                "Animation & VFX 2 year",
+                "Business Administration Commerce"
+            ]
+        }
+    ],
+    "Career Courses ": [
+        {
+            "Designing": [
+                "Master in Graphic Design",
+                "Master in UI/UX & Graphic Design",
+                "UI/UX Design course",
+                "Master in Game Design"
+            ],
+            "Visualization": [
+                "Master in Animation",
+                "Animation & VFX 2 year"
+            ],
+            "Coding & Programming": [
+                "Master in Web Designing",
+                "Master in Front End Developing",
+                "Master in Web Development",
+                "Master in Android Development",
+                "Master in iOS Development",
+                "Master in Game Development",
+                "Master in Flutter",
+                "Advance in Python",
+                "Full Stack Development"
+            ]
+        }
+    ],
+    "Courses": [
+        {
+            "Programming": [
+                "Java",
+                "Android",
+                "iOS",
+                "React Native",
+                "React.Js",
+                "Node.Js",
+                "PHP",
+                "Unity C# Script",
+                "Angular Js",
+                "laravel",
+                "Python"
+            ],
+            "Graphic Design": [
+                "Photoshop",
+                "Illustrator",
+                "Figma",
+                "Corel Draw",
+                "After Effects",
+                "Poster  Designing",
+                ""
+            ],
+            "Video Editing": [
+                "Video Editing",
+                "Davinci Resolve Course"
+            ],
+            "Short Term": [
+                "Microsoft Office",
+                "Cyber Security",
+                "Full Stack Development Bootcamp",
+                "Data Analysis",
+                "Autodesk Autocad course",
+                "Digital Marketing",
+                "Visual  Effects Course"
+            ],
+            "Fronted Coding": [
+                "Bootstrap",
+                "HTML5 CSS3"
+            ],
+            "Project training": [
+                "PHP",
+                "Android Training",
+                "iOS",
+                "Java",
+                "Flutter",
+                "Python"
+            ],
+            "Foundation  Courses": [
+                "CCC",
+                "C &  C++",
+                "Software  Development",
+                "Foundation"
+            ],
+            "Corporate Training": [
+                "Public  Speaking Course",
+                "Entrepreneurship Bootcamp"
+            ],
+            "Next-GEN technologies": [
+                "Data Science & AI-ML Python",
+                "AR-VR"
+            ],
+            "Accounting": [
+                "Diploma in Practical Accounting & Taxation"
+            ]
+        }
+    ],
+    "About Us": [
+        "Group of institutes",
+        "Career With Us",
+        "Affiliations / Authorised",
+        "Press Notes"
+    ],
+    "Student Corner ": [
+        "Apply job",
+        "Placement",
+        "Company Visit",
+        "Expert Session",
+        "Placement Drive",
+        "Grievance",
+        "Why I Choose RNW",
+        "Placement Partners",
+        "Student Works"
+    ],
+    "Contact Us": [
+        "Contact Us"
+    ]
+}
