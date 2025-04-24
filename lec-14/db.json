@@ -126,5 +126,80 @@
     ],
     "Contact Us": [
         "Contact Us"
+    ],
+    "slider": [
+        {
+            "img": "https://www.rnwmultimedia.edu.in/assets/img/slider/Ai-banner.jpg"
+        },
+        {
+            "Students Trained": [
+                "40,000+"
+            ],
+            "Approved Courses": [
+                "50+"
+            ],
+            "Companies Tie-Ups": [
+                "1500+"
+            ],
+            "Branches": [
+                "22+"
+            ],
+            "Certification": [
+                "8"
+            ]
+        }
+    ],
+    "syallbus": [
+        {
+            "h1": [
+                "Pick The Right Course To Build Your Career"
+            ],
+            "box": [
+                {
+                    "img": "https://www.rnwmultimedia.edu.in/assets/img/course/1.png",
+                    "Web Designing": "Web Designing"
+                },
+                {
+                    "img": "https://www.rnwmultimedia.edu.in/assets/img/course/2.png",
+                    "iOS Development": "iOS Development"
+                },
+                {
+                    "img": "https://www.rnwmultimedia.edu.in/assets/img/course/1.png",
+                    "Web Development": "Web Development"
+                },
+                {
+                    "img": "https://www.rnwmultimedia.edu.in/assets/img/course/2.png",
+                    "Android Development": "Android Development"
+                },
+                {
+                    "img": "https://www.rnwmultimedia.edu.in/assets/img/course/4.png",
+                    "Animation": "Animation"
+                },
+                {
+                    "img": "https://www.rnwmultimedia.edu.in/assets/img/course/data.png",
+                    "AI & Data Science": "AI & Data Science"
+                },
+                {
+                    "img": "https://www.rnwmultimedia.edu.in/assets/img/course/5.png",
+                    "Game Design & Development": "Game Design & Development"
+                },
+                {
+                    "img": "https://www.rnwmultimedia.edu.in/assets/img/course/1.png",
+                    "Full Stack Development": "Full Stack Development"
+                },
+                {
+                    "img": "https://www.rnwmultimedia.edu.in/assets/img/course/3.png",
+                    "UI-UX & Graphics Design": "UI-UX & Graphics Design"
+                },
+                {
+                    "img": "https://www.rnwmultimedia.edu.in/assets/img/course/design.png",
+                    "Poster-Design": "Poster-Design"
+                },
+                {
+                    "img": "https://www.rnwmultimedia.edu.in/assets/img/course/hacker.png",
+                    "Cyber Security": "Cyber Security"
+                }
+            ]
+        }
     ]
 }
