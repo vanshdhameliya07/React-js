@@ -1,58 +1,63 @@
-import { category, product } from "./data"
-import './App.css'
-import { useState } from "react"
+import React, { useState } from 'react'
+import './index.css'
+
+import { category, product } from './data'
 
 
-function App() {
+const App = () => {
 
-  let [filter, setFilter] = useState([])
+  let [filters, setFilter] = useState([])
 
-  const filterdata = (name) => {
+  let filter = (name) => {
 
     if (!name) {
       setFilter(category);
-    } else {
-      let filtered = category.filter(c => c.name === name)
-      setFilter(filtered);
     }
+    else {
+      let filterd = category.filter(c => c.name == name)
+      setFilter(filterd);
+
+    }
+
+
+
   }
 
   return (
     <>
-      <button onClick={() => filterdata()}  >All</button>
+      <button onClick={() => filter()}>All</button>
 
       {
         product.map((p, i) => {
           return (
-            <button key={i} onClick={() => filterdata(p.name)}>{p.name}</button>
+            <button key={i} onClick={() => filter(p.name)}>{p.name}</button>
           )
         })
       }
 
-      <table align="center" border={1} cellPadding={5} width={"300px"}>
+      <table border={1}>
         <thead>
           <tr>
             <td>id</td>
-            <td>category</td>
             <td>name</td>
+            <td>category</td>
           </tr>
         </thead>
         <tbody>
           {
-            filter.map((p, i) => {
-              let { id, category, name } = p
+            filters.map((c, i) => {
+              let { id, category, name } = c
               return (
                 <tr key={i}>
                   <td>{id}</td>
-                  <td>{category}</td>
                   <td>{name}</td>
+                  <td>{category}</td>
                 </tr>
               )
             })
           }
         </tbody>
       </table>
-
 
     </>
   )
