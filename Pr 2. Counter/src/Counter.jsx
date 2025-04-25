@@ -1,16 +1,18 @@
-import React from 'react'
+import React from 'react';
+import './Counter.css'; // Import the CSS file
 
 const Counter = ({ cnt, plus, minus, reset }) => {
+  return (
+    <div className="counter-container">
+      <h1 className="counter-title">Counter</h1>
+      <h2 className="counter-value">Count: {cnt}</h2>
+      <div className="button-group">
+        <button className="btn plus" onClick={plus}>+</button>
+        <button className="btn minus" disabled={cnt === 0} onClick={minus}>-</button>
+        <button className="btn reset" onClick={reset}>Reset</button>
+      </div>
+    </div>
+  );
+};
 
-    return (
-        <>
-            <h1>Counter</h1>
-            <h2>cnt : {cnt}</h2>
-            <button onClick={() => plus()}>+</button>
-            <button disabled={cnt == 0} onClick={() => minus()}>-</button>
-            <button onClick={() => reset()}>reset</button>
-        </>
-    )
-}
-
-export default Counter
+export default Counter;
