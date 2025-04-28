@@ -43,6 +43,37 @@
     "Home & Furniture": [
         "Home  Fuernishings",
         "Furniture",
-        "living room Furniture"
+        "living room Furniture",
+        "Kitchen & Dining",
+        "Bedroom Furniture",
+        "space saving Furniture",
+        "Home Decor",
+        "Tools & utility",
+        "Work Space Furniture",
+        "Kids Furniture",
+        "Lighiting & Electronics",
+        "Cleaning & Bath",
+        "Pet & Gardering"
+    ],
+    "Appliances": [
+        "Appliances"
+    ],
+    "Beauty , Toys & More": [
+        "Beauty & Personal Care",
+        "men's Grooming",
+        "Food & drinks",
+        "Nutrition & Health Care",
+        "Baby care",
+        "Toys & School Supplies",
+        "Sports & Fitness",
+        "Books",
+        "Music",
+        "Stationary & Office Supplies",
+        "Auto Accessories",
+        "Safety & Hygiene Essentials"
+    ],
+    "Two Wheelers": [
+        "Petrols Vehicles",
+        "Electronic Vehicles"
     ]
 }
