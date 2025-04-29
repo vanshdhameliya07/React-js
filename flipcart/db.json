@@ -1,79 +1,13 @@
 {
-    "kilos": [
-        "Staples",
-        "Snacks & Beverages",
-        "Packaged Food",
-        "Personal & Baby Care",
-        "Household Care",
-        "Dairy & Eggs"
-    ],
-    "mobile": [
-        {
-            "img": "https://rukminim2.flixcart.com/flap/80/80/image/22fddf3c7da4c4f4.png?q=100",
-            "Mobile": "Mobile"
-        }
-    ],
-    "Fashion": [
-        "Men's Top Wear",
-        "Men's Bottom Wear",
-        "Women Ethnics",
-        "Men's Footwear",
-        "Watches and Accessories",
-        "Women Western",
-        "Bags ,suitcase & luggage",
-        "kids",
-        "Essentials",
-        "Winter"
-    ],
-    "Electronics": [
-        "Electronics GSt Store",
-        "Cameras & Accessories",
-        "Computer Peripherals",
-        "Gaming",
-        "Health & Personal Care",
-        "Laptop Accessories",
-        "Laptop and Desktop",
-        "MobileAccessory",
-        "Powerbank",
-        "Smart Home automation",
-        "Smart Wearables",
-        "storage",
-        "Tablets"
-    ],
-    "Home & Furniture": [
-        "Home  Fuernishings",
-        "Furniture",
-        "living room Furniture",
-        "Kitchen & Dining",
-        "Bedroom Furniture",
-        "space saving Furniture",
-        "Home Decor",
-        "Tools & utility",
-        "Work Space Furniture",
-        "Kids Furniture",
-        "Lighiting & Electronics",
-        "Cleaning & Bath",
-        "Pet & Gardering"
-    ],
-    "Appliances": [
-        "Appliances"
-    ],
-    "Beauty , Toys & More": [
-        "Beauty & Personal Care",
-        "men's Grooming",
-        "Food & drinks",
-        "Nutrition & Health Care",
-        "Baby care",
-        "Toys & School Supplies",
-        "Sports & Fitness",
-        "Books",
-        "Music",
-        "Stationary & Office Supplies",
-        "Auto Accessories",
-        "Safety & Hygiene Essentials"
-    ],
-    "Two Wheelers": [
-        "Petrols Vehicles",
-        "Electronic Vehicles"
+    "Account": [
+        "My Profile",
+        "Supercoin Zone",
+        "Flipcart Plus Zone",
+        "Orders",
+        "Whishlist",
+        "Coupons",
+        "Gift card",
+        "Notification",
+        "Logout"
     ]
 }

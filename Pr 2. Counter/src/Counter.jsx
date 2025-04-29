@@ -1,5 +1,5 @@
 import React from 'react';
-import './Counter.css'; // Import the CSS file
+import './Counter.css'; 
 
 const Counter = ({ cnt, plus, minus, reset }) => {
   return (
@@ -10,6 +10,7 @@ const Counter = ({ cnt, plus, minus, reset }) => {
         <button className="btn plus" onClick={plus}>+</button>
         <button className="btn minus" disabled={cnt === 0} onClick={minus}>-</button>
         <button className="btn reset" onClick={reset}>Reset</button>
+
       </div>
     </div>
   );
