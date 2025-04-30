@@ -59,5 +59,78 @@
             "item": "Two Wheelers",
             "img": "https://rukminim2.flixcart.com/fk-p-flap/80/80/image/05d708653beff580.png?q=100"
         }
+    ],
+    "slidebar": [
+        {
+            "id": 1,
+            "img": "https://rukminim2.flixcart.com/fk-p-flap/1620/270/image/f71bdd8e44943014.jpeg?q=20"
+        },
+        {
+            "id": 2,
+            "img": "https://rukminim2.flixcart.com/fk-p-flap/1620/270/image/b692b7eec25beda6.jpg?q=20"
+        },
+        {
+            "id": 3,
+            "img": "https://rukminim2.flixcart.com/fk-p-flap/1620/270/image/1c731bb170b0d62f.jpeg?q=20"
+        },
+        {
+            "id": 4,
+            "img": "https://rukminim2.flixcart.com/fk-p-flap/1620/270/image/076c4f2ee87225d7.jpg?q=20"
+        },
+        {
+            "id": 5,
+            "img": "https://rukminim2.flixcart.com/fk-p-flap/1620/270/image/74f0ad81e44e6e6f.jpg?q=20"
+        },
+        {
+            "id": 6,
+            "img": "https://rukminim2.flixcart.com/fk-p-flap/1620/270/image/78c3cfa787e8acbe.jpg?q=20"
+        },
+        {
+            "id": 7,
+            "img": "https://rukminim2.flixcart.com/fk-p-flap/1620/270/image/78c3cfa787e8acbe.jpg?q=20"
+        },
+        {
+            "id": 8,
+            "img": "https://rukminim2.flixcart.com/fk-p-flap/1620/270/image/02c1c2908eb3e690.png?q=20"
+        }
+    ],
+    "card": [
+        {
+            "id": 1,
+            "img": "https://rukminim2.flixcart.com/image/240/240/kz1lle80/smartwatch/m/f/q/-original-imagb54tb6fpurze.jpeg?q=60",
+            "list": "Noise Smartwatches",
+            "money": "From ₹1,099"
+        },
+        {
+            "id": 2,
+            "img": "https://rukminim2.flixcart.com/image/240/240/xif0q/smartwatch/5/v/s/-original-imagxrhetgfuebnn.jpeg?q=60",
+            "list": "Fastrack Smartwatches",
+            "money": "From ₹1,399"
+        },
+        {
+            "id": 3,
+            "img": "https://rukminim2.flixcart.com/image/240/240/l58iaa80/headphone/k/z/m/nord-buds-ce-oneplus-original-imagfyk4hyvgg6ze.jpeg?q=60",
+            "list": "Best Truewireless Headphones",
+            "money": "Grab Now"
+        },
+        {
+            "id": 4,
+            "img": "https://rukminim2.flixcart.com/image/240/240/kcf4lu80/speaker/mobile-tablet-speaker/h/u/f/srs-xb23-sony-original-imaftk66vjxp86h5.jpeg?q=60",
+            "list": "Best Selling Mobile Speakers",
+            "money": "From ₹499*"
+        },
+        {
+            "id": 5,
+            "img": "https://rukminim2.flixcart.com/image/240/240/xif0q/projector/q/7/6/i9-pro-10-ei9027-led-projector-egate-original-imah5e3bggu5qcgp.jpeg?q=60",
+            "list": "Projector",
+            "money": "From ₹6990"
+        },
+        {
+            "id": 4,
+            "img": "https://rukminim2.flixcart.com/image/240/240/l58iaa80/monitor/p/6/t/-original-imagfymyyt5chgvz.jpeg?q=60",
+            "list": "ViewSonic Monitors",
+            "money": "From ₹8000"
+        }
+       
     ]
 }

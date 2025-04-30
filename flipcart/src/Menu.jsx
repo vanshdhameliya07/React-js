@@ -2,11 +2,10 @@ import React from 'react'
 import './Menu.css'
 
 const Menu = ({ items }) => {
-    console.log(items);
 
     return (
         <div className='container'>
-            <nav className="navbar mt-4 navbar-expand-lg navbar-light bg-light">
+            <nav className="navbar mt-4 navbar-expand-lg navbar-light btn-light">
 
                 <div className="collapse navbar-collapse" id="navbarNav">
                     <ul className="navbar-nav ">
