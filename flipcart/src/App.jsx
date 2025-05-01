@@ -3,10 +3,13 @@ import './App.css';
 import Header from './Header';
 import Menu from './Menu';
 import Slidbar from './Slidbar';
+import { category, product } from './data'
+
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import Card from './Card';
+import Filter from './Filter';
 
 
 function App() {
@@ -15,6 +18,9 @@ function App() {
   let [items, setItems] = useState([])
   let [slide, setSlide] = useState([])
   let [cards, setCards] = useState([])
+  let [filters, setFilter] = useState([])
+
+
 
   let getmenu = async () => {
     try {
@@ -69,6 +75,25 @@ function App() {
     setCards(res);
   }
 
+
+  let filter = (name) => {
+
+    if (!name) {
+      setFilter(category);
+    }
+    else {
+      let filterd = category.filter(c => c.name == name)
+      setFilter(filterd);
+
+    }
+
+  }
+
+
+
+
+
+
   useEffect(() => {
     setTimeout(() => {
       getmenu();
@@ -85,6 +110,18 @@ function App() {
       <Menu items={items} />
       <Slidbar slidebar={slide} />
       <Card card={cards} />
+      <div align="center">
+        <button onClick={() => filter()}>All</button>
+
+        {
+          product.map((p, i) => {
+            return (
+              <button key={i} onClick={() => filter(p.name)}>{p.name}</button>
+            )
+          })
+        }
+      </div>
+      <Filter filter={filters} />
 
 
     </>
