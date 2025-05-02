@@ -7,33 +7,38 @@ function App() {
 
   const handlesubmit = (event) => {
     event.preventDefault()
-    const obj = {
-
-      id: Math.floor(Math.random() * 1000),
-      name: name
-    };
 
 
     if (editid) {
-      let up = todos.map((v, i) => {
-        if (v == editid) {
-          return (
-            {
-              ...todos, name: name
-            }
-          )
+
+      let update = todos.map((val, i) => {
+
+        if (val.id === editid) {
+          return {
+            ...val,
+            name: name
+          }
         }
+        return val
       })
 
-      setName(up)
+      setTodos(update);
+      setEditid("");
+      setName("")
 
+
+    }
+    else {
+      const obj = {
+        id: Math.floor(Math.random() * 1000),
+        name: name
+      };
+      setTodos([...todos, obj]);
+      setName("")
     }
 
 
 
-
-    setTodos([...todos, obj]);
-    setName("");
 
   };
 
@@ -74,7 +79,7 @@ function App() {
                 <td>id</td>
                 <td>name</td>
                 <td>action</td>
-                <td>action</td>
+                <td>edit</td>
               </tr>
             </thead>
             <tbody>
@@ -86,19 +91,12 @@ function App() {
                       <td> {id}</td>
                       <td>{name}</td>
                       <td>
-
-                        {
-                          editid ? (
-                            <button onClick={() => deleteRecord(id)}>delete</button>
-                          ) : (
-                            <button onClick={() => editRecord(id)}>Edit</button>
-
-                          )
-                        }
-
+                        <button onClick={() => deleteRecord(id)}>delete</button>
+                      </td>
+                      <td>
+                        <button onClick={() => editRecord(id)}>Edit</button>
 
                       </td>
-
 
                     </tr>
                   )
