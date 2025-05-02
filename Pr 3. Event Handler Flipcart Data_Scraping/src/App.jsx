@@ -10,6 +10,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import Card from './Card';
 import Filter from './Filter';
+import Banner from './Banner';
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
   let [slide, setSlide] = useState([])
   let [cards, setCards] = useState([])
   let [filters, setFilter] = useState([])
+  let [banners, setBanners] = useState([])
 
 
 
@@ -75,6 +77,15 @@ function App() {
     setCards(res);
   }
 
+  let banner = async () => {
+    let banner = await fetch('http://localhost:3000/banner', {
+      method: 'get'
+    })
+    let res = await banner.json();
+    setBanners(res)
+
+  }
+
 
   let filter = (name) => {
 
@@ -100,6 +111,7 @@ function App() {
       getitems()
       slidebar()
       card()
+      banner()
     })
   }, [])
 
@@ -110,7 +122,7 @@ function App() {
       <Menu items={items} />
       <Slidbar slidebar={slide} />
       <Card card={cards} />
-      <div align="center" style={{marginTop:"100px"}}>
+      <div align="center" style={{ marginTop: "100px" }}>
         <button onClick={() => filter()}>All</button>
 
         {
@@ -122,6 +134,7 @@ function App() {
         }
       </div>
       <Filter filter={filters} />
+      <Banner banner={banners} />
 
 
     </>

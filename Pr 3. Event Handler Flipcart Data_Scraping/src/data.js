@@ -4,6 +4,7 @@ let product = [
     { id: 3, name: "tablet" },
     { id: 4, name: "headphones" },
     { id: 5, name: "smartwatch" },
+    { id: 6, name: "mens's" },
 ];
 
 let category = [
@@ -16,7 +17,8 @@ let category = [
     { id: 7, category: "Oppo K12x 5G", price: 34999, img: "	https://rukminim2.flixcart.com/image/240/240/xif0q/mobile/j/o/z/-original-imah4qke9gf7jhfg.jpeg?q=60", name: "mobile" },
     { id: 8, category: "Lenovo Tab M10", price: 15999, img: "https://m.media-amazon.com/images/I/31HD6WqNrDS._SX300_SY300_QL70_FMwebp_.jpg", name: "tablet" },
     { id: 9, category: "boAt Rockerz 450", price: 1499, img: "https://m.media-amazon.com/images/I/31ztpzzaDSL._SX300_SY300_QL70_FMwebp_.jpg", name: "headphones" },
-    { id: 10, category: "Motorola G85 5G", price: 24999, img: "https://rukminim2.flixcart.com/image/240/240/xif0q/mobile/n/l/u/-original-imah2fjd7wfd9ksh.jpeg?q=60", name: "mobile" }
+    { id: 10, category: "Motorola G85 5G", price: 24999, img: "https://rukminim2.flixcart.com/image/240/240/xif0q/mobile/n/l/u/-original-imah2fjd7wfd9ksh.jpeg?q=60", name: "mobile" },
+    { id: 11, category: "USPA,Killer...", price: 24999, img: "https://rukminim1.flixcart.com/image/240/240/xif0q/t-shirt/m/k/t/-original-imahafzpbuz3ng4q.jpeg?q=60", name: "mens's" }
 ];
 
 

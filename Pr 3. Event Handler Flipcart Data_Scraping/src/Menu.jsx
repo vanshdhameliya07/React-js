@@ -4,7 +4,7 @@ import './Menu.css'
 const Menu = ({ items }) => {
 
     return (
-        <div className=' justify-content-center' style={{ marginLeft: "16px" }}>
+        <div className=' justify-content-center' style={{marginLeft:'7px'}}>
             <nav className="navbar mt-5 navbar-expand-lg navbar-light btn-light">
 
                 <div className="collapse navbar-collapse" id="navbarNav">

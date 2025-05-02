@@ -15,19 +15,18 @@
     flex-direction: column;
     align-items: center;
     font-size: 15px;
-    /* set font size here */
     white-space: nowrap;
-    /* prevents wrapping */
 }
 
 .nav-item img {
-    width: 40px;
-    /* adjust size as needed */
-    height: 40px;
-    object-fit: cover;
+    width: 64px;
+
+    height: 64px;
     margin-bottom: 5px;
 }
-
+.nav-item a{
+    font-weight:499;
+}
 .nav-link {
     font-size: inherit;
     color: #000;
