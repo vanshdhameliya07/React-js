@@ -16,48 +16,53 @@
     "menu": [
         {
             "id": 1,
-            "item": "kilos",
-            "img": "https://rukminim2.flixcart.com/flap/80/80/image/29327f40e9c4d26b.png?q=100"
+            "item": "Top Offers",
+            "img": "https://rukminim1.flixcart.com/fk-p-flap/80/80/image/75ac28a1e9192898.png?q=100"
         },
         {
             "id": 2,
-            "item": "mobiles",
-            "img": "https://rukminim2.flixcart.com/flap/80/80/image/22fddf3c7da4c4f4.png?q=100"
+            "item": "Mobiles & Tablets",
+            "img": "https://rukminim1.flixcart.com/fk-p-flap/80/80/image/cd6aca4f61e8ea95.png?q=100"
         },
         {
             "id": 3,
-            "item": "Fashion",
-            "img": "https://rukminim2.flixcart.com/fk-p-flap/80/80/image/0d75b34f7d8fbcb3.png?q=100"
+            "item": "TVs & Appliances",
+            "img": "https://rukminim1.flixcart.com/fk-p-flap/80/80/image/9c64dfa667885ca9.png?q=100"
         },
         {
             "id": 4,
             "item": "Electronics",
-            "img": "https://rukminim2.flixcart.com/flap/80/80/image/69c6589653afdb9a.png?q=100"
+            "img": "https://rukminim1.flixcart.com/fk-p-flap/80/80/image/4d6b13d5a0e0724a.png?q=100"
         },
         {
             "id": 5,
-            "item": "Home & Furniture",
-            "img": "https://rukminim2.flixcart.com/flap/80/80/image/ab7e2b022a4587dd.jpg?q=100"
+            "item": "Fashion",
+            "img": "https://rukminim1.flixcart.com/fk-p-flap/80/80/image/ec2982e5564fe07c.png?q=100"
         },
         {
             "id": 6,
-            "item": "Appliances",
-            "img": "https://rukminim2.flixcart.com/fk-p-flap/80/80/image/0139228b2f7eb413.jpg?q=100"
+            "item": "Beauty, Food..",
+            "img": "https://rukminim1.flixcart.com/fk-p-flap/80/80/image/8aa98ff80927c17b.png?q=100"
         },
         {
             "id": 7,
-            "item": "Flight Bookings",
-            "img": "https://rukminim2.flixcart.com/flap/80/80/image/71050627a56b4693.png?q=100"
+            "item": "Home & Kitchen",
+            "img": "https://rukminim1.flixcart.com/fk-p-flap/80/80/image/febcb9896245caf4.png?q=100"
         },
         {
             "id": 8,
-            "item": "Beauty , Toys & More",
-            "img": "https://rukminim2.flixcart.com/flap/80/80/image/dff3f7adcf3a90c6.png?q=100"
+            "item": "Furniture",
+            "img": "https://rukminim1.flixcart.com/fk-p-flap/80/80/image/cddd92e134ba3ea9.png?q=100"
         },
         {
             "id": 9,
-            "item": "Two Wheelers",
-            "img": "https://rukminim2.flixcart.com/fk-p-flap/80/80/image/05d708653beff580.png?q=100"
+            "item": "Travel",
+            "img": "https://rukminim1.flixcart.com/fk-p-flap/80/80/image/b003cdccee1093e4.png?q=100"
+        },
+        {
+            "id": 10,
+            "item": "Grocery",
+            "img": "https://rukminim1.flixcart.com/fk-p-flap/80/80/image/2ebb95ec20eae8f1.png?q=100"
         }
     ],
     "slidebar": [
@@ -131,6 +136,5 @@
             "list": "ViewSonic Monitors",
             "money": "From ₹8000"
         }
-       
     ]
 }

@@ -69,5 +69,25 @@
   font-size: 20px;
   margin-left: 45px;
   text-transform: capitalize;
-  
+
+}
+
+button {
+  background-color: #1e90ff;
+  /* Dodger blue */
+  color: #ffffff;
+  border: none;
+  padding: 10px 24px;
+  margin: 6px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background-color: #0f78d1;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
 }

@@ -110,7 +110,7 @@ function App() {
       <Menu items={items} />
       <Slidbar slidebar={slide} />
       <Card card={cards} />
-      <div align="center">
+      <div align="center" style={{marginTop:"100px"}}>
         <button onClick={() => filter()}>All</button>
 
         {

@@ -14,10 +14,10 @@ function App() {
       let update = todos.map((val, i) => {
 
         if (val.id === editid) {
-          return {
-            ...val,
-            name: name
-          }
+        return{
+          ...val,
+          name
+        }
         }
         return val
       })
@@ -38,8 +38,6 @@ function App() {
     }
 
 
-
-
   };
 
   let deleteRecord = (id) => {
@@ -51,7 +49,6 @@ function App() {
     let edit = todos.find(val => val.id == id);
     setEditid(id);
     setName(edit.name)
-
   }
 
 
@@ -90,14 +87,9 @@ function App() {
                     <tr key={i}>
                       <td> {id}</td>
                       <td>{name}</td>
-                      <td>
-                        <button onClick={() => deleteRecord(id)}>delete</button>
-                      </td>
-                      <td>
-                        <button onClick={() => editRecord(id)}>Edit</button>
+                      <td><button onClick={() => editRecord(id)}>Edit</button></td>
 
-                      </td>
-
+                      <td> <button onClick={() => deleteRecord(id)}>delete</button></td>
                     </tr>
                   )
 

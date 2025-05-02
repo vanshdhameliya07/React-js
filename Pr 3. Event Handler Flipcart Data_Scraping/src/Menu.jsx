@@ -4,8 +4,8 @@ import './Menu.css'
 const Menu = ({ items }) => {
 
     return (
-        <div className='container'>
-            <nav className="navbar mt-4 navbar-expand-lg navbar-light btn-light">
+        <div className=' justify-content-center' style={{ marginLeft: "16px" }}>
+            <nav className="navbar mt-5 navbar-expand-lg navbar-light btn-light">
 
                 <div className="collapse navbar-collapse" id="navbarNav">
                     <ul className="navbar-nav ">
