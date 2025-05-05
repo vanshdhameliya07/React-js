@@ -119,7 +119,7 @@ const Footer = ({ footer }) => {
                     }
                 </div>
             </div>
-            
+
             <div class="footer-bottom">
                 <div>
                     {
@@ -137,13 +137,9 @@ const Footer = ({ footer }) => {
                 <div className="payment-icons">
                     {
                         footer.map((v, i) => {
-                            console.log(v);
-
                             return (
-                                <div key={i}>
-                                    <img src={v.img} alt="" />
-                                </div>
-                            );
+                                <img src={v.img.img} alt="" />
+                            )
                         })
                     }
                 </div>
@@ -151,9 +147,6 @@ const Footer = ({ footer }) => {
             </div>
 
         </footer>
-
-
-
 
     )
 }

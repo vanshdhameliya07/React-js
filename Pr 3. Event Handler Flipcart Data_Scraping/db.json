@@ -210,10 +210,10 @@
                     "BecomeaSeller": "Become a Seller"
                 }
             ],
-            "img":[
+            "img": [
                 {
-                    "id":1,
-                    "img":"https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/payment-method-c454fb.svg"
+                    "id": 1,
+                    "img": "https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/payment-method-c454fb.svg"
                 }
             ]
         }
