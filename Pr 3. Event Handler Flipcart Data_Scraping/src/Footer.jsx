@@ -119,7 +119,7 @@ const Footer = ({ footer }) => {
                     }
                 </div>
             </div>
-
+            
             <div class="footer-bottom">
                 <div>
                     {
@@ -138,7 +138,7 @@ const Footer = ({ footer }) => {
                     {
                         footer.map((v, i) => {
                             console.log(v);
-                            
+
                             return (
                                 <div key={i}>
                                     <img src={v.img} alt="" />

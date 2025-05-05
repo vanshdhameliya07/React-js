@@ -3,6 +3,7 @@ import { category, product } from './data'
 
 
 const Filter = ({ filter }) => {
+
     return (
 
         <>
@@ -32,11 +33,7 @@ const Filter = ({ filter }) => {
 
                             ))
                         )
-
-
                 }
-
-
 
             </div>
         </>

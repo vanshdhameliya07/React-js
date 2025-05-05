@@ -90,17 +90,14 @@ function App() {
 
 
   let filter = (name) => {
-
     if (!name) {
       setFilter(category);
+    } else {
+      let filtered = category.filter(c => c.name === name);
+      setFilter(filtered);
     }
-    else {
-      let filterd = category.filter(c => c.name == name)
-      setFilter(filterd);
-
-    }
-
   }
+
 
 
   let footer = async () => {
@@ -147,7 +144,7 @@ function App() {
       <Filter filter={filters} />
       <Banner banner={banners} />
       <Footer footer={footers} />
-      
+
     </>
   );
 }
