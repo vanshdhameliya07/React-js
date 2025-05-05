@@ -144,5 +144,78 @@
         {
             "img": "https://rukminim1.flixcart.com/fk-p-flap/3072/1648/image/a542327b3f3d9f21.jpg?q=60"
         }
+    ],
+    "footer": [
+        {
+            "aboutus": [
+                "Contact Us",
+                "About Us",
+                "Careers",
+                "Flipkart Stories",
+                "Press",
+                "Corporate Information"
+            ],
+            "GROUPCOMPANIES": [
+                "Myntra",
+                "Cleartrip",
+                "Shopsy"
+            ],
+            "HELP": [
+                "Payments",
+                "Shipping",
+                "Cancellation & Returns",
+                "FAQ"
+            ],
+            "CONSUMERPOLICY": [
+                "Cancellation & Returns",
+                "Terms Of Use ",
+                "Security ",
+                "Privacy",
+                "Sitemap",
+                "Grievance Redressal",
+                "EPR Compliance"
+            ],
+            "MailUs": [
+                "Flipkart Internet Private Limited, ",
+                "Buildings Alyssa, Begonia &",
+                " Clove Embassy Tech Village, ",
+                " Outer Ring Road, Devarabeesanahalli Village, ",
+                " Bengaluru, 560103, ",
+                " Karnataka, India"
+            ],
+            "Social": [
+                {
+                    "id": 1,
+                    "img": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjUiIGhl…uZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8L3N2Zz4K"
+                },
+                {
+                    "id": 2,
+                    "img": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhl…3aGl0ZSIvPgo8L2NsaXBQYXRoPgo8L2RlZnM+Cjwvc3ZnPgo="
+                }
+            ],
+            "RegisteredOfficeAddress": [
+                "Flipkart Internet Private Limited, ",
+                " Buildings Alyssa, Begonia & ",
+                " Clove Embassy Tech Village, ",
+                " Outer Ring Road, Devarabeesanahalli Village, ",
+                " Bengaluru, 560103, ",
+                " Karnataka, India ",
+                " CIN : U51109KA2012PTC066107 ",
+                " Telephone: 044-45614700  /  044-67415800 "
+            ],
+            "seller": [
+                {
+                    "id": 1,
+                    "img": "https://static-assets-web.flixcart.com/batman-retu…atman-returns/p/images/advertise-image-866c0b.svg",
+                    "BecomeaSeller": "Become a Seller"
+                }
+            ],
+            "img":[
+                {
+                    "id":1,
+                    "img":"https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/payment-method-c454fb.svg"
+                }
+            ]
+        }
     ]
 }

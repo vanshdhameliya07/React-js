@@ -11,6 +11,7 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import Card from './Card';
 import Filter from './Filter';
 import Banner from './Banner';
+import Footer from './Footer';
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
   let [cards, setCards] = useState([])
   let [filters, setFilter] = useState([])
   let [banners, setBanners] = useState([])
+  let [footers, setFooter] = useState([])
 
 
 
@@ -101,6 +103,14 @@ function App() {
   }
 
 
+  let footer = async () => {
+    let footer = await fetch('http://localhost:3000/footer', {
+      method: 'get'
+    })
+    let res = await footer.json()
+    setFooter(res)
+
+  }
 
 
 
@@ -112,6 +122,7 @@ function App() {
       slidebar()
       card()
       banner()
+      footer()
     })
   }, [])
 
@@ -135,8 +146,8 @@ function App() {
       </div>
       <Filter filter={filters} />
       <Banner banner={banners} />
-
-
+      <Footer footer={footers} />
+      
     </>
   );
 }
