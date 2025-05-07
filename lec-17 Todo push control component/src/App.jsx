@@ -1,4 +1,5 @@
 import { useState } from "react";
+import './App.css'
 
 function App() {
   const [name, setName] = useState("");
@@ -8,16 +9,15 @@ function App() {
   const handlesubmit = (event) => {
     event.preventDefault()
 
-
     if (editid) {
 
       let update = todos.map((val, i) => {
 
         if (val.id === editid) {
-        return{
-          ...val,
-          name
-        }
+          return {
+            ...val,
+            name
+          }
         }
         return val
       })
@@ -31,7 +31,8 @@ function App() {
     else {
       const obj = {
         id: Math.floor(Math.random() * 1000),
-        name: name
+        name: name,
+        status: "active"
       };
       setTodos([...todos, obj]);
       setName("")
@@ -51,9 +52,29 @@ function App() {
     setName(edit.name)
   }
 
+  let changestatus = (id) => {
+
+    let up = todos.map((val, i) => {
+
+      if (val.id === id) {
+        return {
+          ...val,
+          status: val.status === "active" ? ("deactive") : ("active")
+        }
+      }
+      return val
+
+    })
+    setTodos(up);
+
+  }
+
+  let active = todos.filter(t => t.status === "active").length;
+  let deactive = todos.filter(t => t.status === "deactive").length
 
   return (
     <div align='center'>
+
       <h1>Todo List</h1>
 
       <form onSubmit={handlesubmit}>
@@ -63,9 +84,20 @@ function App() {
           type="text"
           onChange={(e) => setName(e.target.value)}
           value={name}></input>
-        <button type="submit">Submit</button>
+        {
+          editid ? (
+            <button type="submit">edit</button>
+          ) : (
+            <button type="submit">Submit</button>
+          )
+        }
         <h1>todos</h1>
       </form>
+
+
+      <h2>Active :{active}</h2>
+      <h2>Deactive:{deactive}</h2>
+
 
 
       {
@@ -77,6 +109,8 @@ function App() {
                 <td>name</td>
                 <td>action</td>
                 <td>edit</td>
+                <td>Status</td>
+
               </tr>
             </thead>
             <tbody>
@@ -90,7 +124,18 @@ function App() {
                       <td><button onClick={() => editRecord(id)}>Edit</button></td>
 
                       <td> <button onClick={() => deleteRecord(id)}>delete</button></td>
+                      <td>
+                        {
+                          t.status === "active" ? (
+                            <a style={{ color: "green" }} onClick={() => changestatus(t.id)}>{t.status}</a>
+                          ) : (
+                            <a style={{ color: "red" }} onClick={() => changestatus(t.id)}>{t.status}</a>
+                          )
+                        }
+
+                      </td>
                     </tr>
+
                   )
 
                 })
