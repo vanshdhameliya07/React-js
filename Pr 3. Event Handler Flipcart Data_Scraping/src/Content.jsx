@@ -6,7 +6,7 @@ const Content = ({ content }) => {
     console.log(content);
 
     return (
-        <div className='mt-4 ms-4'>
+        <div className='content mt-4 ms-4'>
             {
                 content.map((v, i) => {
                     return (
