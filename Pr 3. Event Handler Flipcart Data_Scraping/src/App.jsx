@@ -12,6 +12,7 @@ import Card from './Card';
 import Filter from './Filter';
 import Banner from './Banner';
 import Footer from './Footer';
+import Cardx from './Cardx';
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
   let [items, setItems] = useState([])
   let [slide, setSlide] = useState([])
   let [cards, setCards] = useState([])
+  let [cardx, setCardx] = useState([])
   let [filters, setFilter] = useState([])
   let [banners, setBanners] = useState([])
   let [footers, setFooter] = useState([])
@@ -79,6 +81,17 @@ function App() {
     setCards(res);
   }
 
+  let cardxs = async () => {
+    let card = await fetch('http://localhost:3000/card-x', {
+      method: 'get'
+    })
+
+    let res = await card.json();
+    console.log(res);
+    setCardx(res);
+  }
+
+
   let banner = async () => {
     let banner = await fetch('http://localhost:3000/banner', {
       method: 'get'
@@ -118,6 +131,7 @@ function App() {
       getitems()
       slidebar()
       card()
+      cardxs()
       banner()
       footer()
     })
@@ -130,6 +144,8 @@ function App() {
       <Menu items={items} />
       <Slidbar slidebar={slide} />
       <Card card={cards} />
+      <Cardx cardx={cardx} />
+
       <div align="center" style={{ marginTop: "100px" }}>
         <button onClick={() => filter()}>All</button>
 
