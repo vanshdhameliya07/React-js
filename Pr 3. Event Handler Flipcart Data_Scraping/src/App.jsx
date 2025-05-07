@@ -13,6 +13,7 @@ import Filter from './Filter';
 import Banner from './Banner';
 import Footer from './Footer';
 import Cardx from './Cardx';
+import Content from './Content';
 
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
   let [filters, setFilter] = useState([])
   let [banners, setBanners] = useState([])
   let [footers, setFooter] = useState([])
+  let [contents, setContents] = useState([])
 
 
 
@@ -87,7 +89,6 @@ function App() {
     })
 
     let res = await card.json();
-    console.log(res);
     setCardx(res);
   }
 
@@ -98,6 +99,14 @@ function App() {
     })
     let res = await banner.json();
     setBanners(res)
+
+  }
+  let content = async () => {
+    let content = await fetch('http://localhost:3000/content', {
+      method: 'get'
+    })
+    let res = await content.json();
+    setContents(res)
 
   }
 
@@ -134,6 +143,7 @@ function App() {
       cardxs()
       banner()
       footer()
+      content()
     })
   }, [])
 
@@ -159,6 +169,7 @@ function App() {
       </div>
       <Filter filter={filters} />
       <Banner banner={banners} />
+      <Content content={contents}/>
       <Footer footer={footers} />
 
     </>
