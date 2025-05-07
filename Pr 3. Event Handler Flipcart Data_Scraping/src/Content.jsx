@@ -34,6 +34,9 @@ const Content = ({ content }) => {
                             <h6 >{v.title5}</h6>
                             <p>{v.content13}</p>
 
+                            <h6 >{v.title6}</h6>
+                            <h6 >{v.title7}</h6>
+                            <p>{v.content14}</p>
 
                         </div>
                     )
