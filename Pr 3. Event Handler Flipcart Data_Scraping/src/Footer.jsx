@@ -100,11 +100,11 @@ const Footer = ({ footer }) => {
                         footer.map((v, i) => {
                             return (
                                 <div key={i}>
-                                    <h4 style={{marginLeft:"10px"}}>{v.social}</h4>
-                                    <img style={{ marginLeft: "10px",cursor:"pointer" }} src={v.fimg} alt="" />
-                                    <img style={{ marginLeft: "10px",cursor:"pointer" }} src={v.timg} alt="" />
-                                    <img style={{ marginLeft: "10px",cursor:"pointer" }} src={v.yimg} alt="" />
-                                    <img style={{ marginLeft: "10px", width: "19px",cursor:"pointer" }} src={v.iimg} alt="" />
+                                    <h4 style={{ marginLeft: "10px" }}>{v.social}</h4>
+                                    <img style={{ marginLeft: "10px", cursor: "pointer" }} src={v.fimg} alt="" />
+                                    <img style={{ marginLeft: "10px", cursor: "pointer" }} src={v.timg} alt="" />
+                                    <img style={{ marginLeft: "10px", cursor: "pointer" }} src={v.yimg} alt="" />
+                                    <img style={{ marginLeft: "10px", width: "19px", cursor: "pointer" }} src={v.iimg} alt="" />
 
                                 </div>
                             );
