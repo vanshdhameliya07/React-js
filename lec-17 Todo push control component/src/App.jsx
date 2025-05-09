@@ -1,153 +1,72 @@
-import { useState } from "react";
-import './App.css'
+import React from 'react'
+import { useState } from 'react'
 
-function App() {
-  const [name, setName] = useState("");
-  const [todos, setTodos] = useState([]);
-  const [editid, setEditid] = useState("");
+const App = () => {
 
-  const handlesubmit = (event) => {
+  let [name, setName] = useState("");
+  let [todo, setTodo] = useState([])
+
+
+  let deleteuser = (id) => {
+    console.log(id);
+
+    let single = todo.filter(val => val.id != id)
+    setTodo(single);
+
+
+  }
+
+
+  let handlesubmit = (event) => {
     event.preventDefault()
 
-    if (editid) {
-
-      let update = todos.map((val, i) => {
-
-        if (val.id === editid) {
-          return {
-            ...val,
-            name
-          }
-        }
-        return val
-      })
-
-      setTodos(update);
-      setEditid("");
-      setName("")
-
-
+    let obj = {
+      id: Math.floor(Math.random() * 100),
+      name: name
     }
-    else {
-      const obj = {
-        id: Math.floor(Math.random() * 1000),
-        name: name,
-        status: "active"
-      };
-      setTodos([...todos, obj]);
-      setName("")
-    }
-
-
-  };
-
-  let deleteRecord = (id) => {
-    let single = todos.filter(val => val.id != id);
-    setTodos(single)
+    setTodo([...todo, obj]);
+    setName("")
   }
-
-  let editRecord = (id) => {
-    let edit = todos.find(val => val.id == id);
-    setEditid(id);
-    setName(edit.name)
-  }
-
-  let changestatus = (id) => {
-
-    let up = todos.map((val, i) => {
-
-      if (val.id === id) {
-        return {
-          ...val,
-          status: val.status === "active" ? ("deactive") : ("active")
-        }
-      }
-      return val
-
-    })
-    setTodos(up);
-
-  }
-
-  let active = todos.filter(t => t.status === "active").length;
-  let deactive = todos.filter(t => t.status === "deactive").length
 
   return (
-    <div align='center'>
-
-      <h1>Todo List</h1>
+    <div align="center">
 
       <form onSubmit={handlesubmit}>
+        name :
+        <input type="text" onChange={(event) => setName(event.target.value)} value={name} />
+        <br />
+        <button type="submit">submit</button>
 
-        Name :
-        <input
-          type="text"
-          onChange={(e) => setName(e.target.value)}
-          value={name}></input>
-        {
-          editid ? (
-            <button type="submit">edit</button>
-          ) : (
-            <button type="submit">Submit</button>
-          )
-        }
-        <h1>todos</h1>
       </form>
 
 
-      <h2>Active :{active}</h2>
-      <h2>Deactive:{deactive}</h2>
 
+      <table border={1}>
+        <thead>
+          <tr>
+            <td>id</td>
+            <td>name</td>
+            <td>action</td>
+          </tr>
+        </thead>
+        <tbody>
+          {
+            todo.map((val, i) => {
+              return (
+                <tr key={i}>
+                  <td>{val.id}</td>
+                  <td>{val.name}</td>
 
+                  <td> <button onClick={() => deleteuser(val.id)}>delete</button></td>
+                </tr>
+              )
+            })
+          }
+        </tbody>
+      </table>
 
-      {
-        todos.length == 0 ? <h1 style={{ color: "red" }}>data not found</h1> : (
-          <table border={1}>
-            <thead>
-              <tr>
-                <td>id</td>
-                <td>name</td>
-                <td>action</td>
-                <td>edit</td>
-                <td>Status</td>
-
-              </tr>
-            </thead>
-            <tbody>
-              {
-                todos.map((t, i) => {
-                  let { id, name } = t;
-                  return (
-                    <tr key={i}>
-                      <td> {id}</td>
-                      <td>{name}</td>
-                      <td><button onClick={() => editRecord(id)}>Edit</button></td>
-
-                      <td> <button onClick={() => deleteRecord(id)}>delete</button></td>
-                      <td>
-                        {
-                          t.status === "active" ? (
-                            <a style={{ color: "green" }} onClick={() => changestatus(t.id)}>{t.status}</a>
-                          ) : (
-                            <a style={{ color: "red" }} onClick={() => changestatus(t.id)}>{t.status}</a>
-                          )
-                        }
-
-                      </td>
-                    </tr>
-
-                  )
-
-                })
-              }
-            </tbody>
-          </table>
-        )
-      }
-
-
-    </div >
-  );
+    </div>
+  )
 }
 
-export default App;
+export default App

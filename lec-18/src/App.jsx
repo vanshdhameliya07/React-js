@@ -6,6 +6,8 @@ function App() {
     name: ''
   })
 
+  let [data, setData] = useState("")
+
   let change = (e) => {
 
     const { name, value } = e.target;
