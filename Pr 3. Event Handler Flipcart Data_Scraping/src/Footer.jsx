@@ -88,10 +88,24 @@ const Footer = ({ footer }) => {
                     {
                         footer.map((v, i) => {
                             return (
-                                <div key={i}>
+                                <div key={i} style={{ borderLeft: '2px solid #454d5e', paddingLeft: '20px' }}>
                                     <h4>{v.m}</h4>
 
                                     <p>{v.MailUs}</p>
+                                </div>
+                            );
+                        })
+                    }
+                    {
+                        footer.map((v, i) => {
+                            return (
+                                <div key={i}>
+                                    <h4 style={{marginLeft:"10px"}}>{v.social}</h4>
+                                    <img style={{ marginLeft: "10px",cursor:"pointer" }} src={v.fimg} alt="" />
+                                    <img style={{ marginLeft: "10px",cursor:"pointer" }} src={v.timg} alt="" />
+                                    <img style={{ marginLeft: "10px",cursor:"pointer" }} src={v.yimg} alt="" />
+                                    <img style={{ marginLeft: "10px", width: "19px",cursor:"pointer" }} src={v.iimg} alt="" />
+
                                 </div>
                             );
                         })
@@ -139,7 +153,7 @@ const Footer = ({ footer }) => {
                     footer.map((v, i) => {
                         return (
                             <div >
-                                <p style={{marginTop:"10px"}}> {v.rr}</p>
+                                <p style={{ marginTop: "10px" }}> {v.rr}</p>
                             </div>
                         )
                     })
