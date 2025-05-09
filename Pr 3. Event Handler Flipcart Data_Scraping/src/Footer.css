@@ -1,7 +1,9 @@
 body {
     color: #fff;
 }
-
+.footer img{
+    background-repeat: no-repeat;
+}
 .footer {
     background-color: #181818;
     padding: 20px 50px;
@@ -14,7 +16,6 @@ body {
     flex-wrap: wrap;
     gap: 40px;
     margin-bottom: 30px;
-    border-bottom: 1px solid #333;
     padding-bottom: 20px;
 }
 
@@ -26,6 +27,7 @@ body {
     font-weight: 600;
     margin-bottom: 10px;
     color: #aaa;
+    font-size: 19px;
 }
 
 .footer-column a {
