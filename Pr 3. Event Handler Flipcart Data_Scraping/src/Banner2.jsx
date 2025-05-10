@@ -19,7 +19,18 @@ const Banner2 = ({ banner2 }) => {
                     banner2.map((v, i) => {
                         return (
                             <img src={v.img2} />
-                           
+
+                        )
+                    })
+                }
+            </div>
+
+            <div className='img-3 mt-3 d-flex'>
+                {
+                    banner2.map((v, i) => {
+                        return (
+                             <img src={v.img3} />
+
                         )
                     })
                 }

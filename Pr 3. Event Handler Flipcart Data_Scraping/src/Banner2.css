@@ -4,3 +4,8 @@
     display: block;
     cursor: pointer;
 }
+.img-3 img{
+    width: 304px !important;
+    height: 200px !important;
+    background-size: contain !important;
+}

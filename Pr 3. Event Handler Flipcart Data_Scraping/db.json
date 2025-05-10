@@ -199,8 +199,24 @@
             "img2": "https://rukminim2.flixcart.com/fk-p-flap/520/280/image/0f0e162869ca38d7.jpg?q=20"
         },
         {
-            "id": 4,
-            "img2": ""
+            "id":5,
+            "img3":"https://rukminim2.flixcart.com/fk-p-flap/800/330/image/1e1901422d8f1a25.jpg?q=90"
+        },
+        {
+            "id":6,
+            "img3":"https://rukminim2.flixcart.com/fk-p-flap/800/330/image/bbe0ce9453338e5f.jpg?q=90"
+        },
+        {
+            "id":7,
+            "img3":"https://rukminim2.flixcart.com/fk-p-flap/800/330/image/6c9c9204c2d49a12.png?q=90"
+        },
+        {
+            "id":8,
+            "img3":"https://rukminim2.flixcart.com/fk-p-flap/800/330/image/f880de25a3bc3ac2.jpg?q=90"
+        },
+        {
+            "id":8,
+            "img3":"https://rukminim2.flixcart.com/fk-p-flap/800/330/image/f880de25a3bc3ac2.jpg?q=90"
         }
     ],
     "banner": [
