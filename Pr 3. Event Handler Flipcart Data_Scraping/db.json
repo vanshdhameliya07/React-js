@@ -181,6 +181,12 @@
             "money": "From ₹11,999*"
         }
     ],
+    "banner2": [
+        {
+            "id":1,
+            "img":"https://rukminim2.flixcart.com/fk-p-flap/1600/350/image/acbb807a1dfc1965.jpg?q=20"
+        }
+    ],
     "banner": [
         {
             "img": "https://rukminim1.flixcart.com/fk-p-flap/3072/1648/image/3c236a0f17b3d518.jpg?q=60"
@@ -229,17 +235,17 @@
             "Shopsy": "Shopsy",
             "h": "HELP",
             "Payments": "Payments",
-            "Shipping":"Shipping",
-            "C":"Cancellation & Returns",
-            "FAQ":"FAQ",
+            "Shipping": "Shipping",
+            "C": "Cancellation & Returns",
+            "FAQ": "FAQ",
             "c": "CONSUMERPOLICY",
-            "ca":"Cancellation & Returns",
-            "TermsOfUse":"Terms Of Use",
-            "Security":"Security",
-            "Privacy":"Privacy",
-            "Sitemap":"Sitemap",
-            "GrievanceRedressal":"Grievance Redressal",
-            "EPRCompliance":"EPR Compliance",
+            "ca": "Cancellation & Returns",
+            "TermsOfUse": "Terms Of Use",
+            "Security": "Security",
+            "Privacy": "Privacy",
+            "Sitemap": "Sitemap",
+            "GrievanceRedressal": "Grievance Redressal",
+            "EPRCompliance": "EPR Compliance",
             "m": "MailUs",
             "MailUs": [
                 "Flipkart Internet Private Limited, ",

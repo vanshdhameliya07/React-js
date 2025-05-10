@@ -14,6 +14,7 @@ import Banner from './Banner';
 import Footer from './Footer';
 import Cardx from './Cardx';
 import Content from './Content';
+import Banner2 from './Banner2';
 
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
   let [cardx, setCardx] = useState([])
   let [filters, setFilter] = useState([])
   let [banners, setBanners] = useState([])
+  let [bannerss, setBanners2] = useState([])
   let [footers, setFooter] = useState([])
   let [contents, setContents] = useState([])
 
@@ -101,6 +103,15 @@ function App() {
     setBanners(res)
 
   }
+  let benners = async () => {
+    let banners = await fetch('http://localhost:3000/banner2', {
+      method: 'get'
+    })
+    let res = await banners.json();
+
+    setBanners2(res)
+
+  }
   let content = async () => {
     let content = await fetch('http://localhost:3000/content', {
       method: 'get'
@@ -142,6 +153,7 @@ function App() {
       card()
       cardxs()
       banner()
+      benners()
       footer()
       content()
     })
@@ -155,6 +167,8 @@ function App() {
       <Slidbar slidebar={slide} />
       <Card card={cards} />
       <Cardx cardx={cardx} />
+      <Banner2 banner2={bannerss} />
+
 
       <div align="center" style={{ marginTop: "100px" }}>
         <button onClick={() => filter()}>All</button>
@@ -169,7 +183,7 @@ function App() {
       </div>
       <Filter filter={filters} />
       <Banner banner={banners} />
-      <Content content={contents}/>
+      <Content content={contents} />
       <Footer footer={footers} />
 
     </>
