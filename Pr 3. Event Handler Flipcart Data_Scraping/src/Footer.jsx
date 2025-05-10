@@ -13,17 +13,20 @@ const Footer = ({ footer }) => {
 
 
             <div className="footer-top">
-                <div class="footer-column">
+                <div className="footer-column">
 
 
                     {
                         footer.map((v, i) => {
                             return (
-                                <div >
+                                <div key={i}>
                                     <h4>{v.ABOUT}</h4>
-                                    <a href="">
-                                        {v.aboutus}
-                                    </a>
+                                    <a href="">{v.ContactUs}</a>
+                                    <a href="">{v.AboutUs}</a>
+                                    <a href="">{v.Careers}</a>
+                                    <a href="">{v.FlipkartStories}</a>
+                                    <a href="">{v.Press}</a>
+                                    <a href="">{v.CorporateInformation}</a>
                                 </div>
                             )
                         })
@@ -31,17 +34,17 @@ const Footer = ({ footer }) => {
 
 
                 </div>
-                <div class="footer-column">
+                <div className="footer-column">
 
                     {
                         footer.map((v, i) => {
                             return (
-                                <div >
+                                <div key={i}>
                                     <h4>{v.s}</h4>
 
-                                    <a href="">
-                                        {v.GROUPCOMPANIES}
-                                    </a>
+                                    <a href="">{v.Myntra}</a>
+                                    <a href="">{v.Cleartrip}</a>
+                                    <a href="">{v.Shopsy}</a>
                                 </div>
                             )
                         })
@@ -49,41 +52,46 @@ const Footer = ({ footer }) => {
 
 
                 </div>
-                <div class="footer-column">
+                <div className="footer-column">
 
                     {
                         footer.map((v, i) => {
                             return (
-                                <div >
+                                <div key={i}>
                                     <h4>{v.h}</h4>
 
-                                    <a href="">
-                                        {v.HELP}
-                                    </a>
+                                    <a href="">{v.Payments}</a>
+                                    <a href="">{v.Shipping}</a>
+                                    <a href="">{v.C}</a>
+                                    <a href="">{v.FAQ}</a>
                                 </div>
                             )
                         })
                     }
 
                 </div>
-                <div class="footer-column">
+                <div className="footer-column">
 
                     {
                         footer.map((v, i) => {
                             return (
-                                <div >
+                                <div key={i}>
                                     <h4>{v.c}</h4>
 
-                                    <a href="">
-                                        {v.CONSUMERPOLICY}
-                                    </a>
+                                    <a href="">{v.ca}</a>
+                                    <a href="">{v.TermsOfUse}</a>
+                                    <a href="">{v.Security}</a>
+                                    <a href="">{v.Privacy}</a>
+                                    <a href="">{v.Sitemap}</a>
+                                    <a href="">{v.GrievanceRedressal}</a>
+                                    <a href="">{v.EPRCompliance}</a>
                                 </div>
                             )
                         })
                     }
 
                 </div>
-                <div class="footer-column address">
+                <div className="footer-column address">
 
                     {
                         footer.map((v, i) => {
@@ -112,11 +120,11 @@ const Footer = ({ footer }) => {
                     }
 
                 </div>
-                <div class="footer-column address">
+                <div className="footer-column address">
                     {
                         footer.map((v, i) => {
                             return (
-                                <div >
+                                <div key={i}>
                                     <h4>{v.r}</h4>
 
                                     <p>{v.RegisteredOfficeAddress}</p>
@@ -127,12 +135,12 @@ const Footer = ({ footer }) => {
                 </div>
             </div>
 
-            <div class=" footer-bottom">
+            <div className=" footer-bottom">
                 <div>
                     {
                         footer.map((v, i) => {
                             return (
-                                <div className='d-flex  jusify-content-center' >
+                                <div key={i} className='d-flex  jusify-content-center' >
                                     <img style={{ marginLeft: "30px" }} src={v.seller} alt="" />
                                     <p style={{ margin: "0px", marginLeft: "5px" }}>{v.b}</p>
                                     <img style={{ marginLeft: "30px" }} src={v.ad} alt="" />
@@ -152,7 +160,7 @@ const Footer = ({ footer }) => {
                 <div>{
                     footer.map((v, i) => {
                         return (
-                            <div >
+                            <div key={i}>
                                 <p style={{ marginTop: "10px" }}> {v.rr}</p>
                             </div>
                         )
@@ -163,7 +171,7 @@ const Footer = ({ footer }) => {
                         footer.map((v, i) => {
 
                             return (
-                                <img src={v.img} alt="" />
+                                <img key={i} src={v.img} alt="" />
                             )
                         })
                     }

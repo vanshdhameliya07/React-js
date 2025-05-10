@@ -3,18 +3,17 @@ import React from 'react'
 import './Content.css'
 
 const Content = ({ content }) => {
-    console.log(content);
 
     return (
         <div className='content mt-4 ms-4'>
             {
                 content.map((v, i) => {
                     return (
-                        <div>
+                        <div key={i}>
                             <h6 >{v.title}</h6>
                             <p>{v.content2}</p>
                             <p>{v.content3}</p>
-                            <h6 c>{v.title2}</h6>
+                            <h6>{v.title2}</h6>
                             <p>{v.content4}</p>
 
 
