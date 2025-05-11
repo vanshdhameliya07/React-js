@@ -1,68 +1,96 @@
-import React from 'react'
-import { useState } from 'react'
+import { useState } from "react";
 
 const App = () => {
 
-  let [name, setName] = useState("");
-  let [todo, setTodo] = useState([])
+
+  let [name, setName] = useState("")
+  let [todos, setTodos] = useState([])
+  let [editid, setEditid] = useState("")
 
 
   let deleteuser = (id) => {
-    console.log(id);
-
-    let single = todo.filter(val => val.id != id)
-    setTodo(single);
-
+    let deletes = todos.filter(val => val.id != id)
+    setTodos(deletes)
 
   }
 
+  let edituser = (id) => {
+    let edit = todos.find(val => val.id == id);
+    setEditid(id);
+    setName(edit.name)
 
-  let handlesubmit = (event) => {
-    event.preventDefault()
+  }
 
-    let obj = {
-      id: Math.floor(Math.random() * 100),
-      name: name
+  let submit = (event) => {
+    event.preventDefault();
+
+
+    if (editid) {
+      let up = todos.map((val, i) => {
+        if (val.id == editid) {
+          return {
+            ...val,
+            name: name
+          }
+        }
+        return val
+      })
+      setTodos(up)
+      setName("")
+      setEditid("")
     }
-    setTodo([...todo, obj]);
-    setName("")
+    else {
+      let obj = {
+        id: Math.floor(Math.random() * 100),
+        name: name
+      }
+      setTodos([...todos, obj]);
+      setName("")
+
+    }
+
+
   }
 
   return (
     <div align="center">
 
-      <form onSubmit={handlesubmit}>
-        name :
-        <input type="text" onChange={(event) => setName(event.target.value)} value={name} />
+
+      <form onSubmit={submit}>
+        <h1>form validation</h1>
+        name :<input type="text" onChange={(event) => setName(event.target.value)} value={name} /><br />
         <br />
-        <button type="submit">submit</button>
-
+        {
+          editid ? (<button type="submit" >Update</button>) : (<button type="submit" >Submit</button>)
+        }
       </form>
-
-
-
-      <table border={1}>
+      <br />
+      <table border={1} cellPadding={5}>
         <thead>
           <tr>
             <td>id</td>
             <td>name</td>
-            <td>action</td>
+            <td>delete</td>
+            <td>edit</td>
           </tr>
         </thead>
         <tbody>
           {
-            todo.map((val, i) => {
+            todos.map((val, i) => {
+              let { id, name } = val
               return (
                 <tr key={i}>
-                  <td>{val.id}</td>
-                  <td>{val.name}</td>
+                  <td>{id}</td>
+                  <td>{name}</td>
 
-                  <td> <button onClick={() => deleteuser(val.id)}>delete</button></td>
+                  <td><button onClick={() => deleteuser(id)} >delete</button></td>
+                  <td><button onClick={() => edituser(id)} >Edit</button></td>
                 </tr>
               )
             })
           }
         </tbody>
+
       </table>
 
     </div>
