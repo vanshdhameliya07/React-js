@@ -8,4 +8,5 @@
     width: 304px !important;
     height: 200px !important;
     background-size: contain !important;
+    cursor: pointer;
 }
