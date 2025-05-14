@@ -1,126 +1,131 @@
-import { use } from "react"
-import { useState } from "react"
+import React, { useState } from 'react'
 
 const App = () => {
 
-  let [forminput, setFormInput] = useState({
-    username: '',
-    useremail: '',
+  let [formInput, setFormInput] = useState({
+    username: "",
+    useremail: "",
+    userpassword: "",
     courses: []
 
   })
 
+
   let [error, setError] = useState({
-    username: '',
-    useremail: '',
+    username: "",
+    useremail: "",
+    userpassword: ""
   })
 
 
+  let formvalidation = () => {
+    let error = { username: '', useremail: '', userpassword: '' }
+    let check = true
+
+    if (!formInput.username) {
+      error.username = "name is required"
+      check = false
+    }
+    if (!formInput.useremail) {
+      error.useremail = "email is required"
+      check = false
+    }
+    else if (formInput.userpassword.length <= 8) {
+      error.userpassword = "password  at list 8 digit require"
+      check = false
+    }
+    setError(error)
+    return check
+
+  }
 
 
-  let changeinput = (event) => {
-    let { name, value, type, checked } = event.target
-
+  let inputchange = (event) => {
+    let { name, value, type, checked } = event.target;
     if (type == "checkbox") {
       if (checked) {
         setFormInput({
-          ...forminput,
-          courses: [...forminput.courses, value]
+          ...formInput,
+          courses: [...formInput.courses, value]
+
         })
-      }
-      else {
+
+      } else {
         setFormInput({
-          ...forminput,
-          courses: [...forminput.courses].filter(val => val != value)
+          ...formInput,
+          courses: [...formInput.courses.filter(c => c != value)]
         })
       }
+
     } else {
       setFormInput({
-        ...forminput,
+        ...formInput,
         [name]: value
       })
     }
 
 
-
-
   }
-
-
-  let formvalidation = () => {
-    let error = { username: '', useremail: '' }
-    let check = true
-
-    if (!forminput.username) {
-      error.username = "Name is required"
-      check = false
-    }
-    if (!forminput.useremail) {
-      error.useremail = "Email is required"
-      check = false
-    }
-    setError(error);
-    return true
-
-  }
-
 
   let handlesubmit = (event) => {
     event.preventDefault()
     if (formvalidation()) {
-      console.log(forminput);
+      console.warn(formInput);
+
       setFormInput({
         username: '',
         useremail: '',
+        userpassword: '',
         courses: []
-
       })
     }
+
 
   }
 
   return (
     <div align="center">
-      <h1>form</h1>
+      <h1>form validation</h1>
 
       <form onSubmit={handlesubmit}>
-
         <table border={1} cellPadding={5}>
           <thead>
             <tr>
               <td>name</td>
-              <td><input type="text" name="username" onChange={changeinput} value={forminput.username} />
+              <td><input type="text" onChange={inputchange} name='username' value={formInput.username} />
                 <span style={{ color: "red" }}>{error.username}</span>
-
               </td>
             </tr>
             <tr>
               <td>email</td>
-              <td><input type="text" name="useremail" onChange={changeinput} value={forminput.useremail} />
+              <td><input type="text" onChange={inputchange} name='useremail' value={formInput.useremail} />
                 <span style={{ color: "red" }}>{error.useremail}</span>
 
               </td>
             </tr>
             <tr>
+              <td>password</td>
+              <td><input type="text" onChange={inputchange} name='userpassword' value={formInput.userpassword} />
+                <span style={{ color: "red" }}>{error.userpassword}</span>
+              </td>
+            </tr>
+            <tr>
               <td>courses</td>
               <td>
-                <input type="checkbox" name="courses" checked={forminput.courses.includes("html")} onChange={changeinput} value="html" />html
-                <input type="checkbox" name="courses" checked={forminput.courses.includes("css")} onChange={changeinput} value="css" />css
-                <input type="checkbox" name="courses" checked={forminput.courses.includes("bootstrap")} onChange={changeinput} value="bootstrap" />bootstrap
-                <input type="checkbox" name="courses" checked={forminput.courses.includes("java")} onChange={changeinput} value="java" />Java
+                <input type="checkbox" checked={formInput.courses.includes('html')} onChange={inputchange} name='courses' value="html" />html
+                <input type="checkbox" checked={formInput.courses.includes('css')} onChange={inputchange} name='courses' value="css" />css
+                <input type="checkbox" checked={formInput.courses.includes('java')} onChange={inputchange} name='courses' value="java" />java
+                <input type="checkbox" checked={formInput.courses.includes('pyton')} onChange={inputchange} name='courses' value="pyton" />pyton
               </td>
             </tr>
             <tr>
               <td></td>
-              <td><input type="Submit" /></td>
+              <td><input type="submit" /></td>
             </tr>
           </thead>
         </table>
-
-
-
-
       </form>
+
     </div>
   )
 }
