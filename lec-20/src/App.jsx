@@ -14,7 +14,7 @@ function App() {
     setInput([...input, newfiled])
   }
 
-  let changeinput = (index, e) => {  // CORRECT
+  let changeinput = (index, e) => {
     const { name, value } = e.target
     let newfiled = [...input]
     newfiled[index][name] = value
