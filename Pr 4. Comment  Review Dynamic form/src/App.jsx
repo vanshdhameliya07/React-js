@@ -1,33 +1,77 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react"
 
 function App() {
-  const [count, setCount] = useState(0)
+
+  let [formInput, setFormInput] = useState([
+    { name: "", email: "" },
+
+  ])
+
+
+  let add = () => {
+    let newfiled = { name: '', email: '' }
+    setFormInput([...formInput, newfiled])
+  }
+
+  let remove = (i) => {
+    let remove = formInput.filter((val, index) => {
+      return index != i
+
+    })
+    alert('remove')
+    setFormInput(remove)
+  }
+
+  let changeinput = (index, event) => {
+
+    let { name, value } = event.target
+    let newfiled = [...formInput]
+    newfiled[index][name] = value
+    setFormInput(newfiled)
+
+
+  }
+
+  let handleSubmit = () => {
+    console.log(formInput);
+
+  }
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+
+      <div align="center">
+        <h1>form validation</h1>
+
+        {
+          formInput.map((val, index) => {
+            return (
+              <div key={index}>
+
+
+                name < input type="text" name="name" onChange={(event) => changeinput(index, event)} value={val.name} />
+                <br />
+                <br />
+                email < input type="text" name="email" onChange={(event) => changeinput(index, event)} value={val.email} />
+                <br />
+                <br />
+                {
+                  index != 0 && (<button onClick={() => remove(index)}>remove</button>)
+                }
+
+
+
+                <br />
+
+                <hr />
+              </div >
+            )
+          })
+        }
+        <br />
+        <button onClick={() => add()}>add</button>
+        <input onClick={() => handleSubmit()} type="submit" />
+      </div >
     </>
   )
 }
