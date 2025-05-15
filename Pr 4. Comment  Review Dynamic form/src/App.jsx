@@ -1,16 +1,15 @@
 import { useState } from "react"
-import './App.css'
 
 function App() {
 
   let [formInput, setFormInput] = useState([
-    { name: "", email: "" },
+    { name: "", email: "", salary: '' },
 
   ])
 
 
   let add = () => {
-    let newfiled = { name: '', email: '' }
+    let newfiled = { name: '', email: '', salary: '' }
     setFormInput([...formInput, newfiled])
   }
 
@@ -48,46 +47,36 @@ function App() {
           <div key={index} style={styles.card}>
             <div style={styles.inputGroup}>
               <label>Name</label>
-              <input
-                type="text"
-                name="name"
-                value={val.name}
-                onChange={(e) => changeinput(index, e)}
-                style={styles.input}
-                placeholder="Enter name"
+              <input type="text" name="name" value={val.name} onChange={(e) => changeinput(index, e)} style={styles.input} placeholder="Enter name"
               />
             </div>
 
             <div style={styles.inputGroup}>
               <label>Email</label>
-              <input
-                type="email"
-                name="email"
-                value={val.email}
-                onChange={(e) => changeinput(index, e)}
-                style={styles.input}
-                placeholder="Enter email"
+              <input type="email" name="email" value={val.email} onChange={(e) => changeinput(index, e)} style={styles.input} placeholder="Enter email"
               />
             </div>
 
-            {index !== 0 && (
-              <button onClick={() => remove(index)} style={styles.removeBtn}>
-                 Remove
-              </button>
-            )}
+            <div style={styles.inputGroup}>
+              <label>salary</label>
+              <input type="email" name="salary" value={val.salary} onChange={(e) => changeinput(index, e)} style={styles.input} placeholder="Enter salary"
+              />
+            </div>
+
+            {index !== 0 && (<button onClick={() => remove(index)} style={styles.removeBtn}>Remove</button>)}
           </div>
         ))}
 
         <div style={styles.buttonGroup}>
           <button onClick={add} style={styles.addBtn}>
-             Add Field
+            Add Field
           </button>
           <button onClick={handleSubmit} style={styles.submitBtn}>
-             Submit
+            Submit
           </button>
         </div>
       </div>
-      
+
     </>
   )
 }
@@ -122,6 +111,8 @@ const styles = {
     borderRadius: "8px",
     border: "1px solid #ccc",
     marginTop: "4px",
+
+
   },
   removeBtn: {
     backgroundColor: "#ef4444",

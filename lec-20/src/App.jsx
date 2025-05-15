@@ -28,7 +28,7 @@ function App() {
   }
 
   let remove = (i) => {
-     let remove = input.filter((val, index) => {
+    let remove = input.filter((val, index) => {
       return index != i
     })
     alert('remove')
