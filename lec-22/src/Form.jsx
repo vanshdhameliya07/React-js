@@ -11,6 +11,8 @@ const Form = () => {
         city: ''
     })
 
+    let [alldata, setAlldata] = useState(localStorage.getItem('users') ? JSON.parse(localStorage.getItem('users')) : [])
+
     let changeInput = (e) => {
         let { name, value, type, checked } = e.target
 
@@ -33,7 +35,14 @@ const Form = () => {
                 [name]: value
             })
         }
+    }
 
+    let deleteuser = (index) => {
+        let deleteuser = alldata.filter((val, i) => {
+            return i != index
+        })
+        setAlldata(deleteuser);
+        localStorage.setItem('users', JSON.stringify(deleteuser))
 
     }
 
@@ -41,6 +50,11 @@ const Form = () => {
         e.preventDefault()
         console.log(formInput);
         alert("form submit")
+
+        let oldrecord = [...alldata, formInput]
+        setAlldata(oldrecord)
+
+        localStorage.setItem('users', JSON.stringify(oldrecord))
 
         setFormInput({
             username: '',
@@ -105,6 +119,45 @@ const Form = () => {
                     </thead>
                 </table>
             </form>
+
+            <br />
+            <br />
+            <table border={1}>
+                <thead>
+                    <tr>
+                        <td>id</td>
+                        <td>name</td>
+                        <td>email</td>
+                        <td>password</td>
+                        <td>gender</td>
+                        <td>language</td>
+                        <td>city</td>
+                        <td>Action</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    {
+                        alldata.map((val, index) => {
+                            let { username, useremail, userpassword, usergender, language, city } = val;
+                            return (
+                                <tr>
+                                    <td>{index}</td>
+                                    <td>{username}</td>
+                                    <td>{useremail}</td>
+                                    <td>{userpassword}</td>
+                                    <td>{usergender}</td>
+                                    <td>{language.join('/')}</td>
+                                    <td>{city}</td>
+                                    <td>
+                                        <button onClick={() => deleteuser(index)}>Delete</button>
+                                    </td>
+                                </tr>
+                            )
+
+                        })
+                    }
+                </tbody>
+            </table>
 
         </div>
     )
