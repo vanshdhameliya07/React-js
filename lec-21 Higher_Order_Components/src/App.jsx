@@ -8,6 +8,7 @@ function App() {
 
   let darkbutton = () => {
     setDarkbtn(!darkbtn)
+
   }
 
   return (
@@ -22,7 +23,6 @@ function App() {
 
       <Acomponent />
       <Bcomponent />
-
 
     </div>
   )
