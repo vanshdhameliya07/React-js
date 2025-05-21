@@ -2,16 +2,17 @@ import React, { useState } from 'react'
 
 const Form = () => {
 
+    let [editid, setEditId] = useState("")
     let [formInput, setFormInput] = useState({
         username: '',
         useremail: '',
         userpassword: '',
-        usergender: '',
+        gender: '',
         language: [],
         city: ''
     })
+    let [all, setAll] = useState(localStorage.getItem('users') ? JSON.parse(localStorage.getItem('users')) : [])
 
-    let [alldata, setAlldata] = useState(localStorage.getItem('users') ? JSON.parse(localStorage.getItem('users')) : [])
 
     let changeInput = (e) => {
         let { name, value, type, checked } = e.target
@@ -37,33 +38,72 @@ const Form = () => {
         }
     }
 
-    let deleteuser = (index) => {
-        let deleteuser = alldata.filter((val, i) => {
-            return i != index
-        })
-        setAlldata(deleteuser);
-        localStorage.setItem('users', JSON.stringify(deleteuser))
-
-    }
-
     let handleSubmit = (e) => {
         e.preventDefault()
         console.log(formInput);
         alert("form submit")
 
-        let oldrecord = [...alldata, formInput]
-        setAlldata(oldrecord)
+        if (editid !== "") {
+            let up = all.map((val) => {
+                if (val.userid === editid) {
+                    {
+                        val.username = formInput.username
+                        val.useremail = formInput.useremail
+                        val.userpassword = formInput.userpassword
+                        val.gender = formInput.gender
+                        val.language = formInput.language
+                        val.city = formInput.city
+                    }
+                }
+                return val;
+            })
 
-        localStorage.setItem('users', JSON.stringify(oldrecord))
+            setAll(up)
+            localStorage.setItem('users', JSON.stringify(up))
+
+
+        } else {
+            let obj = {
+                userid: Math.floor(Math.random() * 100),
+                ...formInput
+            }
+
+            let oldrecord = [...all, obj]
+            setAll(oldrecord)
+
+            localStorage.setItem('users', JSON.stringify(oldrecord))
+        }
+
 
         setFormInput({
             username: '',
             useremail: '',
             userpassword: '',
-            usergender: '',
+            gender: '',
             language: "",
             city: ''
         })
+    }
+
+    let deleteuser = (id) => {
+
+        let deleteuser = all.filter((val, i) => {
+            return val.userid != id
+        })
+        setAll(deleteuser)
+        localStorage.setItem('users', JSON.stringify(deleteuser))
+        alert("delete user")
+    }
+
+    let edituser = (id) => {
+
+        let edit = all.find((val, i) => {
+            return val.userid == id
+        })
+        setFormInput(edit)
+        setEditId(id)
+
+
     }
 
     return (
@@ -88,8 +128,8 @@ const Form = () => {
                         <tr>
                             <td>gender</td>
                             <td>
-                                <input type="radio" name="usergender" onChange={changeInput} checked={formInput.usergender === "male"} value="male" />male
-                                <input type="radio" name="usergender" onChange={changeInput} checked={formInput.usergender === "female"} value="female" />female
+                                <input type="radio" name="gender" onChange={changeInput} checked={formInput.gender === "male"} value="male" />male
+                                <input type="radio" name="gender" onChange={changeInput} checked={formInput.gender === "female"} value="female" />female
                             </td>
                         </tr>
                         <tr>
@@ -122,6 +162,7 @@ const Form = () => {
 
             <br />
             <br />
+
             <table border={1}>
                 <thead>
                     <tr>
@@ -137,23 +178,24 @@ const Form = () => {
                 </thead>
                 <tbody>
                     {
-                        alldata.map((val, index) => {
-                            let { username, useremail, userpassword, usergender, language, city } = val;
+                        all.map((val, index) => {
+                            let { userid, username, useremail, userpassword, gender, language, city } = val
                             return (
-                                <tr>
-                                    <td>{index}</td>
+                                <tr key={index}>
+                                    <td>{userid}</td>
                                     <td>{username}</td>
                                     <td>{useremail}</td>
                                     <td>{userpassword}</td>
-                                    <td>{usergender}</td>
-                                    <td>{language.join('/')}</td>
+                                    <td>{gender}</td>
+                                    <td>{language}</td>
                                     <td>{city}</td>
                                     <td>
-                                        <button onClick={() => deleteuser(index)}>Delete</button>
+                                        <button onClick={() => deleteuser(userid)}>Delete</button>
+                                        <button onClick={() => edituser(userid)} >Edit</button>
                                     </td>
+
                                 </tr>
                             )
-
                         })
                     }
                 </tbody>
