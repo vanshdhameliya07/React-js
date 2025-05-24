@@ -1,29 +1,34 @@
-.banner {
+.card {
+    position: relative;
+    width: 400px;
     margin-top: 50px;
-    margin-left: 50px;
-
+    margin-left: 25px;
 }
 
-.banner-content span {
+.card img {
+    width: 400px;
+    height: 200px;
+    object-fit:cover
+}
+.card-content h5{
+    font-weight: 700;
+}
+.card-content span{
     color: #64b496;
     font-size: 20px;
-    border-bottom: 1px solid #64b496;
+}
+.card-content p{
+    color: #7777;
+    font-weight: 700;
+    font-size: 14px;
+}
+.card-content {
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
-.banner-content h2 {
-    font-size: 25px;
-}
-
-.banner-content h1 {
-    font-size: 55px;
-    font-weight: 900;
-}
-
-.banner-content p {
-    text-align: justify;
-}
-
-.banner-content .btn {
+.card-content .btn {
     display: block;
     padding: 8px 12px;
     height: 40px;
@@ -35,7 +40,7 @@
 
 }
 
-.banner-content .btn a {
+.card-content .btn a {
     color: #fff;
     text-decoration: none;
     text-transform: capitalize;
@@ -44,7 +49,7 @@
     transition: 0.3s;
 }
 
-.banner-content .btn:hover {
+.card-content .btn:hover {
     background-color: black;
     color: white;
 }

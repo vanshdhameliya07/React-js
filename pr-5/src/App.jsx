@@ -2,6 +2,7 @@ import './Header.css'
 import Header from './Header'
 import Navbar from './Navbar'
 import Banner from './Banner'
+import CardX from './CardX'
 
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
    <Header/>
    <Navbar/>
    <Banner/>
+   <CardX/>
    </>
   )
 }

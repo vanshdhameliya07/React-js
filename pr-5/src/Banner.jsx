@@ -11,10 +11,15 @@ const Banner = () => {
                 <h1>Explore fresh &
                     <br />
                     juicy fruits.</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet reiciendis
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet
+                    <br />
+
+                    reiciendis
                     beatae consequuntur.</p>
-                    
-                <button>shop now</button>
+
+               <div className='btn'>
+                <a href="">shop now</a>
+               </div>
 
 
             </div>
