@@ -1,0 +1,60 @@
+.Banner {
+    margin-top: 100px;
+    background-image: url('assets/bg-deal.jpg');
+    width: 1500px;
+    height: 600px;
+    background-position: center;
+    margin-bottom: 100px;
+}
+.Banner .card{
+    margin-left: 100px;
+}
+
+.Banner .card .dd span {
+    color: #64b496;
+    font-size: 26px;
+    font-weight: 700;
+    margin-left: 20px;
+}
+
+.Banner .card .dd p {
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+
+.Banner .card h4 {
+    font-size: 26px;
+    font-weight: 600;
+}
+
+.Banner .card p {
+    color: #7777;
+    font-size: 15px;
+    margin-top: 20px;
+}
+
+.Banner .content {
+    padding: 12px 24px;
+   border: 1px solid #7777;
+    border-radius: 5px;
+}
+
+.Banner .content {
+    padding: 12px;
+    font-weight: 500;
+    border-radius: 5px;
+    text-align: left;
+}
+
+.Banner .content h4 {
+    padding: 12px 24px;
+    border: 1px solid #e9cbbe;
+    border-radius: 5px;
+    display: inline;
+}
+
+.Banner .card .content h6 {
+    margin-left: 2px;
+    word-spacing: 8.4px;
+    color: #7777;
+}
