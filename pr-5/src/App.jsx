@@ -5,6 +5,7 @@ import Banner from './Banner'
 import CardX from './CardX'
 import Card2 from '../Card2'
 import Banner2 from './Banner2'
+import Card3 from '../Card3'
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
    <CardX/>
    <Card2/>
    <Banner2/>
+   <Card3/>
    </>
   )
 }
