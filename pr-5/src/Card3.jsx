@@ -7,7 +7,7 @@ const Card3 = () => {
         <div className='container'>
             <div className="col-12 d-flex">
                 <div className="col-4">
-                    <Card className='Card' style={{ width: '25rem' }}>
+                    <Card className='Cards' style={{ width: '25rem' }}>
                         <div className='img'>
                             <img src="https://maraviyainfotech.com/projects/carrot/carrot-v22/carrot-html/assets/img/testimonial/1.jpg" alt="" />
 
@@ -30,7 +30,7 @@ const Card3 = () => {
                     </Card>
                 </div>
                 <div className="col-4">
-                    <Card className='Card' style={{ width: '25rem' }}>
+                    <Card className='Cards' style={{ width: '25rem' }}>
                         <div className='img'>
                             <img src="https://maraviyainfotech.com/projects/carrot/carrot-v22/carrot-html/assets/img/testimonial/2.jpg" alt="" />
 
@@ -53,7 +53,7 @@ const Card3 = () => {
                     </Card>
                 </div>
                 <div className="col-4">
-                    <Card className='Card' style={{ width: '25rem' }}>
+                    <Card className='Cards' style={{ width: '25rem' }}>
                         <div className='img'>
                             <img src="https://maraviyainfotech.com/projects/carrot/carrot-v22/carrot-html/assets/img/testimonial/3.jpg" alt="" />
 

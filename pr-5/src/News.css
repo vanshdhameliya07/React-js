@@ -1,0 +1,61 @@
+.news{
+    margin-top: 125px;
+}
+.news-content h2 {
+    text-align: center;
+}
+
+.news-content p {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.Card {
+    border-radius: 0px;
+    overflow: hidden;
+}
+
+.card .dd {
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+.Card span {
+    color: #7777;
+    margin-right: 5px;
+    font-size: 14px;
+}
+
+.Card span a {
+    text-decoration: none;
+    color: #7777;
+    border-left: 1px solid #7777;
+    margin-left: 5px;
+    transition: 0.3s;
+
+}
+
+.Card span a:hover {
+    color: #64b496;
+}
+
+.card .dd .icon a {
+    color: #64b496;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 700;
+    font-family: "Manrope", sans-serif;
+}
+
+.card .imgs img {
+    height: 300px;
+    margin-top: 20px;
+
+}
+
+.card .imgs:hover {
+    transform: rotate(0.00deg) scale(1.1);
+    /* zoom effect */
+    transition: transform 0.6s ease;
+
+}

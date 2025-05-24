@@ -28,17 +28,18 @@
     margin-bottom: 20px;
 }
 
-.container .Card{
+.container .Cards{
   position: relative;
   height: 250px;
   background-color: #F7F7F8;
 }
-.container .card .img{
+.container .Cards .img{
     position: absolute;
     top: -30%;
     left: 37%;
+    z-index: 1;
 }
-.container .card .img img{
+.container .Cards .img img{
     width: 120px;
     height: 120px;
     border-radius: 50%;
