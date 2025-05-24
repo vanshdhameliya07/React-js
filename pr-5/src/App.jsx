@@ -7,6 +7,7 @@ import Card2 from './Card2'
 import Banner2 from './Banner2'
 import Card3 from './Card3'
 import News from './News'
+import Footer from './Footer'
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
    <Banner2/>
    <Card3/>
    <News/>
+   <Footer/>
    </>
   )
 }

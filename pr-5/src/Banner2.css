@@ -28,14 +28,14 @@
 }
 
 .Banner .card p {
-    color: #7777;
+    color: #777;
     font-size: 15px;
     margin-top: 20px;
 }
 
 .Banner .content {
     padding: 12px 24px;
-   border: 1px solid #7777;
+   border: 1px solid #777;
     border-radius: 5px;
 }
 
@@ -56,5 +56,5 @@
 .Banner .card .content h6 {
     margin-left: 2px;
     word-spacing: 8.4px;
-    color: #7777;
+    color: #777;
 }
