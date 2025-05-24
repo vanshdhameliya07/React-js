@@ -3,6 +3,7 @@ import Header from './Header'
 import Navbar from './Navbar'
 import Banner from './Banner'
 import CardX from './CardX'
+import Card2 from '../Card2'
 
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
    <Navbar/>
    <Banner/>
    <CardX/>
+   <Card2/>
    </>
   )
 }
