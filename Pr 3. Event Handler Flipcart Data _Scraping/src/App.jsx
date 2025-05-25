@@ -175,6 +175,7 @@ function App() {
 
         {
           product.map((p, i) => {
+            
             return (
               <button key={i} onClick={() => filter(p.name)}>{p.name}</button>
             )

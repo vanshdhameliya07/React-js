@@ -12,7 +12,6 @@ const Filter = ({ filter }) => {
 
                     filter.length == 0 ? (<h1 style={{ color: "red" }}>data is not found</h1>
 
-
                     )
                         : (
                             filter.map((v, i) => (
