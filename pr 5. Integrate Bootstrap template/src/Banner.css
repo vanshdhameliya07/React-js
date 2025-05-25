@@ -4,17 +4,17 @@
 
 
 }
-.ss{
+
+.ss {
     background-color: #F2D3BF;
-    padding: 50px ;
+    padding: 50px;
     height: 500px;
 }
 
-
-.bg img {
-    width: 600px;
-    height: 400px;
-    object-fit: cover;
+.imgs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .banner-content span {

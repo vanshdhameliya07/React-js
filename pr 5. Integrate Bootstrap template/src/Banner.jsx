@@ -9,7 +9,7 @@ const Banner = () => {
     return (
         <>
             <div id="carouselExampleSlidesOnly" className="carousel slide" data-bs-ride="carousel">
-                <div className="carousel-inner" id="carouselExampleSlidesOnly" data-bs-interval="1000">
+                <div className="carousel-inner" id="carouselExampleSlidesOnly" data-bs-interval="5000">
 
                     {/* First Slide */}
                     <div className="carousel-item active" >
@@ -33,7 +33,7 @@ const Banner = () => {
                     {/* Second Slide */}
                     <div className="carousel-item " >
                         <div className="container-fluid ss d-flex">
-                            <div className="col-12 row banner-content align-items-center w-100">
+                            <div className="col-12 row banner-content align-items-center  w-100">
                                 <div className="col-md-6">
                                     <h2><span>100% </span>Organic Vegetables</h2>
                                     <h1>The best way to <br /> stuff your wallet.</h1>
@@ -42,9 +42,10 @@ const Banner = () => {
                                         <a href="#">Shop Now</a>
                                     </div>
                                 </div>
-                                <div className="col-md-6 imgs text-center">
-                                    <img src='./src/assets/banner.jpg' style={{width:"12000px",height:"500px",objectFit:"cover"}}  alt="Fruit 2"  className='img-fluid'/>
+                                <div className="col-6 d-flex justify-content-center align-items-center imgs">
+                                    <img src="./src/assets/banner.jpg" style={{  maxWidth: "1100px",marginRight:"200px" }} alt="Fruit 2" />
                                 </div>
+
                             </div>
                         </div>
                     </div>
