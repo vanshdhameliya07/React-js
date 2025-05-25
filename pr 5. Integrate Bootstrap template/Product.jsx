@@ -6,9 +6,7 @@ const Product = ({ product }) => {
         <div className="container   justify-content-center d-flex flex-wrap mt-5 gap-3">
             {
 
-                product.length == 0 ? (<h1 style={{ color: "red" }}>data is not found</h1>
-
-                )
+                product.length == 0 ? (<h1 style={{ color: "red" }}>data is not found</h1>)
                     : (
                         product.map((v, i) => (
 

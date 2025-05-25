@@ -38,7 +38,7 @@ function App() {
       <Navbar />
       <Banner />
       <div align="center" className='mt-5 dd'>
-        <button onClick={() => filter()}>All</button>
+        <button className='butto'  onClick={() => filter()}>All</button>
 
         {
           product.map((val, index) => {
@@ -47,7 +47,7 @@ function App() {
             let { name, id } = val
 
             return (
-                <button onClick={() => filter(val.name, id)}>{name}</button>
+                <button className='butto' onClick={() => filter(val.name, id)}>{name}</button>
 
             )
           })

@@ -92,25 +92,25 @@
     margin-top: 50px;
 }
 
-.img-content .con {
+.img-content .conn {
     position: absolute;
     top: 20%;
     left: 90%;
 
 }
 
-.img-content .con h4 {
+.img-content .conn h4 {
     color: black;
     font-weight: 700;
     text-align: right;
 }
 
-.img-content .con span {
+.img-content .conn span {
     margin-left: 50px;
 }
 
 
-.img-content .con  .btn {
+.img-content .conn  .btn {
     display: block;
     padding: 8px 12px;
     height: 40px;
@@ -125,7 +125,7 @@
 
 }
 
-.img-content .con  a {
+.img-content .conn  a {
     color: #fff;
     text-decoration: none;
     text-transform: capitalize;
@@ -134,7 +134,7 @@
     transition: 0.3s;
 }
 
-.img-content .con .btn:hover {
+.img-content .conn .btn:hover {
     background-color: black;
     color: white;
 }

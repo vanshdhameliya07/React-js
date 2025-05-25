@@ -10,8 +10,8 @@ import './Header.css'
 const Header = () => {
     return (
         <div>
-            <header className="header">
-                <div className="container top_header ">
+            <header className="header ">
+                <div className="container top_header  ">
                     <div className="navbar-brand">
                         <img src="https://maraviyainfotech.com/projects/carrot/carrot-v22/carrot-html/assets/img/logo/logo.png" alt="Logo" />
                     </div>
@@ -28,7 +28,7 @@ const Header = () => {
                         </select>
 
 
-                        <button type="submit">
+                        <button className='yy' type="submit">
                             <CiSearch />
                         </button>
                     </div>

@@ -1,4 +1,4 @@
-button{
+.butto{
   background-color: #F7F7F8;
   color: black;
   border: 1px solid black;
@@ -7,7 +7,7 @@ button{
   transition: 0.7s;
   font-size: 18px;
 }
-button:hover{
+.butto:hover{
   color: #64b496;
 }
 .dd{

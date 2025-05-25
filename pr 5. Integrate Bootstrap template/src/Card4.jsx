@@ -119,7 +119,7 @@ const Card4 = () => {
                 <div className="col-3">
                     <div className="img-content">
                         <img src="https://maraviyainfotech.com/projects/carrot/carrot-v22/carrot-html/assets/img/product/products-rightview.jpg" alt="" />
-                        <div className="con">
+                        <div className="conn">
                             <h4>Organic & Healthy Vegetables</h4>
                             <span>25% OFF</span>
                             <br />
