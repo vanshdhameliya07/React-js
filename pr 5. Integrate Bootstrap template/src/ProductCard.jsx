@@ -10,11 +10,12 @@ import './ProductCard.css'
 const ProductCard = () => {
     return (
         <div>
+
             <div className=' to mb-5'>
                 <h1>Popular Products</h1>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                     <br />
-                     incididunt ut labore lacus vel facilisis.</p>
+                    incididunt ut labore lacus vel facilisis.</p>
                 <div className="col-12 d-flex align-items-center">
 
                     <div className="col-2 ff">
@@ -27,7 +28,7 @@ const ProductCard = () => {
                         </ul>
                         <ul className='ul'>
                             <li>Snack</li>
-
+                            <FaArrowRight />
                         </ul>
 
                         <ul className='ul'>
@@ -83,7 +84,7 @@ const ProductCard = () => {
                     <div classNames="col-3">
                         <Card className='Card4' style={{ width: '14rem', height: "25rem" }}>
 
-                            <img src="https://maraviyainfotech.com/projects/carrot/carrot-v22/carrot-html/assets/img/product/1.jpg" alt="" />
+                            <img src="https://maraviyainfotech.com/projects/carrot/carrot-v22/carrot-html/assets/img/product/9.jpg" alt="" />
 
                             <div className='lock'>
                                 <AiOutlineShopping />
@@ -200,6 +201,14 @@ const ProductCard = () => {
 
                         <div className='green'>
                             <img src="https://maraviyainfotech.com/projects/carrot/carrot-v22/carrot-html/assets/img/product/product-banner.jpg" alt="" />
+                        </div>
+                        <div className='color'>
+                            <h4>Juicy </h4>
+                            <h5>Fruits</h5>
+                            <span>100% Natural</span>
+                            <div className="bt">
+                                <a href="#">Shop Now</a>
+                            </div>
                         </div>
 
                     </div>
