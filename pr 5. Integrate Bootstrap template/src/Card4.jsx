@@ -7,7 +7,7 @@ import { AiOutlineShopping } from "react-icons/ai";
 const Card4 = () => {
     return (
         <div className='container mb-5'>
-            <div className="col-12">
+            <div className="col-12 d-flex align-items-center">
                 <div classNames="col-3">
                     <Card className='Card4' style={{ width: '16rem', height: "25rem" }}>
 
@@ -41,6 +41,9 @@ const Card4 = () => {
                         </div>
 
                     </Card>
+
+                </div>
+                <div className="col-3">
                     <Card className='Card4' style={{ width: '16rem', height: "25rem" }}>
 
                         <img src="https://maraviyainfotech.com/projects/carrot/carrot-v22/carrot-html/assets/img/product/2.jpg" alt="" />
@@ -75,6 +78,8 @@ const Card4 = () => {
                         </div>
 
                     </Card>
+                </div>
+                <div className="col-3">
                     <Card className='Card4' style={{ width: '16rem', height: "25rem" }}>
 
                         <img src="https://maraviyainfotech.com/projects/carrot/carrot-v22/carrot-html/assets/img/product/3.jpg" alt="" />
@@ -110,6 +115,14 @@ const Card4 = () => {
 
                     </Card>
                 </div>
+
+                <div className="col-3">
+                    <div className="img-content">
+                        <img src="https://maraviyainfotech.com/projects/carrot/carrot-v22/carrot-html/assets/img/product/products-rightview.jpg" alt="" />
+
+                    </div>
+                </div>
+
             </div>
         </div>
     )

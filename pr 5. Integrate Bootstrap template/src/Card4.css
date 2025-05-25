@@ -28,7 +28,13 @@
     justify-content: center;
     display: flex;
     text-decoration: none;
+    transition: 0.5s;
+
     color: #777;
+}
+.Card4-content a:hover{
+    color: #64b496;
+
 }
 
 .Card4-content .a a {
@@ -72,4 +78,11 @@
     margin-left: 15px;
     margin-top: 4px;
     color: #777;
+}
+.img-content img{
+    width: 430px;
+    height: 395px;
+    object-fit:cover;
+    display: block;
+    margin-top: 50px;
 }
