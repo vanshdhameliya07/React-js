@@ -3,6 +3,12 @@
     margin-top: 100px;
 
 }
+.Card4 .lock{
+    cursor: pointer;
+}
+.Card4 .ht img {
+width: 200px;
+}
 
 .to h1 {
     text-align: center;

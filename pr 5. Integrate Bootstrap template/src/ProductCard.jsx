@@ -48,8 +48,10 @@ const ProductCard = () => {
 
                     <div classNames="col-3">
                         <Card className='Card4' style={{ width: '14rem', height: "25rem" }}>
+                            <div className="ht">
+                                <img src="https://maraviyainfotech.com/projects/carrot/carrot-v22/carrot-html/assets/img/product/1.jpg" alt="" />
 
-                            <img src="https://maraviyainfotech.com/projects/carrot/carrot-v22/carrot-html/assets/img/product/1.jpg" alt="" />
+                            </div>
 
                             <div className='lock'>
                                 <AiOutlineShopping />
@@ -67,7 +69,8 @@ const ProductCard = () => {
                                 </div>
 
                                 <div className='a'>
-                                    <a href="">Best snakes with hazel <br /> nut mix pack 200gm</a>
+                                    <a href="">Fresh organic villa farm lomon
+                                        500gm pack</a>
 
                                 </div>
 
@@ -83,8 +86,10 @@ const ProductCard = () => {
                     </div>
                     <div classNames="col-3">
                         <Card className='Card4' style={{ width: '14rem', height: "25rem" }}>
+                            <div className="ht">
+                                <img src="https://maraviyainfotech.com/projects/carrot/carrot-v22/carrot-html/assets/img/product/9.jpg" alt="" />
 
-                            <img src="https://maraviyainfotech.com/projects/carrot/carrot-v22/carrot-html/assets/img/product/9.jpg" alt="" />
+                            </div>
 
                             <div className='lock'>
                                 <AiOutlineShopping />
@@ -107,6 +112,44 @@ const ProductCard = () => {
                                 </div>
 
                                 <div className='cc d-flex '>
+                                    <span> $145</span>
+                                    <p>$150</p>
+                                </div>
+
+                            </div>
+
+                        </Card>
+
+                    </div>
+                    <div className="col-2">
+                        <Card className='Card4' style={{ width: '14rem', height: "25rem" }}>
+                            <div className="ht">
+                                <img src="https://maraviyainfotech.com/projects/carrot/carrot-v22/carrot-html/assets/img/product/2.jpg" alt="" />
+
+                            </div>
+
+                            <div className='lock'>
+                                <AiOutlineShopping />
+                            </div>
+
+                            <div className='Card4-content mt-3'>
+                                <a href="">Fruits</a>
+                                <div className="star d-flex justify-content-center">
+                                    <IoMdStar />
+                                    <IoMdStar />
+                                    <IoMdStar />
+                                    <IoMdStar />
+                                    <IoMdStar />
+                                    <p>(0.5)</p>
+                                </div>
+
+                                <div className='a'>
+                                    <a href="">Fresh organic apple 1kg simla
+                                        marming  </a>
+
+                                </div>
+
+                                <div className='cc d-flex '>
                                     <span> $120.25</span>
                                     <p>$123.25</p>
                                 </div>
@@ -114,19 +157,20 @@ const ProductCard = () => {
                             </div>
 
                         </Card>
-
                     </div>
                     <div className="col-2">
                         <Card className='Card4' style={{ width: '14rem', height: "25rem" }}>
 
-                            <img src="https://maraviyainfotech.com/projects/carrot/carrot-v22/carrot-html/assets/img/product/2.jpg" alt="" />
+                            <div className='ht'>
+                                <img src="https://maraviyainfotech.com/projects/carrot/carrot-v22/carrot-html/assets/img/product/3.jpg" alt="" />
+                            </div>
 
                             <div className='lock'>
                                 <AiOutlineShopping />
                             </div>
 
                             <div className='Card4-content mt-3'>
-                                <a href="">Snacks</a>
+                                <a href="">Fruits</a>
                                 <div className="star d-flex justify-content-center">
                                     <IoMdStar />
                                     <IoMdStar />
@@ -137,51 +181,14 @@ const ProductCard = () => {
                                 </div>
 
                                 <div className='a'>
-                                    <a href="">Sweet snakes crunchy <br /> nut
-                                        mix 250gm
-                                        pack </a>
+                                    <a href="">Organic fresh venila farm
+                                        watermelon 5kg</a>
 
                                 </div>
 
                                 <div className='cc d-flex '>
-                                    <span> $100.25</span>
-                                    <p>$110.25</p>
-                                </div>
-
-                            </div>
-
-                        </Card>
-                    </div>
-                    <div className="col-2">
-                        <Card className='Card4' style={{ width: '14rem', height: "25rem" }}>
-
-                            <img src="https://maraviyainfotech.com/projects/carrot/carrot-v22/carrot-html/assets/img/product/3.jpg" alt="" />
-
-                            <div className='lock'>
-                                <AiOutlineShopping />
-                            </div>
-
-                            <div className='Card4-content mt-3'>
-                                <a href="">Snacks</a>
-                                <div className="star d-flex justify-content-center">
-                                    <IoMdStar />
-                                    <IoMdStar />
-                                    <IoMdStar />
-                                    <IoMdStar />
-                                    <IoMdStar />
-                                    <p>(0.5)</p>
-                                </div>
-
-                                <div className='a'>
-                                    <a href="">Sweet snakes crunchy <br /> nut
-                                        mix 250gm
-                                        pack </a>
-
-                                </div>
-
-                                <div className='cc d-flex '>
-                                    <span> $100.25</span>
-                                    <p>$110.25</p>
+                                    <span> $50.30</span>
+                                    <p>$72.60</p>
                                 </div>
 
                             </div>
@@ -219,7 +226,10 @@ const ProductCard = () => {
                     <div classNames="col-3">
                         <Card className='Card4' style={{ width: '14rem', height: "25rem" }}>
 
-                            <img src="https://maraviyainfotech.com/projects/carrot/carrot-v22/carrot-html/assets/img/product/1.jpg" alt="" />
+                            <div className="ht">
+                                <img src="https://maraviyainfotech.com/projects/carrot/carrot-v22/carrot-html/assets/img/product/11.jpg" alt="" />
+
+                            </div>
 
                             <div className='lock'>
                                 <AiOutlineShopping />
@@ -237,7 +247,8 @@ const ProductCard = () => {
                                 </div>
 
                                 <div className='a'>
-                                    <a href="">Best snakes with hazel <br /> nut mix pack 200gm</a>
+                                    <a href="">Sweet crunchy nut mix 250gm
+                                        pack</a>
 
                                 </div>
 
@@ -254,7 +265,10 @@ const ProductCard = () => {
                     <div classNames="col-3">
                         <Card className='Card4' style={{ width: '14rem', height: "25rem" }}>
 
-                            <img src="https://maraviyainfotech.com/projects/carrot/carrot-v22/carrot-html/assets/img/product/1.jpg" alt="" />
+                            <div className="ht">
+                                <img src="https://maraviyainfotech.com/projects/carrot/carrot-v22/carrot-html/assets/img/product/1.jpg" alt="" />
+
+                            </div>
 
                             <div className='lock'>
                                 <AiOutlineShopping />
@@ -289,7 +303,10 @@ const ProductCard = () => {
                     <div className="col-2">
                         <Card className='Card4' style={{ width: '14rem', height: "25rem" }}>
 
-                            <img src="https://maraviyainfotech.com/projects/carrot/carrot-v22/carrot-html/assets/img/product/2.jpg" alt="" />
+                            <div className="ht">
+                                <img src="https://maraviyainfotech.com/projects/carrot/carrot-v22/carrot-html/assets/img/product/10.jpg" alt="" />
+
+                            </div>
 
                             <div className='lock'>
                                 <AiOutlineShopping />
@@ -325,15 +342,17 @@ const ProductCard = () => {
                     <div className="col-2">
                         <Card className='Card4' style={{ width: '14rem', height: "25rem" }}>
 
-                            <img src="https://maraviyainfotech.com/projects/carrot/carrot-v22/carrot-html/assets/img/product/3.jpg" alt="" />
+                            <div className="ht">
+                                <img src="https://maraviyainfotech.com/projects/carrot/carrot-v22/carrot-html/assets/img/product/17.jpg" alt="" />
 
+                            </div>
                             <div className='lock'>
                                 <AiOutlineShopping />
                             </div>
 
                             <div className='Card4-content mt-3'>
-                                <a href="">Snacks</a>
-                                <div className="star d-flex justify-content-center">
+                                <a href="">Bakery</a>
+                                <div className="star   d-flex justify-content-center">
                                     <IoMdStar />
                                     <IoMdStar />
                                     <IoMdStar />
@@ -343,15 +362,14 @@ const ProductCard = () => {
                                 </div>
 
                                 <div className='a'>
-                                    <a href="">Sweet snakes crunchy <br /> nut
-                                        mix 250gm
-                                        pack </a>
+                                    <a href="" style={{ textAlign: "center" }}>Delicious white baked fresh bread
+                                        and toast</a>
 
                                 </div>
 
                                 <div className='cc d-flex '>
-                                    <span> $100.25</span>
-                                    <p>$110.25</p>
+                                    <span> $20</span>
+                                    <p>$22.25</p>
                                 </div>
 
                             </div>
