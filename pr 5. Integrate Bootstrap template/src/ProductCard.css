@@ -1,0 +1,48 @@
+.to{
+    margin-left: 90px;
+    margin-top: 50px;
+    
+}
+.to h1{
+    text-align: center;
+}
+.to p{
+    text-align: center;
+}
+.ff {
+    margin-right: 30px;
+}
+
+.ul {
+    width: 250px;
+    height: 40px;
+    background-color: #F7F7F9;
+    list-style: none;
+    line-height: 40px;
+    cursor: pointer;
+    position: relative;
+    transition: 0.5s;
+    font-size: 15px;
+    font-weight: 700;
+    padding: 0;
+}
+.ul li{
+    margin-left: 15px;
+}
+
+.ul .arrow {
+    position: absolute;
+    right: 8%;
+    
+}
+
+
+
+.ul:hover {
+    color: #64b496;
+
+}
+
+.ff .green img{
+    width: 250px;
+}
