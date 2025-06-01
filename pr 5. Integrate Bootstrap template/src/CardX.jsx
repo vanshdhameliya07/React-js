@@ -7,8 +7,8 @@ import './Card.css'
 
 const CardX = () => {
     return (
-        <div className='d-flex align-items-center justify-content-center'>
-            <Card className='card'>
+        <div className='col-12 d-flex wow animate__animated animate__backInUp  align-items-center justify-content-center'>
+            <Card className='card col-4 '>
                 <img src="https://maraviyainfotech.com/projects/carrot/carrot-v22/carrot-html/assets/img/product-banner/3.jpg" alt="" />
 
                 <Card.Body className='card-content'>
@@ -21,7 +21,7 @@ const CardX = () => {
                     </div>
                 </Card.Body>
             </Card>
-            <Card className='card'>
+            <Card className='card col-4'>
                 <img src="https://maraviyainfotech.com/projects/carrot/carrot-v22/carrot-html/assets/img/product-banner/1.jpg" alt="" />
 
                 <Card.Body className='card-content'>
@@ -34,7 +34,7 @@ const CardX = () => {
                     </div>
                 </Card.Body>
             </Card>
-            <Card className='card'>
+            <Card className='card col-4'>
                 <img src="https://maraviyainfotech.com/projects/carrot/carrot-v22/carrot-html/assets/img/product-banner/2.jpg" alt="" />
 
                 <Card.Body className='card-content'>
