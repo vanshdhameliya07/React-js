@@ -36,9 +36,9 @@ const Banner = () => {
                     <div className="carousel-item " >
                         <div className="container-fluid ss d-flex">
                             <div className="col-12 row banner-content align-items-center  w-100">
-                                <div className="col-md-6 ">
+                                <div className="col-md-6 wow animate__animated animate__backInUp">
                                     <h2 ><span>100% </span>Organic Vegetables</h2>
-                                    <h1 className="wow animate__animated animate__backInUp">The best way to <br /> stuff your wallet.</h1>
+                                    <h1 className="wow animate__animated animate__bounce">The best way to <br /> stuff your wallet.</h1>
                                     <p>Experience the juicy burst of handpicked fruits. Fresh every day!</p>
                                     <div className="btn">
                                         <a href="#">Shop Now</a>
