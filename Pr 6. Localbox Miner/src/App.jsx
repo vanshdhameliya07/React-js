@@ -11,6 +11,8 @@ function App() {
     EventInterest: ""
   })
 
+  let [editId, setEditid] = useState("")
+
   let [data, setData] = useState([])
 
   let formInput = (event) => {
@@ -24,28 +26,84 @@ function App() {
 
   let handleSubmit = (event) => {
     event.preventDefault()
-    console.log(formInputs);
-    setData([...data, formInputs])
+
+
+    if (editId != "") {
+
+      let update = data.map((val, i) => {
+        if (val.id == editId) {
+          {
+            val.id = formInputs.id
+            val.name = formInputs.name
+            val.email = formInputs.email
+            val.Availability = formInputs.Availability
+            val.EventInterest = formInputs.EventInterest
+          }
+        }
+        return val
+      })
+      setData(update)
+      setEditid("")
+
+
+    } else {
+      let obj = {
+        id: Math.floor(Math.random() * 100),
+        ...formInputs
+      }
+      setData([...data, obj])
+    }
+
+
+
+    setFormInput({
+      name: "",
+      email: "",
+      Availability: [],
+      EventInterest: ""
+    })
 
   }
+
+  let userDelete = (id) => {
+    let deleteuser = data.filter((val, i) => {
+      return val.id != id
+    })
+    setData(deleteuser);
+
+  }
+
+
+  let useredit = (id) => {
+    let edit = data.find((val, i) => {
+      return val.id == id
+    })
+    setFormInput(edit)
+    setEditid(id)
+  }
+
+
+
   return (
 
     <div align="center">
       <form onSubmit={handleSubmit}>
         <table border={1}>
           <thead>
+
+
             <tr>
               <td>Name :</td>
-              <td><input type="text" name='name' onChange={formInput} /></td>
+              <td><input type="text" name='name' onChange={formInput} value={formInputs.name} /></td>
             </tr>
             <tr>
               <td>Email :</td>
-              <td><input type="text" name='email' onChange={formInput} /></td>
+              <td><input type="text" name='email' onChange={formInput} value={formInputs.email} /></td>
             </tr>
             <tr>
               <td>Availability</td>
               <td>
-                <select name="Availability" onChange={formInput} >
+                <select name="Availability" onChange={formInput} value={formInputs.Availability} >
                   <option value="">----select Availability----</option>
                   <option value="Weekdays">Weekdays</option>
                   <option value="Weekends">Weekends</option>
@@ -56,7 +114,7 @@ function App() {
             </tr>
             <tr>
               <td>Event Interest :</td>
-              <td><input type="text" name='EventInterest' onChange={formInput} /></td>
+              <td><input type="text" name='EventInterest' onChange={formInput} value={formInputs.EventInterest} /></td>
             </tr>
             <tr>
               <td></td>
@@ -72,22 +130,30 @@ function App() {
       <table border={1}>
         <thead>
           <tr>
+            <td>id</td>
             <td>name</td>
             <td>email</td>
             <td>Availability</td>
             <td>EventInterest</td>
+            <td>Action</td>
           </tr>
         </thead>
         <tbody>
           {
             data.map((val, i) => {
-              let { name, email, Availability, EventInterest } = val
+              let { id, name, email, Availability, EventInterest } = val
               return (
-                <tr>
+                <tr key={id}>
+                  <td>{id}</td>
                   <td>{name}</td>
                   <td>{email}</td>
                   <td>{Availability}</td>
                   <td>{EventInterest}</td>
+                  <td>
+                    <button onClick={() => userDelete(id)}>Delete</button>
+                    <button onClick={() => useredit(id)}>Edit</button>
+                  </td>
+
                 </tr>
               )
             })

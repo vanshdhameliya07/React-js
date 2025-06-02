@@ -1,12 +1,6 @@
 import React, { useState } from 'react'
 
-const Form = ({ handleSubmitFun, changeInput,formInput }) => {
-
-  
-
-
-
-
+const Form = ({ handleSubmitFun, changeInput, formInput }) => {
 
     let handleSubmit = () => {
         handleSubmitFun(formInput)
