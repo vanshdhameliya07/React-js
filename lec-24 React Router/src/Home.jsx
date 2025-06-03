@@ -3,12 +3,19 @@ import { Link, useNavigate } from 'react-router'
 
 const Home = () => {
 
-    let color = ["red", "green", "blue"]
-
+    let navigate = useNavigate();
+    let data = {
+        color: ["red", "green", "blue"],
+        users: [
+            { id: 1, name: "e", phone: 1245 },
+            { id: 2, name: "wweew", phone: 89712 },
+            { id: 3, name: "rewww", phone: 56899 },
+        ]
+    }
 
 
     let handleSubmit = () => {
-    
+        navigate('/about', { state: data })
     }
 
     return (
@@ -17,7 +24,7 @@ const Home = () => {
             <Link to={"/"} >Home</Link>
             <br />
             <hr />
-            <Link to={"/about"} state={color}>About</Link>
+            <Link to={"/about"}>About</Link>
             <br />
             <hr />
             <Link to={"/contact"}>Contact</Link>

@@ -17,6 +17,7 @@ const About = () => {
             <br />
             <hr />
             <Link to={"/contact"}>Contact</Link>
+
         </div>
     )
 }
