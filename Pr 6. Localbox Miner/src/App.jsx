@@ -86,56 +86,52 @@ function App() {
 
   return (
 
-    <div align="center">
+    <div class="container">
+      <h1>Volunteer Sign-Up</h1>
       <form onSubmit={handleSubmit}>
-        <table border={1}>
-          <thead>
-
-
-            <tr>
-              <td>Name :</td>
-              <td><input type="text" name='name' onChange={formInput} value={formInputs.name} /></td>
-            </tr>
-            <tr>
-              <td>Email :</td>
-              <td><input type="text" name='email' onChange={formInput} value={formInputs.email} /></td>
-            </tr>
-            <tr>
-              <td>Availability</td>
-              <td>
-                <select name="Availability" onChange={formInput} value={formInputs.Availability} >
-                  <option value="">----select Availability----</option>
-                  <option value="Weekdays">Weekdays</option>
-                  <option value="Weekends">Weekends</option>
-                  <option value="Evenings">Evenings</option>
-                  <option value="Anytime">Anytime</option>
-                </select>
-              </td>
-            </tr>
-            <tr>
-              <td>Event Interest :</td>
-              <td><input type="text" name='EventInterest' onChange={formInput} value={formInputs.EventInterest} /></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td><input type="Submit" /></td>
-            </tr>
-          </thead>
+        <table>
+          <tr>
+            <td><label for="name">Name:</label></td>
+            <td><input type="text" name='name' onChange={formInput} value={formInputs.name} /></td>
+          </tr>
+          <tr>
+            <td><label for="email">Email:</label></td>
+            <td><input type="text" name='email' onChange={formInput} value={formInputs.email} /></td>
+          </tr>
+          <tr>
+            <td><label for="availability">Availability:</label></td>
+            <td>
+              <select name="Availability" onChange={formInput} value={formInputs.Availability} >
+                <option value="">-- Select Availability --</option>
+                <option value="Weekdays">Weekdays</option>
+                <option value="Weekends">Weekends</option>
+                <option value="Evenings">Evenings</option>
+                <option value="Anytime">Anytime</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td><label for="interest">Event Interest:</label></td>
+            <td><input type="text" name='EventInterest' onChange={formInput} value={formInputs.EventInterest} /></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td><input type="submit" value="Submit" /></td>
+          </tr>
         </table>
       </form>
 
-      <br />
-      <br />
+      <br /><br />
 
-      <table border={1}>
+      <table class="data-table">
         <thead>
           <tr>
-            <td>id</td>
-            <td>name</td>
-            <td>email</td>
-            <td>Availability</td>
-            <td>EventInterest</td>
-            <td>Action</td>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Availability</th>
+            <th>Event Interest</th>
+            <th>Actions</th>
           </tr>
         </thead>
         <tbody>
@@ -160,7 +156,6 @@ function App() {
           }
         </tbody>
       </table>
-
     </div>
 
   )

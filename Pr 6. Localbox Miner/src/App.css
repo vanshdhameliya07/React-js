@@ -1,53 +1,91 @@
-.form-container {
-  max-width: 400px;
-  margin: 50px auto;
-  background: #f9f9f9;
-  padding: 25px 30px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+body {
   font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  padding: 20px;
 }
 
-.form-container h2 {
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px #ccc;
+}
+
+h1 {
   text-align: center;
-  margin-bottom: 20px;
   color: #333;
 }
 
-.form-group {
-  margin-bottom: 15px;
-}
-
-.form-group label {
-  display: block;
-  margin-bottom: 6px;
-  font-weight: bold;
-  color: #555;
-}
-
-.form-group input[type="text"],
-.form-group input[type="email"],
-.form-group select {
+form table {
   width: 100%;
-  padding: 8px 10px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 14px;
-  box-sizing: border-box;
+  border-collapse: collapse;
 }
 
-.form-group button {
-  width: 100%;
+form td {
   padding: 10px;
-  background-color: #0066cc;
-  color: white;
-  font-size: 16px;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
 }
 
-.form-group button:hover {
-  background-color: #004a99;
+input[type="text"],
+input[type="email"],
+select {
+  width: 98%;
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+input[type="submit"] {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 30px;
+}
+
+.data-table th,
+.data-table td {
+  padding: 10px;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+
+.data-table th {
+  background-color: #007bff;
+  color: white;
+}
+
+.data-table td button {
+  padding: 5px 10px;
+  margin: 2px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.data-table td button:hover {
+  opacity: 0.8;
+}
+
+.data-table td button:first-child {
+  background-color: #dc3545;
+  color: white;
+}
+
+.data-table td button:last-child {
+  background-color: #28a745;
+  color: white;
 }
