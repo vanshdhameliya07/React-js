@@ -48,7 +48,12 @@ const Add = () => {
     event.preventDefault()
     console.log(formInput);
 
-    let oldrecord = [...allrecord, formInput]
+    let obj = {
+      id: Math.floor(Math.random() * 100),
+      ...formInput
+    }
+
+    let oldrecord = [...allrecord, obj]
     setAllrecord(oldrecord)
     localStorage.setItem('users', JSON.stringify(oldrecord))
     alert("form submitted")
