@@ -83,8 +83,9 @@ const View = () => {
                 </thead>
                 <tbody>
                     {
-                        filterdata.length == 0 ? (
-                            allrecord.map((val, i) => {
+                        
+                            filterdata.length==0 ?(
+                                allrecord.map((val, i) => {
                                 let { id, name, email, password, gender, courses, city, date } = val
                                 return (
                                     <tr key={i++}>
@@ -103,8 +104,8 @@ const View = () => {
                                     </tr>
                                 )
                             })
-                        ) : (
-                            filterdata.map((val, i) => {
+                            ):(
+                                filterdata.map((val, i) => {
                                 let { id, name, email, password, gender, courses, city, date } = val
                                 return (
                                     <tr key={i++}>
@@ -123,7 +124,8 @@ const View = () => {
                                     </tr>
                                 )
                             })
-                        )
+                            )
+                       
                     }
                 </tbody>
             </table>
