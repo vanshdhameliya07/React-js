@@ -6,7 +6,7 @@ const View = () => {
 
     let [allrecord, setAllrecord] = useState([]);
     let [filterdata, setFilterdata] = useState([]);
-    let [shortings, setShortings] = useState(true)
+    let [shortings, setShortings] = useState({ name: true })
     let [searchField, setSearchField] = useState({
         name: "",
         email: "",
@@ -56,7 +56,7 @@ const View = () => {
 
     }
 
-    let shorting = () => {
+    let shorting = (name) => {
         let shortdata = [...allrecord].sort((a, b) => {
             let nameA = a.name.toLowerCase()
             let nameB = b.name.toLowerCase()
