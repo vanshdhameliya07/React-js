@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, useNavigate, useParams } from 'react-router-dom'
 
 const View = () => {
 
 
     let [allrecord, setAllrecord] = useState([]);
     let [filterdata, setFilterdata] = useState([]);
-    let [shortings, setShortings] = useState({ name: true })
+    let [shortings, setShortings] = useState({ name: true });
     let [searchField, setSearchField] = useState({
         name: "",
         email: "",
@@ -74,6 +74,10 @@ const View = () => {
 
     }
 
+    let edituser = (id) => {
+        let single = allrecord.find(val => val.id == id);
+        navigator(`/edit/${id}`)
+    }
 
     let navigator = useNavigate()
 
@@ -138,7 +142,7 @@ const View = () => {
                                         <td>{date}</td>
                                         <td>
                                             <button onClick={() => deleteuser(id)}>Delete</button>
-                                            <button >Edit</button>
+                                            <button onClick={() => edituser(id)} >Edit</button>
                                         </td>
                                     </tr>
                                 )
