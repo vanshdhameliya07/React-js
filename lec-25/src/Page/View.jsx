@@ -6,6 +6,7 @@ const View = () => {
 
     let [allrecord, setAllrecord] = useState([]);
     let [filterdata, setFilterdata] = useState([]);
+    let [shortings, setShortings] = useState(true)
     let [searchField, setSearchField] = useState({
         name: "",
         email: "",
@@ -55,6 +56,24 @@ const View = () => {
 
     }
 
+    let shorting = () => {
+        let shortdata = [...allrecord].sort((a, b) => {
+            let nameA = a.name.toLowerCase()
+            let nameB = b.name.toLowerCase()
+
+            if (nameA > nameB) {
+                return shortings ? 1 : -1;
+            }
+            if (nameA < nameB) {
+                return shortings ? -1 : 1;
+            }
+        });
+        setAllrecord(shortdata)
+        localStorage.setItem("users", JSON.stringify(shortdata))
+        setShortings(!shortings)
+
+    }
+
 
     let navigator = useNavigate()
 
@@ -70,7 +89,7 @@ const View = () => {
                 <thead>
                     <tr>
                         <td>Id</td>
-                        <td>name</td>
+                        <td onClick={() => shorting('name')} style={{ cursor: "pointer" }}>name</td>
                         <td>email</td>
                         <td>password</td>
                         <td>Gender</td>
@@ -83,9 +102,9 @@ const View = () => {
                 </thead>
                 <tbody>
                     {
-                        
-                            filterdata.length==0 ?(
-                                allrecord.map((val, i) => {
+
+                        filterdata.length == 0 ? (
+                            allrecord.map((val, i) => {
                                 let { id, name, email, password, gender, courses, city, date } = val
                                 return (
                                     <tr key={i++}>
@@ -104,8 +123,8 @@ const View = () => {
                                     </tr>
                                 )
                             })
-                            ):(
-                                filterdata.map((val, i) => {
+                        ) : (
+                            filterdata.map((val, i) => {
                                 let { id, name, email, password, gender, courses, city, date } = val
                                 return (
                                     <tr key={i++}>
@@ -124,8 +143,8 @@ const View = () => {
                                     </tr>
                                 )
                             })
-                            )
-                       
+                        )
+
                     }
                 </tbody>
             </table>
