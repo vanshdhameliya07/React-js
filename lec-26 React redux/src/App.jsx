@@ -10,6 +10,7 @@ function App() {
       <div align="center">
         <h1>Counter : {no}</h1>
         <button onClick={() => dispatch({ type: 'inc' })}>+</button>
+        <button onClick={() => dispatch({ type: 'dec' })}>-</button>
       </div>
     </>
   )
