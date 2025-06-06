@@ -1,16 +1,16 @@
-const Increment = () => {
+let Increment = () => {
     return {
         type: "inc"
     }
 }
-const decrement = () => {
+let decrement = () => {
     return {
-        type: "dec"
+        type: "dic"
     }
 }
-const reset = () => {
+let reset = () => {
     return {
         type: "res"
     }
 }
-export { Increment, decrement, reset }
+export { Increment, decrement,reset }

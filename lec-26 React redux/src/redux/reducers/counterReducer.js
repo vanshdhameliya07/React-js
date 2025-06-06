@@ -1,17 +1,15 @@
-let initialstate = 0;
+let zero = 0;
 
-const counter = (state = initialstate, action) => {
-
+let Counter = (state = zero, action) => {
     switch (action.type) {
-        case `inc`:
+        case "inc":
             return state + 1
-        case `dec`:
+        case "dic":
             return state - 1
-        case 'res':
+        case "res":
             return state = 0
         default:
             return state
     }
-
 }
-export default counter
+export default Counter
