@@ -7,6 +7,8 @@ const counter = (state = initialstate, action) => {
             return state + 1
         case `dec`:
             return state - 1
+        case 'res':
+            return state = 0
         default:
             return state
     }

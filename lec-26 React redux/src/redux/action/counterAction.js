@@ -8,4 +8,9 @@ const decrement = () => {
         type: "dec"
     }
 }
-export { Increment, decrement }
+const reset = () => {
+    return {
+        type: "res"
+    }
+}
+export { Increment, decrement, reset }

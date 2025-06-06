@@ -8,9 +8,13 @@ function App() {
   return (
     <>
       <div align="center">
+        <br />
+        <br />
+        <br />
         <h1>Counter : {no}</h1>
         <button onClick={() => dispatch({ type: 'inc' })}>+</button>
         <button onClick={() => dispatch({ type: 'dec' })}>-</button>
+        <button onClick={() => dispatch({ type: 'res' })}>reset</button>
       </div>
     </>
   )
