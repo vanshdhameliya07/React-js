@@ -1,6 +1,6 @@
 import { createStore } from "redux";
-import rootReducers from "./reducers/indexReducer";
+import rootReducer from "./reducers/indexReducer";
 
-let store = createStore(rootReducers)
+let store = createStore(rootReducer)
 
 export default store

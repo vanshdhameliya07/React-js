@@ -1,21 +1,20 @@
 import React from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import Counter from './Page/Counter'
+import Add from './Page/Add'
+import View from './Page/View'
 
 const App = () => {
-
-  let no = useSelector((state) => state.count);
-  let dispatch = useDispatch()
-
   return (
-    <div align="center">
 
-      <h1>Counter App </h1>
-      <h2>Count : {no}</h2>
-      <button onClick={() => dispatch({ type: "inc" })}>+</button>
-      <button onClick={() => dispatch({ type: "dic" })}>-</button>
-      <button onClick={() => dispatch({ type: "res" })}>reset</button>
+    <BrowserRouter>
+      <Routes>
+        <Route path='/count' element={<Counter />} />
+        <Route path='/add' element={<Add />} />
+        <Route path='/view' element={<View />} />
+      </Routes>
+    </BrowserRouter>
 
-    </div>
   )
 }
 
