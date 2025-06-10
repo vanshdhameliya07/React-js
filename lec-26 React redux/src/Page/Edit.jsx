@@ -1,10 +1,11 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, useNavigate, useParams } from 'react-router-dom'
 import { Adduser } from '../redux/action/crudAction'
 
-const Add = () => {
+const Edit = () => {
 
+    const { id } = useParams()
     let dispatch = useDispatch()
     let navigate = useNavigate()
 
@@ -12,6 +13,7 @@ const Add = () => {
         name: '',
         email: ''
     })
+
 
     let changeInput = (event) => {
         let { name, value } = event.target
@@ -52,7 +54,7 @@ const Add = () => {
                         </tr>
                         <tr>
                             <td></td>
-                            <td><input type="submit" /></td>
+                            <td><input type="submit" value="Update" /></td>
                         </tr>
                     </thead>
                 </table>
@@ -62,4 +64,4 @@ const Add = () => {
     )
 }
 
-export default Add
+export default Edit

@@ -1,8 +1,21 @@
+
 let Adduser = (data) => {
+
     return {
         type: "add",
         payload: data
     }
 }
-
-export default Adduser
+let deleteuser = (id) => {
+    return {
+        type: "delete",
+        payload: id
+    }
+}
+let edituser = (id) => {
+    return {
+        type: "edit",
+        payload: id
+    }
+}
+export { Adduser, deleteuser, edituser }

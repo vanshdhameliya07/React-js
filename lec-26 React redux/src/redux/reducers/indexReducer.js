@@ -1,10 +1,10 @@
 import { combineReducers } from "redux";
 import Counter from "./counterReducer";
-import crudReducer from "./crudReducer";
+import CrudReducer from "./crudReducer";
 
 let rootReducer = combineReducers({
     count: Counter,
-    crud: crudReducer
+    crud:CrudReducer
 })
 
 export default rootReducer
