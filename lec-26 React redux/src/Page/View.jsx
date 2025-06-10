@@ -1,36 +1,34 @@
-import React from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { Link, useNavigate } from 'react-router-dom'
-import { deleteuser } from '../redux/action/crudAction'
+import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { Link, useNavigate } from 'react-router-dom';
+import { deleteuser, Edituser } from '../redux/action/crudAction';
 
 const View = () => {
+    const user = useSelector((state) => state.crud.user);
 
-    let user = useSelector((state) => state.crud.user);
-    let Dispatch = useDispatch();
-    let navigate = useNavigate()
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
 
-    let edituser = (id) => {
-        navigate(`/edit/${id}`)
-
-    }
+    const editUser = (id) => {
+        navigate(`/edit/${id}`);
+        dispatch(Edituser(id));
+    };
 
     return (
         <div align="center">
-            <h1>view user</h1>
-
+            <h1>View User</h1>
             <table border={1}>
                 <thead>
                     <tr>
-                        <td>id</td>
-                        <td>name</td>
-                        <td>email</td>
-                        <td>Action</td>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
                     {
                         user.map((val, i) => {
-
                             let { id, name, email } = val
                             return (
                                 <tr key={id}>
@@ -38,21 +36,19 @@ const View = () => {
                                     <td>{name}</td>
                                     <td>{email}</td>
                                     <td>
-                                        <button onClick={() => Dispatch(deleteuser(id))}>Delete</button>
-                                        <button onClick={() => edituser(id)} >Edit</button>
+                                        <button onClick={() => dispatch(deleteuser(id))}>Delete</button>
+                                        <button onClick={() => editUser(id)}>Edit</button>
                                     </td>
-
                                 </tr>
                             )
                         })
                     }
+
                 </tbody>
             </table>
-
-            <Link to={'/add'}>Add</Link>
-
+            <Link to="/add">Add</Link>
         </div>
-    )
-}
+    );
+};
 
-export default View
+export default View;

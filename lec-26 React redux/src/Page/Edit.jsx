@@ -6,6 +6,8 @@ import { Adduser } from '../redux/action/crudAction'
 const Edit = () => {
 
     const { id } = useParams()
+
+
     let dispatch = useDispatch()
     let navigate = useNavigate()
 
@@ -14,6 +16,9 @@ const Edit = () => {
         email: ''
     })
 
+    useEffect(() => {
+
+    }, []);
 
     let changeInput = (event) => {
         let { name, value } = event.target
@@ -25,15 +30,7 @@ const Edit = () => {
 
     let handleSubmit = (event) => {
         event.preventDefault()
-        let obj = {
-            id: Date.now(),
-            ...formInput
-        }
-        setFormInput({
-            name: '',
-            email: ''
-        })
-        dispatch(Adduser(obj));
+
         navigate("/view")
 
     }

@@ -12,10 +12,10 @@ let deleteuser = (id) => {
         payload: id
     }
 }
-let edituser = (id) => {
+let Edituser = (id) => {
     return {
         type: "edit",
         payload: id
     }
 }
-export { Adduser, deleteuser, edituser }
+export { Adduser, deleteuser, Edituser }
