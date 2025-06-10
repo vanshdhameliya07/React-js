@@ -128,7 +128,14 @@ const Add = () => {
           </table>
         </form>
 
-        <Link to={"/view"}>view</Link>
+        <Link to={"/view"} style={{
+          backgroundColor: "#007BFF", textDecoration: "none", color: 'white',
+          border: 'none',
+          padding: '8px 12px',
+          marginRight: '8px',
+          borderRadius: '4px',
+          cursor: 'pointer',
+        }}>view</Link>
       </div>
     </>
 

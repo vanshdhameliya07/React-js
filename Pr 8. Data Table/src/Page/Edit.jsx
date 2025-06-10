@@ -65,6 +65,12 @@ const Edit = () => {
                 if (val.id == editid) {
                     {
                         val.name = formInput.name
+                        val.email = formInput.email
+                        val.password = formInput.password
+                        val.gender = formInput.gender
+                        val.courses = formInput.courses
+                        val.city = formInput.city
+                        val.date = formInput.date
 
 
                     }
@@ -73,11 +79,10 @@ const Edit = () => {
                 }
 
             })
-            console.log(up);
-
 
             setAllrecord(up)
             localStorage.setItem("users", JSON.stringify(up))
+            alert("Update sucessfully ")
 
         }
         navigator('/view')
@@ -89,7 +94,7 @@ const Edit = () => {
             <h1>Edit user</h1>
 
             <form onSubmit={handleSubmit}>
-                <table border={1}>
+                <table style={{ width: "300px", height: "100px" }} cellPadding={5} cellSpacing={2}>
                     <thead>
                         <tr>
                             <td>name</td>
@@ -142,7 +147,17 @@ const Edit = () => {
                 </table>
             </form>
 
-            <Link to={"/view"}>view</Link>
+            <Link to={"/view"} style={{
+                backgroundColor: "#007BFF", textDecoration: "none", color: 'white',
+                border: 'none',
+                padding: '8px 12px',
+                marginRight: '8px',
+                borderRadius: '4px',
+                cursor: 'pointer',
+            }}>view</Link>
+            <br />
+            <br />
+            <br />
         </div>
 
     )

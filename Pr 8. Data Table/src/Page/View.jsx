@@ -82,25 +82,27 @@ const View = () => {
     let navigator = useNavigate()
 
     return (
-        <div align="center">
-            <h1>view user</h1>
+        <div align="center" style={styles.container}>
+            <h1 style={styles.heading}>view user</h1>
 
-            <Link to={"/"}>Add</Link>
+            <br />
 
-            <input type="text" name='name' onChange={searchinput} value={searchField.name} />
-
-            <table border={1}>
+            Search name &nbsp;
+            <input type="text" name='name' placeholder='Enter name to search' onChange={searchinput} value={searchField.name} />
+            <br />
+            <br />
+            <table border={1} style={styles.table}>
                 <thead>
                     <tr>
-                        <td>Id</td>
-                        <td onClick={() => shorting('name')} style={{ cursor: "pointer" }}>name</td>
-                        <td>email</td>
-                        <td>password</td>
-                        <td>Gender</td>
-                        <td>courses</td>
-                        <td>City</td>
-                        <td>Date</td>
-                        <td>Action</td>
+                        <td style={styles.th}>Id</td>
+                        <td onClick={() => shorting('name')} style={{ cursor: "pointer", backgroundColor: "#007bff", color: "#FFF", border: '1px solid #ddd', }}>name</td>
+                        <td style={styles.th}>email</td>
+                        <td style={styles.th}>password</td>
+                        <td style={styles.th}>Gender</td>
+                        <td style={styles.th}>courses</td>
+                        <td style={styles.th}>City</td>
+                        <td style={styles.th}>Date</td>
+                        <td style={styles.th}>Action</td>
                     </tr>
 
                 </thead>
@@ -112,7 +114,7 @@ const View = () => {
                                 let { id, name, email, password, gender, courses, city, date } = val
                                 return (
                                     <tr key={i++}>
-                                        <td>{id}</td>
+                                        <td >{id}</td>
                                         <td>{name}</td>
                                         <td>{email}</td>
                                         <td>{password}</td>
@@ -132,17 +134,17 @@ const View = () => {
                                 let { id, name, email, password, gender, courses, city, date } = val
                                 return (
                                     <tr key={i++}>
-                                        <td>{id}</td>
-                                        <td>{name}</td>
-                                        <td>{email}</td>
-                                        <td>{password}</td>
-                                        <td>{gender}</td>
-                                        <td>{courses.join(" - ")}</td>
-                                        <td>{city}</td>
-                                        <td>{date}</td>
-                                        <td>
-                                            <button onClick={() => deleteuser(id)}>Delete</button>
-                                            <button onClick={() => edituser(id)} >Edit</button>
+                                        <td style={styles.td}>{id}</td>
+                                        <td style={styles.td}>{name}</td>
+                                        <td style={styles.td}>{email}</td>
+                                        <td style={styles.td}>{password}</td>
+                                        <td style={styles.td}>{gender}</td>
+                                        <td style={styles.td}>{courses.join(" , ")}</td>
+                                        <td style={styles.td}>{city}</td>
+                                        <td style={styles.td}>{date}</td>
+                                        <td >
+                                            <button style={styles.deleteBtn} onClick={() => deleteuser(id)}>Delete</button>
+                                            <button style={styles.editBtn} onClick={() => edituser(id)} >Edit</button>
                                         </td>
                                     </tr>
                                 )
@@ -152,9 +154,79 @@ const View = () => {
                     }
                 </tbody>
             </table>
+            <Link to={"/"} style={{
+                backgroundColor: "#007BFF", textDecoration: "none", color: 'white',
+                border: 'none',
+                padding: '8px 12px',
+                marginRight: '8px',
+                borderRadius: '4px',
+                cursor: 'pointer'
+            }}>Add</Link>
 
         </div>
     )
+}
+const styles = {
+    container: {
+        maxWidth: '1100px',
+        margin: '40px auto',
+        padding: '20px',
+        border: '1px solid #ccc',
+        borderRadius: '10px',
+        backgroundColor: '#fefefe',
+        fontFamily: 'Segoe UI, sans-serif',
+        boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',
+        textAlign: 'center'
+    },
+    heading: {
+        marginBottom: '20px',
+        color: '#333'
+    },
+    noData: {
+        fontSize: '16px',
+        color: '#888'
+    },
+    table: {
+        width: '100%',
+        borderCollapse: 'collapse',
+        marginBottom: '20px'
+    },
+    th: {
+        backgroundColor: '#007bff',
+        color: '#fff',
+        padding: '10px',
+        border: '1px solid #ddd',
+        textAlign: 'center'
+    },
+    td: {
+        padding: '10px',
+        border: '1px solid #ddd',
+        textAlign: 'center'
+    },
+    deleteBtn: {
+        backgroundColor: '#dc3545',
+        color: 'white',
+        border: 'none',
+        padding: '8px 12px',
+        marginRight: '8px',
+        borderRadius: '4px',
+        cursor: 'pointer'
+    },
+    editBtn: {
+        backgroundColor: '#28a745',
+        color: 'white',
+        border: 'none',
+        padding: '8px 12px',
+        borderRadius: '4px',
+        cursor: 'pointer'
+    },
+    link: {
+        display: 'inline-block',
+        marginTop: '10px',
+        textDecoration: 'none',
+        color: '#007bff',
+        fontWeight: 'bold'
+    }
 }
 
 export default View
