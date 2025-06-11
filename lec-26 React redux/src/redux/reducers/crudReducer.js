@@ -1,6 +1,7 @@
 
 let initialize = {
-    user: JSON.parse(localStorage.getItem('user')) || []
+    user: JSON.parse(localStorage.getItem('user')) || [],
+    single: null
 }
 
 let CrudReducer = (state = initialize, action) => {
@@ -26,9 +27,10 @@ let CrudReducer = (state = initialize, action) => {
 
         case 'edit':
             let single = state.user.find(val => val.id == action.payload)
-            console.log(single);
-
-
+            return {
+                ...state,
+                single: single
+            }
 
         default:
             return state

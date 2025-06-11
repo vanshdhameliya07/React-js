@@ -5,6 +5,7 @@ import { deleteuser, Edituser } from '../redux/action/crudAction';
 
 const View = () => {
     const user = useSelector((state) => state.crud.user);
+    console.log(user);
 
     const dispatch = useDispatch();
     const navigate = useNavigate();
