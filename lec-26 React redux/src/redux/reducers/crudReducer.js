@@ -38,8 +38,9 @@ let CrudReducer = (state = initialize, action) => {
                     val.name = action.payload.name;
                     val.email = action.payload.email;
                 }
-                return val
+                return val;
             })
+            console.log(updatedUsers);
 
             localStorage.setItem('user', JSON.stringify(updatedUsers))
             return {

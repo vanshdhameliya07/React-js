@@ -7,11 +7,8 @@ const Add = () => {
   let [formInput, setFormInput] = useState({
     name: "",
     email: "",
-    password: "",
-    gender: "",
-    courses: [],
-    city: "",
-    date: ""
+    Availability: "",
+    EventInterest: ""
 
   })
 
@@ -60,7 +57,9 @@ const Add = () => {
     alert("form submitted")
     setFormInput({
       name: "",
-      email: ""
+      email: "",
+      Availability: "",
+      EventInterest: ""
     })
     navigator('/view')
 
@@ -86,40 +85,24 @@ const Add = () => {
                 <td><input type="text" name='email' onChange={changeInput} value={formInput.email} /></td>
               </tr>
               <tr>
-                <td style={{ textTransform: "capitalize" }}>password</td>
-                <td><input type="password" name='password' onChange={changeInput} value={formInput.password} /></td>
-              </tr>
-              <tr>
-                <td style={{ textTransform: "capitalize" }}>Gender</td>
-                <td><input type="radio" name='gender' value="male" onChange={changeInput} />Male
-                  <input type="radio" name='gender' value="female" onChange={changeInput} />Female
-                </td>
-              </tr>
-              <tr>
-                <td style={{ textTransform: "capitalize" }}>Courses</td>
-                <td>
-                  <input type="checkbox" name="courses" value="c" onChange={changeInput} />c
-                  <input type="checkbox" name="courses" value="c++" onChange={changeInput} />c++
-                  <input type="checkbox" name="courses" value="python" onChange={changeInput} />python
+                <td style={{ textTransform: "capitalize" }}>Availability</td>
 
-                </td>
-
-              </tr>
-              <tr>
-                <td style={{ textTransform: "capitalize" }}>City</td>
                 <td>
-                  <select name="city" onChange={changeInput} value={formInput.city}>
-                    <option value="">--select city----</option>
-                    <option value="Surat">Surat</option>
-                    <option value="Vapi">Vapi</option>
-                    <option value="Tapi">Tapi</option>
+                  <select name="Availability" onChange={changeInput} value={formInput.Availability}>
+                    <option value="">-- Select Availability --</option>
+                    <option value="Weekdays">Weekdays</option>
+                    <option value="Weekends">Weekends</option>
+                    <option value="Evenings">Evenings</option>
+                    <option value="Anytime">Anytime</option>
                   </select>
                 </td>
               </tr>
               <tr>
-                <td style={{ textTransform: "capitalize" }}>Date</td>
-                <td><input type="date" name="date" onChange={changeInput} value={formInput.date} /></td>
+                <td style={{ textTransform: "capitalize" }}>Availability</td>
+                <td><input type="text" name='EventInterest' onChange={changeInput} value={formInput.EventInterest} /></td>
               </tr>
+
+
               <tr>
                 <td></td>
                 <td><input type="Submit" /></td>

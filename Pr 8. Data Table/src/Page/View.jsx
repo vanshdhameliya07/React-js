@@ -10,11 +10,8 @@ const View = () => {
     let [searchField, setSearchField] = useState({
         name: "",
         email: "",
-        password: "",
-        gender: "",
-        courses: [],
-        city: "",
-        date: ""
+        Availability: "",
+        EventInterest: ""
     })
 
     useEffect(() => {
@@ -97,12 +94,10 @@ const View = () => {
                         <td style={styles.th}>Id</td>
                         <td onClick={() => shorting('name')} style={{ cursor: "pointer", backgroundColor: "#007bff", color: "#FFF", border: '1px solid #ddd', }}>name</td>
                         <td style={styles.th}>email</td>
-                        <td style={styles.th}>password</td>
-                        <td style={styles.th}>Gender</td>
-                        <td style={styles.th}>courses</td>
-                        <td style={styles.th}>City</td>
-                        <td style={styles.th}>Date</td>
+                        <td style={styles.th}>Availability</td>
+                        <td style={styles.th}>EventInterest</td>
                         <td style={styles.th}>Action</td>
+
                     </tr>
 
                 </thead>
@@ -111,37 +106,33 @@ const View = () => {
 
                         filterdata.length == 0 ? (
                             allrecord.map((val, i) => {
-                                let { id, name, email, password, gender, courses, city, date } = val
+                                let { id, name, email, Availability, EventInterest } = val
                                 return (
                                     <tr key={i++}>
-                                        <td >{id}</td>
-                                        <td>{name}</td>
-                                        <td>{email}</td>
-                                        <td>{password}</td>
-                                        <td>{gender}</td>
-                                        <td>{courses.join(" - ")}</td>
-                                        <td>{city}</td>
-                                        <td>{date}</td>
+                                        <td style={styles.td}>{id}</td>
+                                        <td style={styles.td}>{name}</td>
+                                        <td style={styles.td}>{email}</td>
+                                        <td style={styles.td}>{Availability}</td>
+                                        <td style={styles.td}>{EventInterest}</td>
+
                                         <td>
-                                            <button onClick={() => deleteuser(id)}>Delete</button>
-                                            <button >Edit</button>
+                                            <button style={styles.deleteBtn} onClick={() => deleteuser(id)}>Delete</button>
+                                            <button style={styles.editBtn} >Edit</button>
                                         </td>
                                     </tr>
                                 )
                             })
                         ) : (
                             filterdata.map((val, i) => {
-                                let { id, name, email, password, gender, courses, city, date } = val
+                                let { id, name, email, Availability, EventInterest } = val
                                 return (
                                     <tr key={i++}>
                                         <td style={styles.td}>{id}</td>
                                         <td style={styles.td}>{name}</td>
                                         <td style={styles.td}>{email}</td>
-                                        <td style={styles.td}>{password}</td>
-                                        <td style={styles.td}>{gender}</td>
-                                        <td style={styles.td}>{courses.join(" , ")}</td>
-                                        <td style={styles.td}>{city}</td>
-                                        <td style={styles.td}>{date}</td>
+                                        <td style={styles.td}>{Availability}</td>
+                                        <td style={styles.td}>{EventInterest}</td>
+
                                         <td >
                                             <button style={styles.deleteBtn} onClick={() => deleteuser(id)}>Delete</button>
                                             <button style={styles.editBtn} onClick={() => edituser(id)} >Edit</button>
