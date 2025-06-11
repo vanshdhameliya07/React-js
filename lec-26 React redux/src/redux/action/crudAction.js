@@ -13,10 +13,15 @@ let deleteuser = (id) => {
     }
 }
 let Edituser = (id) => {
-
     return {
         type: "edit",
         payload: id
     }
 }
-export { Adduser, deleteuser, Edituser }
+let Updateuser = (id) => {
+    return {
+        type: "Update",
+        payload: id
+    }
+}
+export { Adduser, deleteuser, Edituser, Updateuser }

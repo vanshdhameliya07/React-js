@@ -32,6 +32,24 @@ let CrudReducer = (state = initialize, action) => {
                 single: single
             }
 
+        case 'Update':
+            const updatedUsers = state.user.map((val) => {
+                if (val.id == action.payload.id) {
+                    val.name = action.payload.name;
+                    val.email = action.payload.email;
+                }
+                return val
+            })
+
+            localStorage.setItem('user', JSON.stringify(updatedUsers))
+            return {
+                ...state,
+                user: updatedUsers
+            }
+
+
+
+
         default:
             return state
     }

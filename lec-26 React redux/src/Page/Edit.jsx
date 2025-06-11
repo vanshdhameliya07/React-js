@@ -1,21 +1,22 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link, useNavigate, useParams } from 'react-router-dom'
-import { Adduser } from '../redux/action/crudAction'
+import { Adduser, Edituser, Updateuser } from '../redux/action/crudAction'
 
 const Edit = () => {
 
     const { id } = useParams()
+    let [formInput, setFormInput] = useState({
+        name: '',
+        email: ''
+    })
 
     const single = useSelector(state => state.crud.single)
 
     let dispatch = useDispatch()
     let navigate = useNavigate()
 
-    let [formInput, setFormInput] = useState({
-        name: '',
-        email: ''
-    })
+
 
     useEffect(() => {
         if (single) {
@@ -35,8 +36,13 @@ const Edit = () => {
     let handleSubmit = (event) => {
         event.preventDefault()
 
-        let single = state.crud.single;
-        console.log(single);
+        let obj = {
+            id: Date.now(),
+            ...formInput
+        }
+
+        dispatch(Updateuser(obj))
+
 
 
 
