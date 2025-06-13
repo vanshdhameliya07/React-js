@@ -11,6 +11,7 @@ function App() {
   return (
     <div align="center">
       <h1>Counter :- {no}</h1>
+      
       <h2>Count</h2>
       <button onClick={()=>Increment()}>+</button>
     </div>
