@@ -5,7 +5,6 @@ import { Adduser, Edituser, Updateuser } from '../redux/action/crudAction'
 
 const Edit = () => {
 
-    const { id } = useParams()
     let [formInput, setFormInput] = useState({
         name: '',
         email: ''
@@ -42,9 +41,6 @@ const Edit = () => {
         }
 
         dispatch(Updateuser(obj))
-
-
-
 
         navigate("/view")
 
