@@ -1,19 +1,16 @@
-import { useContext } from "react"
-import { MyContext } from "./Context/Context";
+import React, { useContext } from 'react'
+import { Myprovider } from './Context/Context'
 
-
-function App() {
-
-  let { no, Increment } = useContext(MyContext)
-  console.log(no);
-
+const App = () => {
+  let { no, INcrement, Decrement, reset } = useContext(Myprovider)
 
   return (
     <div align="center">
-      <h1>Counter :- {no}</h1>
-      
-      <h2>Count</h2>
-      <button onClick={()=>Increment()}>+</button>
+      <h1>Counter App with Context</h1>
+      <h2>Count :- {no}</h2>
+      <button onClick={() => INcrement()}>+</button>
+      <button onClick={() => Decrement()}>-</button>
+      <button onClick={() => reset()}>reset</button>
     </div>
   )
 }

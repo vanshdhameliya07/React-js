@@ -1,19 +1,26 @@
-import React, { createContext, useState } from 'react';
+import { createContext, useState } from 'react'
 
-export const MyContext = createContext();
+export let Myprovider = createContext()
 
-const ContextProvider = ({ children }) => {
-    const [no, setNo] = useState(0);
+const Context = ({ children }) => {
 
-    let Increment = () => {
+    let [no, setNo] = useState(0)
+
+    let INcrement = () => {
         setNo(no + 1)
+    }
+    let Decrement = () => {
+        setNo(no - 1)
+    }
+    let reset = () => {
+        setNo( 0)
     }
 
     return (
-        <MyContext.Provider value={{ no, Increment }}>
+        <Myprovider.Provider value={{ no, INcrement, Decrement, reset }}>
             {children}
-        </MyContext.Provider>
-    );
-};
+        </Myprovider.Provider>
+    )
+}
 
-export default ContextProvider;
+export default Context
