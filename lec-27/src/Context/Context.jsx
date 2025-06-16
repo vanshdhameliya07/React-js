@@ -13,7 +13,7 @@ const Context = ({ children }) => {
         setNo(no - 1)
     }
     let reset = () => {
-        setNo( 0)
+        setNo(0)
     }
 
     return (
