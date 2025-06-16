@@ -17,7 +17,7 @@ function App() {
   return (
     <>
 
-      <table>
+      <table align='center' border={1}>
         <thead>
           <tr>
             <td>id</td>
@@ -26,7 +26,14 @@ function App() {
         </thead>
         <tbody>
           {
-            data.
+            data.map((val) => {
+              return (
+                <tr key={val.id}>
+                  <td>{val.id}</td>
+                  <td>{val.title}</td>
+                </tr>
+              )
+            })
           }
         </tbody>
       </table>
