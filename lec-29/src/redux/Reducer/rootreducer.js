@@ -9,16 +9,12 @@ let reducer = (state = initialstate, action) => {
             return {
                 ...state,
                 users: [...state.users, action.payload],
-                err: action.err
             }
         case 'viewuser':
             return {
                 ...state,
                 users: action.payload,
-                err: action.err
             }
-
-       
 
         default:
             return state
