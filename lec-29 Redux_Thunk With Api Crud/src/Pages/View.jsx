@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { Link } from 'react-router-dom'
-import {  view_user } from '../redux/Action/Action'
+import { Link, useNavigate } from 'react-router-dom'
+import { Delete_user, view_user } from '../redux/Action/Action'
 
 const View = () => {
 
@@ -10,9 +10,19 @@ const View = () => {
 
 
     let dispatch = useDispatch()
+    let navigate = useNavigate()
+
     useEffect(() => {
         dispatch(view_user())
     }, [])
+
+    let deleteuser = (id) => {
+        dispatch(Delete_user(id))
+    }
+
+    let edituser = (id) => {
+        navigate(`/edit/${id}`)
+    }
 
 
     return (
@@ -25,6 +35,7 @@ const View = () => {
                         <td>id</td>
                         <td>name</td>
                         <td>email</td>
+                        <td>Action</td>
                     </tr>
                 </thead>
                 <tbody>
@@ -36,7 +47,12 @@ const View = () => {
                                     <td>{id}</td>
                                     <td>{name}</td>
                                     <td>{email}</td>
-                                  
+                                    <td>
+                                        <button onClick={() => deleteuser(id)}>Delete</button>
+                                        <button onClick={() => edituser(id)}>Edit</button>
+
+                                    </td>
+
                                 </tr>
                             )
                         })

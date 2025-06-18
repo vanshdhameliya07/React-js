@@ -41,5 +41,48 @@ let view_user = (record) => {
         }
     }
 }
+let Delete_user = (id) => {
 
-export { Add_user, view_user }
+    return async (dispatch) => {
+        try {
+            let data = await fetch(`http://localhost:3000/users/${id}`, {
+                method: "DELETE",
+            })
+
+            let res = await data.json()
+
+
+            return dispatch({
+                type: "deleteuser",
+                payload: res,
+            })
+
+        } catch (error) {
+            console.log(error);
+            return false
+        }
+    }
+}
+
+let Edit_user = (id) => {
+    return async (dispatch) => {
+        try {
+            let data = await fetch(`http://localhost:3000/users/${id}`, {
+                method: "GET",
+            })
+
+            let res = await data.json()
+
+            return dispatch({
+                type: "edituser",
+                payload: res,
+            })
+
+        } catch (error) {
+            console.log(error);
+            return false
+        }
+    }
+}
+
+export { Add_user, view_user, Delete_user, Edit_user }
