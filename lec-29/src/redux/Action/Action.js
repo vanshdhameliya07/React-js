@@ -8,7 +8,6 @@ let Add_user = (record) => {
                 },
                 body: JSON.stringify(record)
             })
-
             let res = await data.json()
 
             return dispatch({
