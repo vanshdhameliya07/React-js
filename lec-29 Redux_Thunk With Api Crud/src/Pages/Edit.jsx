@@ -24,9 +24,8 @@ const Add = () => {
 
 
   useEffect(() => {
-    console.log(single);
 
-    setFormInput(single)
+    setFormInput(single[0])
   }, [single])
 
 
