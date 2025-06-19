@@ -4,7 +4,8 @@ let Add_user = (record) => {
             let data = await fetch('http://localhost:3000/users', {
                 method: "POST",
                 headers: {
-                    'Content-Type': 'appliaction/json'
+                    'Content-Type': 'application/json'
+
                 },
                 body: JSON.stringify(record)
             })
@@ -69,6 +70,10 @@ let Edit_user = (id) => {
         try {
             let data = await fetch(`http://localhost:3000/users/${id}`, {
                 method: "GET",
+                headers: {
+                    'Content-Type': 'application/json'
+
+                },
             })
 
             let res = await data.json()
@@ -84,5 +89,34 @@ let Edit_user = (id) => {
         }
     }
 }
+let Update_user = (record) => {
 
-export { Add_user, view_user, Delete_user, Edit_user }
+
+    return async (dispatch) => {
+        try {
+            let data = await fetch(`http://localhost:3000/users/${record.id}`, {
+                method: "PUT",
+                headers: {
+                    'Content-Type': 'application/json'
+
+                },
+                body: JSON.stringify(record)
+            })
+
+            let res = await data.json()
+
+
+
+            return dispatch({
+                type: "Updateuser",
+                payload: res,
+            })
+
+        } catch (error) {
+            console.log(error);
+            return false
+        }
+    }
+}
+
+export { Add_user, view_user, Delete_user, Edit_user, Update_user }

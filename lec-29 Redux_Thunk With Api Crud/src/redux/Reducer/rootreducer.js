@@ -31,6 +31,17 @@ let reducer = (state = initialstate, action) => {
                 single: single
             }
 
+        case 'Updateuser':
+            let up = state.users.map((val) => {
+                if (val.id == action.payload.id) {
+                    return action.payload
+                }
+                return val
+            })
+            return {
+                ...state,
+                users: up,
+            }
         default:
             return state
 

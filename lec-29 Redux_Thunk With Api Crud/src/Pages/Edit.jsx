@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link, useNavigate, useParams } from 'react-router-dom'
-import { Add_user, Edit_user } from '../redux/Action/Action'
+import { Add_user, Edit_user, Update_user } from '../redux/Action/Action'
 
 const Add = () => {
 
@@ -20,12 +20,15 @@ const Add = () => {
 
   useEffect(() => {
     dispatch(Edit_user(id))
-  }, [id])
+  }, [id, dispatch])
 
 
   useEffect(() => {
 
-    setFormInput(single[0])
+    if (single[0]) {
+      setFormInput(single[0]);
+    }
+
   }, [single])
 
 
@@ -41,7 +44,7 @@ const Add = () => {
   let handleSubmit = (event) => {
     event.preventDefault()
 
-    dispatch(Add_user(formInput))
+    dispatch(Update_user(formInput))
     navigator('/view')
 
   }
