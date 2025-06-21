@@ -1,5 +1,8 @@
 import React, { useState } from 'react'
 import { FaPlus } from "react-icons/fa";
+import { useDispatch } from 'react-redux';
+import { AddUser } from './redux/Action/action'
+import { toast, ToastContainer } from 'react-toastify';
 
 const App = () => {
 
@@ -7,6 +10,8 @@ const App = () => {
     title: '',
     content: ''
   })
+
+  let dispatch = useDispatch()
 
   let notesInput = (event) => {
     let { name, value } = event.target
@@ -19,8 +24,37 @@ const App = () => {
 
   let handleSubmit = (event) => {
     event.preventDefault()
-    console.log(notes);
 
+
+    if (notes.title.trim() === "" || notes.content.trim() === "") {
+      toast.error("Please fill all the fields", {
+        style: {
+          borderLeft: "5px solidrgb(179, 61, 61)",
+          backgroundColor: "#FF0000",
+          color: "#ffff"
+
+        },
+        position: "top-center",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored"
+      });
+      return;
+    }
+
+    let obj = {
+      id: Date.now(),
+      ...notes
+    }
+
+
+
+
+    dispatch(AddUser(obj))
   }
 
   return (
@@ -46,6 +80,8 @@ const App = () => {
           </thead>
         </table>
       </form>
+      <ToastContainer position="top-center" autoClose={2000} />
+
     </div>
   )
 }
