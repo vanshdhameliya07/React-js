@@ -21,11 +21,12 @@ table {
 }
 
 .btn {
-    margin-top: 100px;
+    margin-top: 15px;
     border: none;
     background-color: white;
     color: #F9A620;
     font-size: 20px;
+    cursor: pointer;
 }
 
 .dd {
