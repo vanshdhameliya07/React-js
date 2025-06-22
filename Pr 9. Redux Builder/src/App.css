@@ -90,8 +90,9 @@ input[name="text"] {
     background-color: #F7B61E;
     color: white;
 }
-.footer p{
+
+.footer p {
     font-size: 19px;
-   padding-top: 2px;
-   padding-bottom: 2px;
+    padding-top: 2px;
+    padding-bottom: 2px;
 }
