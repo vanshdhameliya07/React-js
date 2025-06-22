@@ -39,11 +39,11 @@ const App = () => {
 
   return (
 
-    <div>
+    <div align="center">
 
 
       <div className='dd'>
-        <div className="col-12 d-flex">
+        <div className="col-12 d-flex align-content-center">
           <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAABbUlEQVR4Ae3aAUQEQRQG4OUmwiEAQIQQIAQIAQGCgICQkJAACUAAQkEQAAJEu11cSSldOlWR4hBJp90ozdt53QSgs/e09v70fh4YzPuWmbeYQIMergTGRmapVRc2NJxHva4Hc4UBPsOeWb9pnhWvBcUhRF9eACgMIW5QAJAjAAFyBCBAjgAEyBGAADkCECBHQADkCACAHAEAkJcCFPDnAFEvp1cz7B432SV1du8P7J63mepTfg0bQIdD7OIat4sH0cEgJsA3z5RwVtzbNdtKHx7Avexxp0kbq1gAOhpmUZxlu1vGAaS3CywNHY8AAe6WxYD0choIcDMvBtD5BA6ATkbFZ4D2B8BuobjWef9PW4BzwN9EznJmbJNttR90Ep+NfzfYNh+NrNtHf+YUQKdjfi78WH4NDyAYan5NAXoGFKAABShAAf8NkHQRUP01gMLSRrcAFJYm83hqULaRWaSwdF9g8027Y1Zae5tAA54vA5QFBsesCogAAAAASUVORK5CYII=" alt="" />
           <h3 >Google Keep</h3>
 
@@ -59,24 +59,24 @@ const App = () => {
       <br />
 
       <form onSubmit={handleSubmit}>
-        <table align='center' border={1}>
-          <thead>
-            <tr>
-              <td>Title</td>
-              <td><input type="text" name='title' onChange={notesInput} value={notes.title} /></td>
-            </tr>
-            <tr>
-              <td>Write a note...</td>
-              <td><input type="text" name='content' onChange={notesInput} value={notes.content} /></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td><button ><FaPlus /></button></td>
-
-            </tr>
-          </thead>
-        </table>
+        <div className="note-box">
+          <input
+            type="text"
+            name="title"
+            placeholder="Title"
+            value={notes.title}
+            onChange={notesInput}
+          />
+          <textarea
+            name="content"
+            placeholder="Write a note..."
+            value={notes.content}
+            onChange={notesInput}
+          />
+          <button type="submit"><FaPlus /></button>
+        </div>
       </form>
+
 
 
       <br />
