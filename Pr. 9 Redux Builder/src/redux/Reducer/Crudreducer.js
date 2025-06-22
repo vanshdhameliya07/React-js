@@ -1,8 +1,6 @@
-import { toast } from "react-toastify";
-import 'react-toastify/dist/ReactToastify.css';
 
 let initialState = {
-    user: []
+    user: JSON.parse(localStorage.getItem("user")) || []
 }
 
 let CrudReducer = (state = initialState, action) => {
@@ -10,25 +8,22 @@ let CrudReducer = (state = initialState, action) => {
 
         case "Add":
             let old = [...state.user, action.payload]
-
-            toast.success("Note Added Successfully...", {
-                position: "top-right",
-                autoClose: 5000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-                theme: "light",
-                style: {
-                    borderLeft: "5px solid #42CC46"
-                }
-            });
-
+            localStorage.setItem("user", JSON.stringify(old))
             return {
                 ...state,
                 user: old
             }
+
+        case "Delete":
+            let Deleteuser = state.user.filter(val => val.id !== action.payload.id)
+            localStorage.setItem("user", JSON.stringify(Deleteuser))
+
+            return {
+                ...state,
+                user: Deleteuser
+            }
+
+
 
         default:
             return state;

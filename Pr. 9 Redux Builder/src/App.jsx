@@ -1,15 +1,21 @@
 import React, { useState } from 'react'
 import { FaPlus } from "react-icons/fa";
 import { useDispatch } from 'react-redux';
-import { AddUser } from './redux/Action/action'
-import { toast, ToastContainer } from 'react-toastify';
+import { AddUser, DeleteUser } from './redux/Action/action'
+import { MdDelete } from "react-icons/md";
+import './App.css'
 
 const App = () => {
+
+  let user = JSON.parse(localStorage.getItem("user")) || []
+
 
   let [notes, setNotes] = useState({
     title: '',
     content: ''
   })
+
+  let [record, setRecord] = useState([])
 
   let dispatch = useDispatch()
 
@@ -22,43 +28,30 @@ const App = () => {
 
   }
 
+  let deleteuser = (id) => {
+    dispatch(DeleteUser(id))
+  }
+
   let handleSubmit = (event) => {
     event.preventDefault()
 
-
-    if (notes.title.trim() === "" || notes.content.trim() === "") {
-      toast.error("Please fill all the fields", {
-        style: {
-          borderLeft: "5px solidrgb(179, 61, 61)",
-          backgroundColor: "#FF0000",
-          color: "#ffff"
-
-        },
-        position: "top-center",
-        autoClose: 2000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "colored"
-      });
-      return;
-    }
 
     let obj = {
       id: Date.now(),
       ...notes
     }
-
-
-
+    setRecord([obj])
 
     dispatch(AddUser(obj))
   }
 
   return (
     <div align="center">
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
       <h1>Google Keep </h1>
 
       <form onSubmit={handleSubmit}>
@@ -80,9 +73,30 @@ const App = () => {
           </thead>
         </table>
       </form>
-      <ToastContainer position="top-center" autoClose={2000} />
 
-    </div>
+
+      <br />
+      <br />
+
+
+      <h1>View Notes</h1>
+      {
+        user.map((val, i) => {
+          let { id, title, content } = val
+          return (
+            <div className='d-flex ' key={id}>
+              <div className='box' >
+                <p>{title}</p>
+                <p>{content}</p>
+                <button onClick={() => deleteuser(id)}><MdDelete /></button>
+              </div>
+            </div>
+          );
+        })
+      }
+
+
+    </div >
   )
 }
 
