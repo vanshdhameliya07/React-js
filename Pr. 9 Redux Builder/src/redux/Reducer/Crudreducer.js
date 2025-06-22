@@ -15,15 +15,13 @@ let CrudReducer = (state = initialState, action) => {
             }
 
         case "Delete":
-            let Deleteuser = state.user.filter(val => val.id !== action.payload.id)
+            let Deleteuser = state.user.filter(val => val.id != action.payload)
             localStorage.setItem("user", JSON.stringify(Deleteuser))
 
             return {
                 ...state,
                 user: Deleteuser
             }
-
-
 
         default:
             return state;

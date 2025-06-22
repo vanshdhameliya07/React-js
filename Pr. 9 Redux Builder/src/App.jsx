@@ -1,13 +1,14 @@
 import React, { useState } from 'react'
 import { FaPlus } from "react-icons/fa";
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { AddUser, DeleteUser } from './redux/Action/action'
 import { MdDelete } from "react-icons/md";
 import './App.css'
 
 const App = () => {
 
-  let user = JSON.parse(localStorage.getItem("user")) || []
+  let user = useSelector((state => state.crud.user))
+
 
 
   let [notes, setNotes] = useState({
@@ -15,7 +16,6 @@ const App = () => {
     content: ''
   })
 
-  let [record, setRecord] = useState([])
 
   let dispatch = useDispatch()
 
@@ -28,20 +28,15 @@ const App = () => {
 
   }
 
-  let deleteuser = (id) => {
-    dispatch(DeleteUser(id))
-  }
+
 
   let handleSubmit = (event) => {
     event.preventDefault()
-
 
     let obj = {
       id: Date.now(),
       ...notes
     }
-    setRecord([obj])
-
     dispatch(AddUser(obj))
   }
 
@@ -88,7 +83,7 @@ const App = () => {
               <div className='box' >
                 <p>{title}</p>
                 <p>{content}</p>
-                <button onClick={() => deleteuser(id)}><MdDelete /></button>
+                <button onClick={() => dispatch(DeleteUser(id))}><MdDelete /></button>
               </div>
             </div>
           );

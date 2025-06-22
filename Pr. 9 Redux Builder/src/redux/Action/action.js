@@ -5,6 +5,7 @@ const AddUser = (data) => {
     }
 }
 const DeleteUser = (id) => {
+
     return {
         type: "Delete",
         payload: id
