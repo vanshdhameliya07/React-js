@@ -73,17 +73,19 @@ const App = () => {
             value={notes.content}
             onChange={notesInput}
           />
-          <button type="submit"><FaPlus /></button>
+          <button type="submit">
+            <div className='icon'>
+              <FaPlus />
+            </div>
+          </button>
         </div>
       </form>
 
 
 
       <br />
-      <br />
 
 
-      <h1>View Notes</h1>
       {
         user.map((val, i) => {
           let { id, title, content } = val
