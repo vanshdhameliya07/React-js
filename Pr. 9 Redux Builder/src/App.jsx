@@ -49,14 +49,7 @@ const App = () => {
 
         </div>
       </div>
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
+  
 
       <form onSubmit={handleSubmit}>
         <div className="note-box">
@@ -82,25 +75,26 @@ const App = () => {
       </form>
 
 
-
-      <br />
-
-
-      {
-        user.map((val, i) => {
-          let { id, title, content } = val
-          return (
-            <div className='d-flex ' key={id}>
-              <div className='box' >
-                <p>{title}</p>
-                <p>{content}</p>
-                <button className='btn' onClick={() => dispatch(DeleteUser(id))}><RiDeleteBin6Fill /></button>
+      <div>
+        {
+          user.map((val, i) => {
+            let { id, title, content } = val
+            return (
+              <div className='d-flex ' key={id}>
+                <div className='box' >
+                  <p>{title}</p>
+                  <p>{content}</p>
+                  <button className='btn' onClick={() => dispatch(DeleteUser(id))}><RiDeleteBin6Fill /></button>
+                </div>
               </div>
-            </div>
-          );
-        })
-      }
+            );
+          })
+        }
+      </div>
 
+      <div className='footer'>
+        <p>Copyrights 2025</p>
+      </div>
 
     </div >
   )
