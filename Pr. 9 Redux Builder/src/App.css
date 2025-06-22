@@ -8,6 +8,27 @@
 }
 
 .d-flex {
-    display: block;
+    display: flex;
     flex-wrap: wrap;
+}
+
+.btn {
+    margin-top: 100px;
+    border: none;
+    background-color: white;
+    color: #F9A620;
+    font-size: 20px;
+}
+
+.dd{
+    background-color: #F5D03E;
+}
+img{
+    width: 48px;
+    height: 48px;
+    margin-top: 5px;
+}
+.container{
+    display: block;
+    margin: 0 auto;
 }

@@ -2,15 +2,12 @@ import React, { useState } from 'react'
 import { FaPlus } from "react-icons/fa";
 import { useDispatch, useSelector } from 'react-redux';
 import { AddUser, DeleteUser } from './redux/Action/action'
-import { MdDelete } from "react-icons/md";
+import { RiDeleteBin6Fill } from "react-icons/ri";
 import './App.css'
 
 const App = () => {
 
   let user = useSelector((state => state.crud.user))
-
-
-
   let [notes, setNotes] = useState({
     title: '',
     content: ''
@@ -41,16 +38,28 @@ const App = () => {
   }
 
   return (
-    <div align="center">
+
+    <div>
+
+
+      <div className='dd'>
+        <div className="col-12 d-flex">
+          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAABbUlEQVR4Ae3aAUQEQRQG4OUmwiEAQIQQIAQIAQGCgICQkJAACUAAQkEQAAJEu11cSSldOlWR4hBJp90ozdt53QSgs/e09v70fh4YzPuWmbeYQIMergTGRmapVRc2NJxHva4Hc4UBPsOeWb9pnhWvBcUhRF9eACgMIW5QAJAjAAFyBCBAjgAEyBGAADkCECBHQADkCACAHAEAkJcCFPDnAFEvp1cz7B432SV1du8P7J63mepTfg0bQIdD7OIat4sH0cEgJsA3z5RwVtzbNdtKHx7Avexxp0kbq1gAOhpmUZxlu1vGAaS3CywNHY8AAe6WxYD0choIcDMvBtD5BA6ATkbFZ4D2B8BuobjWef9PW4BzwN9EznJmbJNttR90Ep+NfzfYNh+NrNtHf+YUQKdjfi78WH4NDyAYan5NAXoGFKAABShAAf8NkHQRUP01gMLSRrcAFJYm83hqULaRWaSwdF9g8027Y1Zae5tAA54vA5QFBsesCogAAAAASUVORK5CYII=" alt="" />
+          <h3 >Google Keep</h3>
+
+        </div>
+      </div>
       <br />
       <br />
       <br />
       <br />
       <br />
-      <h1>Google Keep </h1>
+      <br />
+      <br />
+      <br />
 
       <form onSubmit={handleSubmit}>
-        <table border={1}>
+        <table align='center' border={1}>
           <thead>
             <tr>
               <td>Title</td>
@@ -83,7 +92,7 @@ const App = () => {
               <div className='box' >
                 <p>{title}</p>
                 <p>{content}</p>
-                <button onClick={() => dispatch(DeleteUser(id))}><MdDelete /></button>
+                <button className='btn' onClick={() => dispatch(DeleteUser(id))}><RiDeleteBin6Fill /></button>
               </div>
             </div>
           );
