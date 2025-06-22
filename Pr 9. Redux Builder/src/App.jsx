@@ -49,7 +49,7 @@ const App = () => {
 
         </div>
       </div>
-  
+
 
       <form onSubmit={handleSubmit}>
         <div className="note-box">
@@ -81,7 +81,7 @@ const App = () => {
             let { id, title, content } = val
             return (
               <div className='d-flex ' key={id}>
-                <div className='box' >
+                <div className='box ' >
                   <p>{title}</p>
                   <p>{content}</p>
                   <button className='btn' onClick={() => dispatch(DeleteUser(id))}><RiDeleteBin6Fill /></button>
@@ -91,6 +91,10 @@ const App = () => {
           })
         }
       </div>
+
+
+
+
 
       <div className='footer'>
         <p>Copyrights 2025</p>
