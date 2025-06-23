@@ -1,34 +1,76 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import React, { useEffect, useState } from 'react'
+import { FaStar } from "react-icons/fa6";
+
 import './App.css'
 
-function App() {
-  const [count, setCount] = useState(0)
+
+const App = () => {
+
+  let [product, setProduct] = useState([])
+
+  const getapi = async () => {
+    try {
+      let res = await fetch('https://dummyjson.com/products')
+      let data = await res.json()
+      setProduct(data.products);
+
+    } catch (error) {
+      console.log(error);
+      return false
+
+    }
+  }
+
+  useEffect(() => {
+    getapi()
+  }, [])
+
+
+
+  const renderStars = (rating) => {
+
+    const stars = [];
+    const rounded = Math.round(rating);
+
+    for (let i = 0; i < 5; i++) {
+      stars.push(
+        <FaStar key={i} style={{ color: i < rounded ? "gold" : "grey" }} />
+      )
+    }
+    return stars;
+  };
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div>
+      <h1>Product List</h1>
+
+
+      <div className='d-flex align-items-center justify-content-center'>
+        {product.map((val) => {
+          const { id, images, rating } = val;
+          return (
+
+            <div className="card   mt-4 mx-4" style={{ width: '24rem' }} key={id}>
+              <img src={images[0]} alt="" />
+              <div className="card-body">
+                <p className="card-text">Dish name :- </p>
+                <span className="card-text">instructions :- </span>
+                <div>
+                  rating : ({rating}) {renderStars(rating)}
+                </div>
+
+                {/* <div><strong>Tags : </strong>
+                  {tags.join(', ')}
+                </div> */}
+
+              </div>
+            </div>
+          );
+        })}
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+
+
+    </div>
   )
 }
 
