@@ -13,7 +13,6 @@ const App = () => {
       let res = await fetch('https://dummyjson.com/products')
       let data = await res.json()
       setProduct(data.products);
-      console.log(data.products);
 
 
     } catch (error) {
