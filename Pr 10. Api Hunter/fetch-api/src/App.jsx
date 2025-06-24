@@ -43,32 +43,32 @@ const App = () => {
   };
 
   return (
-    <div>
+    <div align="center" >
       <h1>Product List</h1>
 
-      <div className='d-flex'>
+      <div className="product-container">
+
         {product.map((val) => {
-          const { id, images, title, rating, description } = val;
+          const { id, images, title, rating, description, brand, category } = val;
           return (
-
-            <div className="card   mt-4 mx-4" style={{ width: '24rem' }} key={id}>
-              <img src={images[0]} alt="" />
+            <div className="product-card" key={id}>
+              <img src={images[0]} alt={title} className="product-image" />
               <div className="card-body">
-                <p className="card-text">Product name :- {title}</p>
-                <span className="card-text">description :-{description} </span>
-                <div>
-                  rating : ({rating}) {renderStars(rating)}
+                <h3 className="product-title">{title}</h3>
+                <p className="product-description">{description}</p>
+                <div className="product-rating align-items-center">
+                  Rating:  {renderStars(rating)} ({rating})
                 </div>
-
-                {/* <div><strong>Tags : </strong>
-                  {tags.join(', ')}
-                </div> */}
-
+                <div className="product-meta">
+                  <span>Brand :- {brand}</span>
+                  <span>Category: {category}</span>
+                </div>
               </div>
             </div>
           );
         })}
       </div>
+
 
 
     </div>
