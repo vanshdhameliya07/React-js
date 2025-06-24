@@ -12,10 +12,7 @@ function App() {
   let getuser = async () => {
     try {
       let res = await axios.get('https://dummyjson.com/recipes')
-      console.log(res.data.recipes);
       setGetapi(res.data.recipes)
-
-
 
     } catch (error) {
       console.log(error);
@@ -23,9 +20,24 @@ function App() {
     }
   }
 
+  let rate = (rating) => {
+    let star = []
+    let rounded = Math.round(rating)
+
+    for (let i = 0; i < 5; i++) {
+      star.push(
+        <FaStar key={i} style={{ color: i < rounded ? "gold" : "lightgray" }} />
+      )
+    }
+    return star
+
+  }
+
   useEffect(() => {
     getuser()
   }, [])
+
+
 
   return (
     <div align="center">
@@ -43,13 +55,7 @@ function App() {
                 <p className="card-text">Dish name :- {name}</p>
                 <span className="card-text">instructions :- {instructions}</span>
                 <div>
-                  rating :  {rating}
-
-                  (  <FaStar style={{ color: 'gold' }} />
-                  <FaStar style={{ color: 'gold' }} />
-                  <FaStar style={{ color: 'gold' }} />
-                  <FaStar style={{ color: 'gold' }} />
-                  <FaStar style={{ color: 'gold' }} />)
+                  rating : {rate(rating)} ({rating})
                 </div>
 
                 <div><strong>Tags : </strong>
