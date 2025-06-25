@@ -38,8 +38,8 @@ const Add = () => {
       .then((res) => {
         alert("record successfully add")
         setFormInput({
-          name:"",
-          email:""
+          name: "",
+          email: ""
         })
       })
       .catch((err) => {
