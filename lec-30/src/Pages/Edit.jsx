@@ -1,15 +1,18 @@
-import React, { useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import React, { useEffect, useState } from 'react'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { getDatabase, ref, set } from 'firebase/database'
 import { app } from '../Firebase'
 
-const Add = () => {
-
-  let navigate = useNavigate()
+const Edit = () => {
   let [formInput, setFormInput] = useState({
     name: "",
     email: ""
   })
+
+  let location = useLocation()
+
+  let navigate = useNavigate()
+
 
   const changeInput = (event) => {
     let { name, value } = event.target;
@@ -19,42 +22,27 @@ const Add = () => {
     })
   }
 
+  useEffect(() => {
+
+    setFormInput({
+      name: location?.state?.data?.name,
+      email: location?.state?.data?.email
+    })
+
+  }, [location?.state?.data])
+
   const db = getDatabase(app)
 
   const handlesubmit = (event) => {
     event.preventDefault()
-    let obj = {
-      id: Math.floor(Math.random() * 1000),
-      ...formInput
-    }
-    setFormInput({
-      name: "",
-      email: ""
-    })
 
-    set(ref(db, `users/${obj.id}`), {
-      name: formInput.name,
-      email: formInput.email
-    })
-      .then((res) => {
-        alert("record successfully add")
-        navigate("/view")
-        setFormInput({
-          name: "",
-          email: ""
-        })
-      })
-      .catch((err) => {
-        console.log(err);
-        return false
-      })
 
 
   }
 
   return (
     <div align="center">
-      <h1>Add User</h1>
+      <h1>Edit User</h1>
 
 
       <form onSubmit={handlesubmit}>
@@ -82,4 +70,4 @@ const Add = () => {
   )
 }
 
-export default Add
+export default Edit
