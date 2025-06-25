@@ -61,7 +61,7 @@ const App = () => {
 
   return (
 
-    <div className='container' align="center">
+    <div align='center'>
 
 
       <div className='dd'>
