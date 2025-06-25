@@ -75,12 +75,12 @@ const App = () => {
       </form>
 
 
-      <div>
+      <div className='d-flex  justify-content-center'>
         {
           user.map((val, i) => {
             let { id, title, content } = val
             return (
-              <div className='d-flex ' key={id}>
+              <div className='d-flex' key={id}>
                 <div className='box ' >
                   <p>{title}</p>
                   <p>{content}</p>
@@ -91,9 +91,6 @@ const App = () => {
           })
         }
       </div>
-
-
-
 
 
       <div className='footer'>
