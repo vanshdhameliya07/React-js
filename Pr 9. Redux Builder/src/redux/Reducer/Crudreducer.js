@@ -30,9 +30,7 @@ let CrudReducer = (state = initialState, action) => {
         case "Delete":
             let Deleteuser = state.user.filter(val => val.id != action.payload)
             localStorage.setItem("user", JSON.stringify(Deleteuser))
-
-
-            toast.warn("User Deleted Notes Successfully", {
+            toast.warn(" Deleted Notes Successfully", {
                 position: "top-right",
                 autoClose: 3000,
                 hideProgressBar: false,
@@ -40,7 +38,6 @@ let CrudReducer = (state = initialState, action) => {
                 pauseOnHover: true,
                 draggable: true,
                 theme: "light"
-
             })
 
             return {
