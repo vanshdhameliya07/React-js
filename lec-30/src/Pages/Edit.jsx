@@ -13,7 +13,6 @@ const Edit = () => {
 
   let navigate = useNavigate()
 
-
   const changeInput = (event) => {
     let { name, value } = event.target;
     setFormInput({
@@ -45,22 +44,25 @@ const Edit = () => {
       name: "",
       email: ""
     })
+
     set(ref(db, `users/${obj.id}`), {
       name: formInput.name,
       email: formInput.email
     })
       .then((res) => {
+        console.log(res);
         alert("record successfully updated")
-        navigate("/view")
-        setFormInput({
-          name: "",
-          email: ""
-        })
-      })
-      .catch((err) => {
+        navigate("/view");
+      }).catch((err) => {
         console.log(err);
         return false
       })
+
+    setFormInput({
+      name: "",
+      email: ""
+    })
+
 
   }
 
