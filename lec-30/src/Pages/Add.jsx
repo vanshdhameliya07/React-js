@@ -62,11 +62,11 @@ const Add = () => {
           <thead>
             <tr>
               <td>Name</td>
-              <td><input type="text" name='name' onChange={changeInput} /></td>
+              <td><input type="text" name='name' onChange={changeInput} value={formInput.name} /></td>
             </tr>
             <tr>
               <td>email</td>
-              <td><input type="text" name='email' onChange={changeInput} /></td>
+              <td><input type="text" name='email' onChange={changeInput} value={formInput.email} /></td>
             </tr>
             <tr>
               <td></td>

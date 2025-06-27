@@ -53,13 +53,11 @@ const View = () => {
                         <th>Action</th>
                     </tr>
                 </thead>
-
                 <tbody>
                     {
                         allrecord && Object.entries(allrecord).map(([key, value]) => {
                             return (
-
-                                <tr>
+                                <tr key={key}>
                                     <td>{key}</td>
                                     <td>{value.name}</td>
                                     <td>{value.email}</td>
@@ -68,7 +66,6 @@ const View = () => {
                                         <button onClick={() => editUser(key, value.name, value.email)}>Edit</button>
 
                                     </td>
-
                                 </tr>
                             )
                         })

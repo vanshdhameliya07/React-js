@@ -23,6 +23,7 @@ const Edit = () => {
   }
 
   useEffect(() => {
+    console.log(location?.state?.data);
 
     setFormInput({
       name: location?.state?.data?.name,
@@ -36,7 +37,30 @@ const Edit = () => {
   const handlesubmit = (event) => {
     event.preventDefault()
 
-
+    let obj = {
+      id: location?.state?.data?.id,
+      ...formInput
+    }
+    setFormInput({
+      name: "",
+      email: ""
+    })
+    set(ref(db, `users/${obj.id}`), {
+      name: formInput.name,
+      email: formInput.email
+    })
+      .then((res) => {
+        alert("record successfully updated")
+        navigate("/view")
+        setFormInput({
+          name: "",
+          email: ""
+        })
+      })
+      .catch((err) => {
+        console.log(err);
+        return false
+      })
 
   }
 
@@ -50,11 +74,11 @@ const Edit = () => {
           <thead>
             <tr>
               <td>Name</td>
-              <td><input type="text" name='name' onChange={changeInput} /></td>
+              <td><input type="text" name='name' onChange={changeInput} value={formInput.name} /></td>
             </tr>
             <tr>
               <td>email</td>
-              <td><input type="text" name='email' onChange={changeInput} /></td>
+              <td><input type="text" name='email' onChange={changeInput} value={formInput.email} /></td>
             </tr>
             <tr>
               <td></td>
