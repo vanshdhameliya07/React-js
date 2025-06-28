@@ -1,14 +1,16 @@
-import React, { useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import React, { useEffect, useState } from 'react'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { app } from '../../FirebaseConfig'
-import { addDoc, collection, getFirestore } from 'firebase/firestore'
-const Add = () => {
+import { addDoc, collection, doc, getFirestore, updateDoc } from 'firebase/firestore'
+const Edit = () => {
 
   let [forminput, setForminput] = useState({
     name: '',
     email: ''
   })
   let navigate = useNavigate()
+  let location = useLocation()
+
 
   let changeInput = (event) => {
     let { name, value } = event.target;
@@ -24,16 +26,14 @@ const Add = () => {
   let handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const addrecord = await addDoc(collection(db, 'users'), {
-        userid: Math.floor(Math.random() * 1000),
+      const updaterecord = doc(db, `users/${location.state.id}`)
+      await updateDoc(updaterecord, {
         name: forminput.name,
         email: forminput.email
       })
+      alert("updated successfully")
       navigate('/view')
-      setForminput({
-        name: '',
-        email: ''
-      })
+
 
     } catch (err) {
       console.log(err);
@@ -41,10 +41,18 @@ const Add = () => {
     }
   }
 
+  useEffect(() => {
+    setForminput({
+      ...forminput,
+      name: location.state.name,
+      email: location.state.email
+    })
+  }, [location.state])
+
 
   return (
     <div align="center">
-      <h1>Add Page</h1>
+      <h1>Edit Page</h1>
 
 
       <form onSubmit={handleSubmit}>
@@ -72,4 +80,4 @@ const Add = () => {
   )
 }
 
-export default Add
+export default Edit
