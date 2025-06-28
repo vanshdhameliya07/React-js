@@ -56,7 +56,6 @@ const Add = () => {
     <div align="center">
       <h1>Add User</h1>
 
-
       <form onSubmit={handlesubmit}>
         <table border="1">
           <thead>

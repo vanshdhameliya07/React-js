@@ -22,8 +22,6 @@ const Edit = () => {
   }
 
   useEffect(() => {
-    console.log(location?.state?.data);
-
     setFormInput({
       name: location?.state?.data?.name,
       email: location?.state?.data?.email
