@@ -22,7 +22,6 @@ const Edit = () => {
 
   const db = getFirestore(app)
 
-
   let handleSubmit = async (event) => {
     event.preventDefault();
     try {
