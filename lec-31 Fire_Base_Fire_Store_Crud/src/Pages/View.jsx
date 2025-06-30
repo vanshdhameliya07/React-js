@@ -6,7 +6,7 @@ import { app } from '../../FirebaseConfig'
 const View = () => {
 
     let [alluser, setAlluser] = useState([])
-    let navigate=useNavigate()
+    let navigate = useNavigate()
 
     const db = getFirestore(app)
     let getuser = async () => {
@@ -43,7 +43,7 @@ const View = () => {
         }
     }
 
-   
+
 
     return (
         <div align="center">
@@ -67,7 +67,7 @@ const View = () => {
                                     <td>{user.email}</td>
                                     <td>
                                         <button onClick={() => deleteUser(user.id)}>Delete</button>
-                                        <button onClick={() => navigate("/edit",{state:user})}>Edit</button>
+                                        <button onClick={() => navigate("/edit", { state: user })}>Edit</button>
                                     </td>
                                 </tr>
                             )

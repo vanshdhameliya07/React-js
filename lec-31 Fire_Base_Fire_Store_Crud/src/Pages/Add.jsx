@@ -23,22 +23,22 @@ const Add = () => {
 
   let handleSubmit = async (event) => {
     event.preventDefault();
+
     try {
-      const addrecord = await addDoc(collection(db, 'users'), {
+
+      let record = await addDoc(collection(db, 'users'), {
         userid: Math.floor(Math.random() * 1000),
         name: forminput.name,
         email: forminput.email
       })
-      navigate('/view')
-      setForminput({
-        name: '',
-        email: ''
-      })
+      navigate("/view")
 
     } catch (err) {
       console.log(err);
       return false
+
     }
+
   }
 
 
