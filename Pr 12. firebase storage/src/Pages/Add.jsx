@@ -61,7 +61,6 @@ const Add = () => {
         getuser()
     }, [])
 
-
     let deleteUser = async (id) => {
         try {
             let deleteuser = doc(db, (`user/${id}`))
