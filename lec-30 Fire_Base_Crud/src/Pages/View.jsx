@@ -4,41 +4,49 @@ import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { app } from '../Firebase'
 
 const View = () => {
-    const db = getDatabase(app)
 
+    const db = getDatabase(app)
+    let [alluser, setAlluser] = useState([])
     let navigate = useNavigate()
-    let [allrecord, setAllrecord] = useState("")
 
     let getuser = () => {
-        const allrecord = ref(db, 'users')
-        onValue(allrecord, (row) => {
-            let data = row.val()
-            setAllrecord(data)
-        })
+        let allrecord = ref(db, 'users')
+
+        onValue(allrecord, ((row) => {
+            const data = row.val()
+            setAlluser(data)
+
+        }))
+
     }
-
-
     useEffect(() => {
         getuser()
     }, [])
-    let editUser = (id, name, email) => {
-
-        let data = { id, name, email };
 
 
-        navigate(`/edit/${id}`, {
-            state: {
-                data: data
-            }
+
+    const deleteUser = (id) => {
+        let deleteuser = ref(db, `users/${id}`)
+        remove(deleteuser)
+        alert("User Deleted Successfully")
+        getuser()
+    }
+
+    const editUser = (id, name, email) => {
+        let data = ({
+            id: id,
+            name: name,
+            email: email
+        })
+        navigate("/edit", {
+            state: data
         })
 
+
+
     }
 
-    let deleteUser = (id) => {
-        let deleteUser = ref(db, `users/${id}`)
-        remove(deleteUser)
-        alert("record successfully deleted")
-    }
+
 
 
     return (
@@ -55,16 +63,15 @@ const View = () => {
                 </thead>
                 <tbody>
                     {
-                        allrecord && Object.entries(allrecord).map(([key, value]) => {
+                        alluser && Object.entries(alluser).map(([id, value]) => {
                             return (
-                                <tr key={key}>
-                                    <td>{key}</td>
+                                <tr key={id}>
+                                    <td>{id}</td>
                                     <td>{value.name}</td>
                                     <td>{value.email}</td>
                                     <td>
-                                        <button onClick={() => deleteUser(key)}>Delete</button>
-                                        <button onClick={() => editUser(key, value.name, value.email)}>Edit</button>
-
+                                        <button onClick={() => deleteUser(id)}>Delete</button>
+                                        <button onClick={() => editUser(id, value.name, value.email)}>Edit</button>
                                     </td>
                                 </tr>
                             )
