@@ -1,11 +1,11 @@
-import React, { useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
-import { getDatabase, ref, set } from 'firebase/database'
+import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import { app } from '../Firebase'
+import { ref, set,getDatabase } from 'firebase/database'
 
 const Add = () => {
 
-  let navigate = useNavigate()
+
   let [formInput, setFormInput] = useState({
     name: "",
     email: ""
@@ -32,22 +32,16 @@ const Add = () => {
       email: ""
     })
 
-    set(ref(db, `users/${obj.id}`), {
+    set(ref(db, 'users', obj.id), {
       name: formInput.name,
       email: formInput.email
     })
       .then((res) => {
-        alert("record successfully add")
-        navigate("/view")
-        setFormInput({
-          name: "",
-          email: ""
-        })
+        alert("User Added Successfully")
+
       })
-      .catch((err) => {
-        console.log(err);
-        return false
-      })
+
+
 
 
   }

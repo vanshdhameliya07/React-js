@@ -5,6 +5,7 @@ import { app } from '../Firebase'
 
 const View = () => {
     const db = getDatabase(app)
+
     let navigate = useNavigate()
     let [allrecord, setAllrecord] = useState("")
 
@@ -13,7 +14,6 @@ const View = () => {
         onValue(allrecord, (row) => {
             let data = row.val()
             setAllrecord(data)
-
         })
     }
 
