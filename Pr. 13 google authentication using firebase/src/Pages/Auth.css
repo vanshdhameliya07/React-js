@@ -1,0 +1,47 @@
+.auth-container {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-color: #d8ecf9;
+}
+
+.auth-box {
+    background-color: #cce4f7;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    position: relative;
+}
+
+.auth-box h2 {
+    margin-bottom: 30px;
+    color: #1a1a1a;
+    font-weight: 600;
+}
+
+.google-btn {
+    background-color: white;
+    color: #555;
+    font-size: 16px;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.google-btn:hover {
+    background-color: #f0f0f0;
+}
+
+.google-btn img {
+    width: 20px;
+    height: 20px;
+}
