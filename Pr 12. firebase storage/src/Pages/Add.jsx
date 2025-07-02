@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { app } from '../../FirebaseConfig'
 import { addDoc, collection, deleteDoc, doc, getDocs, getFirestore } from 'firebase/firestore'
-
+import './Add.css'
 const Add = () => {
 
     let [forminput, setForminput] = useState({
