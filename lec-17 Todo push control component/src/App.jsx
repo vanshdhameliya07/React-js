@@ -46,9 +46,7 @@ const App = () => {
       }
       setTodos([...todos, obj]);
       setName("")
-
     }
-
 
   }
 

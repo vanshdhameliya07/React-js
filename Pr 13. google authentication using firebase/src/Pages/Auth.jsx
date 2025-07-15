@@ -1,7 +1,7 @@
 import React from 'react';
 import { signInWithPopup } from 'firebase/auth';
 import { auth, googleauthprovider } from '../../Auth';
-import './Auth.css'; // Import CSS
+import './Auth.css';
 
 const Auth = () => {
     const handlelogin = async () => {

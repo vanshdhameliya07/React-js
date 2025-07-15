@@ -9,9 +9,6 @@ function App() {
     event.preventDefault()
     console.log(name);
     console.log(email);
-
-
-
   }
 
 

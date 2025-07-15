@@ -1,0 +1,27 @@
+{
+  "register": [
+    {
+      "id": "6436",
+      "name": "vansh",
+      "email": "vanshdhameliya07@gmail.com",
+      "password": "1234"
+    }
+  ],
+  "login": [
+    {
+      "id": "76ad",
+      "email": "vanshdhameliya07@gmail.com",
+      "password": "1234"
+    },
+    {
+      "id": "f5ec",
+      "email": "vanshdhameliya07@gmail.com",
+      "password": "1234"
+    },
+    {
+      "id": "c773",
+      "email": "ss",
+      "password": "ss"
+    }
+  ]
+}

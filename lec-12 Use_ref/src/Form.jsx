@@ -7,7 +7,6 @@ const Form = () => {
         e.preventDefault()
         console.log("name  :", name.current.value);
         console.log("email :", email.current.value);
-
     }
 
     return (
