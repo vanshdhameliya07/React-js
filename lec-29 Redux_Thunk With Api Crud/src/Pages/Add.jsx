@@ -47,7 +47,6 @@ const Add = () => {
               <td><input type="text" name='email' onChange={changeInput} value={formInput.email} /></td>
             </tr>
 
-
             <tr>
               <td></td>
               <td><input type="Submit" /></td>

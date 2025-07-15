@@ -20,11 +20,7 @@ const Dashboard = () => {
 
     const handlesubmit = (e) => {
         e.preventDefault();
-        const newStudent = {
-            id: Math.floor(Math.random() * 10000),
-            ...forminput
-        };
-        dispatch(Add_Student(newStudent));
+        dispatch(Add_Student(forminput));
         navigate("/view");
     };
 

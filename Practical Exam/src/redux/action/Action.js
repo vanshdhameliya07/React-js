@@ -100,12 +100,17 @@ let view_user = (record) => {
 let DeleteUser = (id) => {
     return async (dispatch) => {
         try {
-            let res = await fetch(`http://localhost:3000/student/${id}`, {
+            let data = await fetch(`http://localhost:3000/student/${id}`, {
                 method: "DELETE"
             });
+
+            let res = await data.json()
+            console.log(res);
+
+
             dispatch({
                 type: "deleteuser",
-                payload: id
+                payload: res
             });
 
         } catch (err) {
@@ -127,10 +132,12 @@ let Edit_user = (id) => {
                 },
             })
 
+            let res = await data.json();
             return dispatch({
                 type: "edituser",
-                payload: id,
-            })
+                payload: res
+            });
+
 
         } catch (error) {
             console.log(error);

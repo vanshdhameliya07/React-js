@@ -7,14 +7,8 @@ const View = () => {
 
     let user = useSelector((state) => state.crud.users)
 
-
-
     let dispatch = useDispatch()
     let navigate = useNavigate()
-
-    useEffect(() => {
-        dispatch(view_user())
-    }, [])
 
     let deleteuser = (id) => {
         dispatch(Delete_user(id))

@@ -1,21 +1,19 @@
 let initalstate = {
-    user: JSON.parse(localStorage.getItem("user")) || [],
-    login: JSON.parse(localStorage.getItem("login")) || [],
-    student: JSON.parse(localStorage.getItem('student')) || [],
+    user: [],
+    login: [],
+    student: [],
 }
 
 let crudreducer = (state = initalstate, action) => {
     switch (action.type) {
         case "Add_Student":
             let data = [...state.user, action.payload]
-            localStorage.setItem("user", JSON.stringify(data))
             return {
                 ...state,
                 user: data
             }
 
         case "login_user":
-            localStorage.setItem("login", JSON.stringify(action.payload))
             return {
                 ...state,
                 login: action.payload
@@ -24,7 +22,6 @@ let crudreducer = (state = initalstate, action) => {
 
         case "Add":
             let oldrecord = [...state.student, action.payload]
-            localStorage.setItem('student', JSON.stringify(oldrecord))
 
             return {
                 ...state,
@@ -33,16 +30,14 @@ let crudreducer = (state = initalstate, action) => {
         case 'viewuser':
             return {
                 ...state,
-                users: action.payload,
+                user: action.payload,
             }
-
         case 'deleteuser':
-            let deleteuser = state.student.filter((val) => val.id !== action.payload);
-            localStorage.setItem('student', JSON.stringify(deleteuser));
+            let deleteuser = state.student.filter(val => val.id != action.payload)
             return {
                 ...state,
-                student: deleteuser
-            };
+                user: deleteuser
+            }
         case 'edituser':
 
             let single = state.student.find(val => val.id == action.payload.id)
@@ -56,7 +51,6 @@ let crudreducer = (state = initalstate, action) => {
                 val.id === action.payload.id ? action.payload : val
             );
 
-            localStorage.setItem("student", JSON.stringify(updatedList));
 
             return {
                 ...state,

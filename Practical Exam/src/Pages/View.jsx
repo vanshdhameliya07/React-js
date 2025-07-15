@@ -1,17 +1,22 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { DeleteUser } from '../redux/action/Action';
+import { DeleteUser, view_user } from '../redux/action/Action';
 import { Link, useNavigate } from 'react-router-dom';
 
 const View = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const users = useSelector((state) => state.student);
+    
 
     const [searchField, setSearchField] = useState({
         sname: ''
     });
     const [sortAsc, setSortAsc] = useState(true);
+
+    useEffect(()=>{
+        dispatch(view_user())
+    },[])
 
     const searchinput = (event) => {
         const { name, value } = event.target;

@@ -21,7 +21,7 @@ let reducer = (state = initialstate, action) => {
             let deleteuser = state.users.filter(val => val.id != action.payload.id)
             return {
                 ...state,
-                users: deleteuser
+                user: deleteuser
             }
 
         case 'edituser':
@@ -32,6 +32,7 @@ let reducer = (state = initialstate, action) => {
             }
 
         case 'Updateuser':
+
             let up = state.users.map((val) => {
                 if (val.id == action.payload.id) {
                     return action.payload

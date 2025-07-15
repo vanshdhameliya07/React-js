@@ -1,47 +1,17 @@
 {
   "register": [
     {
-      "id": "84c9",
+      "id": "a256",
       "name": "vansh",
       "email": "vanshdhameliya07@gmail.com",
       "password": "1234"
-    },
-    {
-      "id": "2470",
-      "name": "rr",
-      "email": "rr@gmail.com",
-      "password": "1234"
-    },
-    {
-      "id": "9c99",
-      "name": "ss",
-      "email": "ss@gmail.com",
-      "password": "6666"
     }
   ],
   "student": [
     {
-      "id": 8469,
-      "sname": "raj",
-      "Class": "gg",
-      "email": "vanshdhameliya07@gmail.com"
-    },
-    {
-      "id": 382,
-      "sname": "raj",
-      "Class": "gg",
-      "email": "ss@gmail.com"
-    },
-    {
-      "id": 605,
-      "sname": "vansh",
-      "Class": "van",
-      "email": "vanshdhameliya07@gmail.com"
-    },
-    {
-      "id": 9203,
-      "sname": "raj",
-      "Class": "ggssssss",
+      "id": "20b5",
+      "sname": "rajsssssss",
+      "Class": "ggsssss",
       "email": "rr@gmail.com"
     }
   ]

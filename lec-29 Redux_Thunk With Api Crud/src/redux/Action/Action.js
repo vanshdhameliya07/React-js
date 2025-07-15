@@ -1,5 +1,5 @@
 let Add_user = (record) => {
-    
+
     return async (dispatch) => {
         try {
             let data = await fetch('http://localhost:3000/users', {
@@ -23,6 +23,7 @@ let Add_user = (record) => {
     }
 }
 let view_user = (record) => {
+
     return async (dispatch) => {
         try {
             let data = await fetch('http://localhost:3000/users', {
@@ -50,7 +51,10 @@ let Delete_user = (id) => {
                 method: "DELETE",
             })
 
+
             let res = await data.json()
+            console.log(res);
+
 
             return dispatch({
                 type: "deleteuser",
@@ -103,8 +107,6 @@ let Update_user = (record) => {
             })
 
             let res = await data.json()
-
-
 
             return dispatch({
                 type: "Updateuser",
