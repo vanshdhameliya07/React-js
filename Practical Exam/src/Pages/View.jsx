@@ -33,7 +33,6 @@ const View = () => {
         navigate(`/edit/${id}`);
     };
 
-    // 🔍 Filter + Sort in one go from Redux state
     const filteredData = users
         .filter((val) =>
             val.sname.toLowerCase().includes(searchField.sname.toLowerCase())
