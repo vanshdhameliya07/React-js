@@ -30,13 +30,13 @@ let crudreducer = (state = initalstate, action) => {
         case 'viewuser':
             return {
                 ...state,
-                user: action.payload,
+                student: action.payload,
             }
         case 'deleteuser':
-            let deleteuser = state.student.filter(val => val.id != action.payload)
+            let deleteuser = state.student.filter(val => val.id != action.payload.id)
             return {
                 ...state,
-                user: deleteuser
+                student: deleteuser
             }
         case 'edituser':
 

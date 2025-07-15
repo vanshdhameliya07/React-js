@@ -7,12 +7,5 @@
       "password": "1234"
     }
   ],
-  "student": [
-    {
-      "id": "20b5",
-      "sname": "rajsssssss",
-      "Class": "ggsssss",
-      "email": "rr@gmail.com"
-    }
-  ]
+  "student": []
 }

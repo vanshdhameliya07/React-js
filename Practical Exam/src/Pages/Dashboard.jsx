@@ -10,7 +10,8 @@ const Dashboard = () => {
     const [forminput, setForminput] = useState({
         sname: '',
         Class: '',
-        email: ''
+        email: '',
+        rollno: ""
     });
 
     const changeInput = (e) => {
@@ -57,6 +58,17 @@ const Dashboard = () => {
                             type="email"
                             name="email"
                             value={forminput.email}
+                            onChange={changeInput}
+                            style={styles.input}
+                            required
+                        />
+                    </div>
+                    <div style={styles.formGroup}>
+                        <label style={styles.label}>Roll no</label>
+                        <input
+                            type="number"
+                            name="rollno"
+                            value={forminput.rollno}
                             onChange={changeInput}
                             style={styles.input}
                             required

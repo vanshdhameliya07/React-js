@@ -9,14 +9,15 @@ const View = () => {
     const users = useSelector((state) => state.student);
     
 
+
     const [searchField, setSearchField] = useState({
         sname: ''
     });
     const [sortAsc, setSortAsc] = useState(true);
 
-    useEffect(()=>{
+    useEffect(() => {
         dispatch(view_user())
-    },[])
+    }, [])
 
     const searchinput = (event) => {
         const { name, value } = event.target;
@@ -70,17 +71,19 @@ const View = () => {
                             <th>ID</th>
                             <th onClick={shorting} style={{ cursor: 'pointer' }}>Name ⬍</th>
                             <th>Class</th>
+                            <th>Roll no</th>
                             <th>Email</th>
                             <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
                         {filteredData.length > 0 ? (
-                            filteredData.map(({ id, sname, Class, email }) => (
+                            filteredData.map(({ id, sname, rollno, Class, email }) => (
                                 <tr key={id}>
                                     <td>{id}</td>
                                     <td>{sname}</td>
                                     <td>{Class}</td>
+                                    <td>{rollno}</td>
                                     <td>{email}</td>
                                     <td>
                                         <button onClick={() => deleteuser(id)} style={styles.deleteBtn}>Delete</button>

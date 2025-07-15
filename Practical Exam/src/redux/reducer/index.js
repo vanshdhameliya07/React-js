@@ -2,7 +2,7 @@ import { combineReducers } from "redux";
 import crudreducer from "./crudreducer";
 
 let rootReducer = combineReducers({
-    crud: crudreducer
+    student: crudreducer
 })
 
 export default rootReducer

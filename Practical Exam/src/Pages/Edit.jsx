@@ -13,7 +13,8 @@ const Edit = () => {
     const [forminput, setForminput] = useState({
         sname: '',
         Class: '',
-        email: ''
+        email: '',
+        rollno: ''
     });
 
     useEffect(() => {
@@ -73,6 +74,17 @@ const Edit = () => {
                             type="email"
                             name="email"
                             value={forminput.email}
+                            onChange={changeInput}
+                            style={styles.input}
+                            required
+                        />
+                    </div>
+                    <div style={styles.formGroup}>
+                        <label style={styles.label}>Email</label>
+                        <input
+                            type="number"
+                            name="rollno"
+                            value={forminput.rollno}
                             onChange={changeInput}
                             style={styles.input}
                             required
