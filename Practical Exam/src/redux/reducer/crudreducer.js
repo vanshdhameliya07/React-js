@@ -41,23 +41,25 @@ let crudreducer = (state = initalstate, action) => {
         case 'edituser':
 
             let single = state.student.find(val => val.id == action.payload.id)
-
             return {
                 ...state,
                 single: single
             }
 
-        case 'Updateuser':
-            let up = state.student.map((val) => {
-                if (val.id == action.payload.id) {
-                    return action.payload
-                }
-                return val
-            })
+
+
+        case "UPDATE_USER":
+            const updatedList = state.student.map((val) =>
+                val.id === action.payload.id ? action.payload : val
+            );
+
+            localStorage.setItem("student", JSON.stringify(updatedList));
+
             return {
                 ...state,
-                student: up,
-            }
+                student: updatedList,
+            };
+
 
         default:
             return state

@@ -89,7 +89,8 @@ let DeleteUser = (id) => {
             });
 
         } catch (err) {
-            console.log("Delete error:", err);
+            console.log(err);
+            return false
         }
     };
 };
@@ -106,11 +107,9 @@ let Edit_user = (id) => {
                 },
             })
 
-            let res = await data.json()
-
             return dispatch({
                 type: "edituser",
-                payload: res,
+                payload: id,
             })
 
         } catch (error) {
@@ -119,33 +118,31 @@ let Edit_user = (id) => {
         }
     }
 }
-let Update_user = (record) => {
+ const Update_user = (record) => {
     return async (dispatch) => {
         try {
-            let data = await fetch(`http://localhost:3000/student/${record.id}`, {
+            const res = await fetch(`http://localhost:3000/student/${record.id}`, {
                 method: "PUT",
                 headers: {
                     'Content-Type': 'application/json'
-
                 },
                 body: JSON.stringify(record)
-            })
+            });
 
+            const data = await res.json();
+            console.log("Updated:", data);
 
-            let res = await data.json()
-            console.log(res);
-
-            return dispatch({
-                type: "Updateuser",
-                payload: res,
-            })
+            dispatch({
+                type: "UPDATE_USER",
+                payload: data
+            });
 
         } catch (error) {
-            console.log(error);
-            return false
+            console.error("Update error:", error);
         }
-    }
-}
+    };
+};
+
 
 
 export { add_student, Login_user, Add_Student, DeleteUser, Edit_user, Update_user }

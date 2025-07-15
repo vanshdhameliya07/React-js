@@ -21,7 +21,6 @@ const View = () => {
 
     useEffect(() => {
         let data = JSON.parse(localStorage.getItem('student')) || []
-        console.log(data);
 
         setAllrecord(data)
         setFilterdata(data)
@@ -76,11 +75,7 @@ const View = () => {
 
     return (
         <div align="center">
-
-
             <input type="text" name='sname' onChange={searchinput} value={searchField.sname} />
-
-
             <table border={1}>
                 <thead>
 

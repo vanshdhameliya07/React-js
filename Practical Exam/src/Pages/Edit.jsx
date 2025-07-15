@@ -45,6 +45,7 @@ const Edit = () => {
 
     let handlesubmit = (event) => {
         event.preventDefault()
+
         dispatch(Update_user(forminput))
         navigate("/view")
     }
