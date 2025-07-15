@@ -77,6 +77,26 @@ let Add_Student = (detail) => {
         }
     }
 }
+let view_user = (record) => {
+    return async (dispatch) => {
+        try {
+            let data = await fetch('http://localhost:3000/student', {
+                method: "GET",
+            })
+
+            let res = await data.json()
+
+            return dispatch({
+                type: "viewuser",
+                payload: res,
+            })
+
+        } catch (error) {
+            console.log(error);
+            return false
+        }
+    }
+}
 let DeleteUser = (id) => {
     return async (dispatch) => {
         try {
@@ -118,7 +138,7 @@ let Edit_user = (id) => {
         }
     }
 }
- const Update_user = (record) => {
+const Update_user = (record) => {
     return async (dispatch) => {
         try {
             const res = await fetch(`http://localhost:3000/student/${record.id}`, {
@@ -145,4 +165,4 @@ let Edit_user = (id) => {
 
 
 
-export { add_student, Login_user, Add_Student, DeleteUser, Edit_user, Update_user }
+export { add_student, Login_user, Add_Student, DeleteUser, Edit_user, Update_user, view_user }

@@ -21,28 +21,28 @@
   ],
   "student": [
     {
-      "id": 21,
-      "sname": "vansh",
-      "Class": "gg",
-      "email": "vanshdhameliya07@gmail.com"
-    },
-    {
-      "id": 12,
-      "sname": "raj",
-      "Class": "gg",
-      "email": "rr@gmail.com"
-    },
-    {
-      "id": 69,
-      "sname": "vansh",
-      "Class": "ggsssss",
-      "email": "rr@gmail.com"
-    },
-    {
-      "id": 4035,
+      "id": 8469,
       "sname": "raj",
       "Class": "gg",
       "email": "vanshdhameliya07@gmail.com"
+    },
+    {
+      "id": 382,
+      "sname": "raj",
+      "Class": "gg",
+      "email": "ss@gmail.com"
+    },
+    {
+      "id": 605,
+      "sname": "vansh",
+      "Class": "van",
+      "email": "vanshdhameliya07@gmail.com"
+    },
+    {
+      "id": 9203,
+      "sname": "raj",
+      "Class": "ggssssss",
+      "email": "rr@gmail.com"
     }
   ]
 }

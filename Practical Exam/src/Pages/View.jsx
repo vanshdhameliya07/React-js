@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { DeleteUser } from '../redux/action/Action';
 import { Link, useNavigate } from 'react-router-dom';
@@ -6,42 +6,12 @@ import { Link, useNavigate } from 'react-router-dom';
 const View = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
-    const user = useSelector((state) => state.student);
-    
-    const [allrecord, setAllrecord] = useState([]);
-    const [filterdata, setFilterdata] = useState([]);
-    const [shortings, setShortings] = useState({ name: true });
+    const users = useSelector((state) => state.student);
+
     const [searchField, setSearchField] = useState({
-        sname: '',
-        Class: '',
-        email: ''
+        sname: ''
     });
-
-    useEffect(() => {
-        const data = JSON.parse(localStorage.getItem('student')) || [];
-        setAllrecord(data);
-        setFilterdata(data);
-    }, []);
-
-    useEffect(() => {
-        const fdata = allrecord.filter((val) =>
-            val.sname.toLowerCase().includes(searchField.sname.toLowerCase())
-        );
-        setFilterdata(fdata);
-    }, [searchField, allrecord]);
-
-    const shorting = () => {
-        const shortdata = [...allrecord].sort((a, b) => {
-            const nameA = a.sname.toLowerCase();
-            const nameB = b.sname.toLowerCase();
-            if (nameA > nameB) return shortings.name ? 1 : -1;
-            if (nameA < nameB) return shortings.name ? -1 : 1;
-            return 0;
-        });
-        setAllrecord(shortdata);
-        localStorage.setItem('student', JSON.stringify(shortdata));
-        setShortings({ name: !shortings.name });
-    };
+    const [sortAsc, setSortAsc] = useState(true);
 
     const searchinput = (event) => {
         const { name, value } = event.target;
@@ -51,6 +21,10 @@ const View = () => {
         });
     };
 
+    const shorting = () => {
+        setSortAsc(!sortAsc);
+    };
+
     const deleteuser = (id) => {
         dispatch(DeleteUser(id));
     };
@@ -58,6 +32,19 @@ const View = () => {
     const edituser = (id) => {
         navigate(`/edit/${id}`);
     };
+
+    // 🔍 Filter + Sort in one go from Redux state
+    const filteredData = users
+        .filter((val) =>
+            val.sname.toLowerCase().includes(searchField.sname.toLowerCase())
+        )
+        .sort((a, b) => {
+            const nameA = a.sname.toLowerCase();
+            const nameB = b.sname.toLowerCase();
+            if (nameA > nameB) return sortAsc ? 1 : -1;
+            if (nameA < nameB) return sortAsc ? -1 : 1;
+            return 0;
+        });
 
     return (
         <div style={styles.container}>
@@ -84,19 +71,20 @@ const View = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        {filterdata.map(({ id, sname, Class, email }) => (
-                            <tr key={id}>
-                                <td>{id}</td>
-                                <td>{sname}</td>
-                                <td>{Class}</td>
-                                <td>{email}</td>
-                                <td>
-                                    <button onClick={() => deleteuser(id)} style={styles.deleteBtn}>Delete</button>
-                                    <button onClick={() => edituser(id)} style={styles.editBtn}>Edit</button>
-                                </td>
-                            </tr>
-                        ))}
-                        {filterdata.length === 0 && (
+                        {filteredData.length > 0 ? (
+                            filteredData.map(({ id, sname, Class, email }) => (
+                                <tr key={id}>
+                                    <td>{id}</td>
+                                    <td>{sname}</td>
+                                    <td>{Class}</td>
+                                    <td>{email}</td>
+                                    <td>
+                                        <button onClick={() => deleteuser(id)} style={styles.deleteBtn}>Delete</button>
+                                        <button onClick={() => edituser(id)} style={styles.editBtn}>Edit</button>
+                                    </td>
+                                </tr>
+                            ))
+                        ) : (
                             <tr>
                                 <td colSpan={5} style={{ textAlign: 'center', color: 'gray' }}>
                                     No students found.
