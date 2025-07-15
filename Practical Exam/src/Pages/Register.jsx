@@ -1,60 +1,128 @@
-import React, { useState } from 'react'
-import { useDispatch } from 'react-redux'
-import { Link, useNavigate } from 'react-router-dom'
-import { add_student } from '../redux/action/Action'
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { Link, useNavigate } from 'react-router-dom';
+import { add_student } from '../redux/action/Action';
 
 const Register = () => {
-
-    let navigate = useNavigate()
-    let dispatch = useDispatch()
-    let [forminput, setForminput] = useState({
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
+    const [forminput, setForminput] = useState({
         name: '',
         email: '',
         password: ''
-    })
+    });
 
-    let changeInput = (event) => {
-        let { name, value } = event.target;
+    const changeInput = (event) => {
+        const { name, value } = event.target;
         setForminput({
             ...forminput,
             [name]: value
-        })
-    }
+        });
+    };
 
-    let handleSubmit = (event) => {
-        event.preventDefault()
-        dispatch(add_student(forminput))
-        navigate("/login")
-    }
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        dispatch(add_student(forminput));
+        navigate("/login");
+    };
 
     return (
-        <div align="center">
-            <h1>Register user</h1>
-            <form onSubmit={handleSubmit}>
-                <table border={1}>
-                    <thead>
-                        <tr>
-                            <td>Name</td>
-                            <td><input type="text" name='name' onChange={changeInput} value={forminput.name} /></td>
-                        </tr>
-                        <tr>
-                            <td>email</td>
-                            <td><input type="text" name='email' onChange={changeInput} value={forminput.email} /></td>
-                        </tr>
-                        <tr>
-                            <td>password</td>
-                            <td><input type="text" name='password' onChange={changeInput} value={forminput.password} /></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td><input type="submit" /></td>
-                        </tr>
-                    </thead>
-                </table>
-            </form>
-            <Link to={`/login`}>Login</Link>
+        <div style={styles.container}>
+            <div style={styles.card}>
+                <h2 style={styles.heading}>Register User</h2>
+                <form onSubmit={handleSubmit} style={styles.form}>
+                    <div style={styles.formGroup}>
+                        <label style={styles.label}>Name</label>
+                        <input
+                            type="text"
+                            name="name"
+                            value={forminput.name}
+                            onChange={changeInput}
+                            style={styles.input}
+                            required
+                        />
+                    </div>
+                    <div style={styles.formGroup}>
+                        <label style={styles.label}>Email</label>
+                        <input
+                            type="email"
+                            name="email"
+                            value={forminput.email}
+                            onChange={changeInput}
+                            style={styles.input}
+                            required
+                        />
+                    </div>
+                    <div style={styles.formGroup}>
+                        <label style={styles.label}>Password</label>
+                        <input
+                            type="password"
+                            name="password"
+                            value={forminput.password}
+                            onChange={changeInput}
+                            style={styles.input}
+                            required
+                        />
+                    </div>
+                    <button type="submit" style={styles.button}>Register</button>
+                </form>
+                <p style={{ marginTop: "10px" }}>
+                    Already have an account? <Link to="/login">Login</Link>
+                </p>
+            </div>
         </div>
-    )
-}
+    );
+};
 
-export default Register
+const styles = {
+    container: {
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        height: '100vh',
+        backgroundColor: '#f1f1f1',
+    },
+    card: {
+        backgroundColor: '#fff',
+        padding: '30px 40px',
+        borderRadius: '10px',
+        boxShadow: '0 0 15px rgba(0,0,0,0.1)',
+        width: '350px'
+    },
+    heading: {
+        textAlign: 'center',
+        marginBottom: '20px',
+        color: '#333',
+    },
+    form: {
+        display: 'flex',
+        flexDirection: 'column',
+    },
+    formGroup: {
+        marginBottom: '15px',
+    },
+    label: {
+        marginBottom: '5px',
+        display: 'block',
+        color: '#555',
+        fontWeight: '500',
+    },
+    input: {
+        width: '100%',
+        padding: '10px',
+        borderRadius: '5px',
+        border: '1px solid #ccc',
+        outline: 'none',
+    },
+    button: {
+        padding: '10px',
+        borderRadius: '5px',
+        border: 'none',
+        backgroundColor: '#4CAF50',
+        color: '#fff',
+        cursor: 'pointer',
+        fontWeight: '600',
+    }
+};
+
+export default Register;

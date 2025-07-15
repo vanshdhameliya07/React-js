@@ -1,63 +1,121 @@
-import React, { useEffect, useState } from 'react'
-import { useDispatch } from 'react-redux'
-import { Link, useNavigate } from 'react-router-dom'
-import { add_student, Login_user } from '../redux/action/Action'
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { Link, useNavigate } from 'react-router-dom';
+import { Login_user } from '../redux/action/Action';
 
 const Login = () => {
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
 
-    let login = JSON.parse(localStorage.getItem("login")) || []
-
-    let navigate = useNavigate()
-    let dispatch = useDispatch()
-    let [forminput, setForminput] = useState({
+    const [forminput, setForminput] = useState({
         email: '',
         password: ''
-    })
+    });
 
-    let changeInput = (event) => {
-        let { name, value } = event.target;
+    const changeInput = (event) => {
+        const { name, value } = event.target;
         setForminput({
             ...forminput,
             [name]: value
-        })
-    }
+        });
+    };
 
-    let handleSubmit = async (event) => {
-        event.preventDefault()
+    const handleSubmit = async (event) => {
+        event.preventDefault();
         const result = await dispatch(Login_user(forminput));
         if (result) {
             navigate("/dashboard");
         } else {
             alert("Invalid email or password");
         }
-
-    }
+    };
 
     return (
-        <div align="center">
-            <h1>Login user</h1>
-            <form onSubmit={handleSubmit}>
-                <table border={1}>
-                    <thead>
-
-                        <tr>
-                            <td>email</td>
-                            <td><input type="text" name='email' onChange={changeInput} value={forminput.email} /></td>
-                        </tr>
-                        <tr>
-                            <td>password</td>
-                            <td><input type="text" name='password' onChange={changeInput} value={forminput.password} /></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td><input type="submit" /></td>
-                        </tr>
-                    </thead>
-                </table>
-            </form>
-            <Link to={`/`}>register</Link>
+        <div style={styles.container}>
+            <div style={styles.card}>
+                <h2 style={styles.heading}>Login</h2>
+                <form onSubmit={handleSubmit} style={styles.form}>
+                    <div style={styles.formGroup}>
+                        <label style={styles.label}>Email</label>
+                        <input
+                            type="email"
+                            name="email"
+                            value={forminput.email}
+                            onChange={changeInput}
+                            style={styles.input}
+                            required
+                        />
+                    </div>
+                    <div style={styles.formGroup}>
+                        <label style={styles.label}>Password</label>
+                        <input
+                            type="password"
+                            name="password"
+                            value={forminput.password}
+                            onChange={changeInput}
+                            style={styles.input}
+                            required
+                        />
+                    </div>
+                    <button type="submit" style={styles.button}>Login</button>
+                </form>
+                <p style={{ marginTop: '10px' }}>
+                    Don't have an account? <Link to="/">Register</Link>
+                </p>
+            </div>
         </div>
-    )
-}
+    );
+};
 
-export default Login
+const styles = {
+    container: {
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        height: '100vh',
+        backgroundColor: '#f0f0f0',
+    },
+    card: {
+        backgroundColor: '#fff',
+        padding: '30px 40px',
+        borderRadius: '10px',
+        boxShadow: '0 0 15px rgba(0,0,0,0.1)',
+        width: '350px'
+    },
+    heading: {
+        textAlign: 'center',
+        marginBottom: '20px',
+        color: '#333',
+    },
+    form: {
+        display: 'flex',
+        flexDirection: 'column',
+    },
+    formGroup: {
+        marginBottom: '15px',
+    },
+    label: {
+        marginBottom: '5px',
+        display: 'block',
+        color: '#555',
+        fontWeight: '500',
+    },
+    input: {
+        width: '100%',
+        padding: '10px',
+        borderRadius: '5px',
+        border: '1px solid #ccc',
+        outline: 'none',
+    },
+    button: {
+        padding: '10px',
+        borderRadius: '5px',
+        border: 'none',
+        backgroundColor: '#007BFF',
+        color: '#fff',
+        cursor: 'pointer',
+        fontWeight: '600',
+    }
+};
+
+export default Login;
