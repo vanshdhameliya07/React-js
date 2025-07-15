@@ -1,56 +1,41 @@
+
 const Register_User = (record) => {
     return async (dispatch) => {
         try {
-            let response = await fetch(`http://localhost:3000/register`, {
+            const response = await fetch(`http://localhost:3000/register`, {
                 method: "POST",
-                headers: {
-                    'Content-Type': 'application/json'
-                },
+                headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(record)
             });
 
-            let res = await response.json();
-            console.log(res);
-
-
-            dispatch({
-                type: "adduser",
-                payload: res,
-            });
-
+            const res = await response.json();
+            dispatch({ type: "adduser", payload: res });
             return res;
         } catch (err) {
-            console.log("Registration error:", err);
+            console.error("Registration error:", err);
             return false;
         }
     };
 };
-const Login_User = (login) => {
 
+const Login_User = (login) => {
     return async (dispatch) => {
         try {
-            const response = await fetch(`http://localhost:3000/login`, {
-                method: "POST",
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(login)
-            });
-
+            const response = await fetch(`http://localhost:3000/register?email=${login.email}&password=${login.password}`);
             const res = await response.json();
-            console.log(res);
 
-            dispatch({
-                type: "login_user",
-                payload: res
-            });
-
-            return res;
+            if (res.length > 0) {
+                dispatch({ type: "login_user", payload: res[0] });
+                localStorage.setItem("loginuser", JSON.stringify(res[0]));
+                return res[0];
+            } else {
+                return null;
+            }
         } catch (err) {
-            console.log(err);
+            console.error("Login error:", err);
             return false;
         }
     };
+};
 
-}
 export { Register_User, Login_User };

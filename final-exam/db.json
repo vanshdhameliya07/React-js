@@ -1,0 +1,36 @@
+{
+  "register": [
+    {
+      "id": "84c9",
+      "name": "vansh",
+      "email": "vanshdhameliya07@gmail.com",
+      "password": "1234"
+    },
+    {
+      "id": "2470",
+      "name": "rr",
+      "email": "rr@gmail.com",
+      "password": "1234"
+    },
+    {
+      "id": "9c99",
+      "name": "ss",
+      "email": "ss@gmail.com",
+      "password": "6666"
+    }
+  ],
+  "student": [
+    {
+      "id": 46,
+      "sname": "raj",
+      "Class": "tt",
+      "email": "rr@gmail.com"
+    },
+    {
+      "id": 43,
+      "sname": "milan",
+      "Class": "ww",
+      "email": "a@gmail.com"
+    }
+  ]
+}

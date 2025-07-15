@@ -1,20 +1,19 @@
 import React, { useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { Login_User } from '../redux/Action/Action'
+import { useDispatch } from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom'
+import { add_student } from '../redux/action/Action'
 
-const Login = () => {
+const Register = () => {
 
-    let dispatch = useDispatch()
     let navigate = useNavigate()
-
-
+    let dispatch = useDispatch()
     let [forminput, setForminput] = useState({
+        name: '',
         email: '',
         password: ''
     })
 
-    let changeinput = (event) => {
+    let changeInput = (event) => {
         let { name, value } = event.target;
         setForminput({
             ...forminput,
@@ -24,24 +23,27 @@ const Login = () => {
 
     let handleSubmit = (event) => {
         event.preventDefault()
-        dispatch(Login_User(forminput))
-
+        dispatch(add_student(forminput))
+        navigate("/login")
     }
-
 
     return (
         <div align="center">
-            <h1>Login</h1>
+            <h1>Register user</h1>
             <form onSubmit={handleSubmit}>
                 <table border={1}>
                     <thead>
                         <tr>
-                            <td>email</td>
-                            <td><input type="text" name='email' value={forminput.email} onChange={changeinput} /></td>
+                            <td>Name</td>
+                            <td><input type="text" name='name' onChange={changeInput} value={forminput.name} /></td>
                         </tr>
                         <tr>
-                            <td>Password</td>
-                            <td><input type="text" name='password' value={forminput.password} onChange={changeinput} /></td>
+                            <td>email</td>
+                            <td><input type="text" name='email' onChange={changeInput} value={forminput.email} /></td>
+                        </tr>
+                        <tr>
+                            <td>password</td>
+                            <td><input type="text" name='password' onChange={changeInput} value={forminput.password} /></td>
                         </tr>
                         <tr>
                             <td></td>
@@ -50,10 +52,9 @@ const Login = () => {
                     </thead>
                 </table>
             </form>
-            <Link to={'/'}>register</Link>
-
+            <Link to={`/login`}>Login</Link>
         </div>
     )
 }
 
-export default Login
+export default Register

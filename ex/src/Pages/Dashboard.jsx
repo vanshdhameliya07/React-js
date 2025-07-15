@@ -1,18 +1,21 @@
-import React from 'react'
-import { useNavigate } from 'react-router-dom'
+// /components/Dashboard.js
+import React, { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Dashboard = () => {
+    const navigate = useNavigate();
 
-    let navigate = useNavigate()
-    let register = JSON.parse(localStorage.getItem('register')) || []
-    let login = JSON.parse(localStorage.getItem('loginuser')) || []
+    useEffect(() => {
+        const user = JSON.parse(localStorage.getItem("loginuser"));
+        console.log(user);
 
-    return (
-        <div>
+        if (!user) {
+            alert("Please login first.");
+            navigate("/login");
+        }
+    }, [navigate]);
 
-            <h1>Welcome dashboard page</h1>
-        </div>
-    )
-}
+    return <h2>Welcome to Dashboard</h2>;
+};
 
-export default Dashboard
+export default Dashboard;
