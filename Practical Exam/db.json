@@ -21,16 +21,22 @@
   ],
   "student": [
     {
-      "id": 46,
+      "id": 21,
+      "sname": "vansh",
+      "Class": "gg",
+      "email": "vanshdhameliya07@gmail.com"
+    },
+    {
+      "id": 12,
       "sname": "raj",
-      "Class": "tt",
+      "Class": "gg",
       "email": "rr@gmail.com"
     },
     {
-      "id": 43,
-      "sname": "milan",
-      "Class": "ww",
-      "email": "a@gmail.com"
+      "id": 69,
+      "sname": "vansh",
+      "Class": "ggsssss",
+      "email": "rr@gmail.com"
     }
   ]
 }

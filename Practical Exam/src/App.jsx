@@ -5,6 +5,7 @@ import Register from './Pages/Register'
 import Login from './Pages/Login'
 import Dashboard from './Pages/Dashboard'
 import View from './Pages/View'
+import Edit from './Pages/Edit'
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
           <Route path='/login' element={<Login />} />
           <Route path='/dashboard' element={<Dashboard />} />
           <Route path='/view' element={<View />} />
+          <Route path='/edit/:id' element={<Edit />} />
         </Routes>
       </BrowserRouter>
     </div>

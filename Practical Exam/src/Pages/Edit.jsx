@@ -1,18 +1,38 @@
 import React, { useEffect, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
-import { useDispatch } from 'react-redux'
+import { useNavigate, useParams } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux'
 
-import { Add_Student } from '../redux/action/Action'
+import { Add_Student, Edit_user, Update_user } from '../redux/action/Action'
 
-const Dashboard = () => {
+const Edit = () => {
 
-     let dispatch = useDispatch()
-     let navigate = useNavigate()
+    let { id } = useParams()
     let [forminput, setForminput] = useState({
         sname: "",
         Class: "",
         email: ""
     })
+
+    let single = useSelector((state) => state.student)
+
+    let dispatch = useDispatch()
+
+    let navigate = useNavigate()
+
+    useEffect(() => {
+        dispatch(Edit_user(id))
+    }, [id, dispatch])
+
+
+    useEffect(() => {
+
+        if (single[0]) {
+            setForminput(single[0]);
+        }
+
+    }, [single])
+
+
 
     let changeInput = (event) => {
         let { name, value } = event.target
@@ -25,17 +45,13 @@ const Dashboard = () => {
 
     let handlesubmit = (event) => {
         event.preventDefault()
-        let obj = {
-            id: Math.floor(Math.random() * 100),
-            ...forminput
-        }
-        dispatch(Add_Student(obj))
+        dispatch(Update_user(forminput))
         navigate("/view")
     }
 
     return (
         <div align="center">
-            <h1>Add User</h1>
+            <h1>Edit User</h1>
             <form onSubmit={handlesubmit}>
                 <table border={1}>
                     <thead>
@@ -63,4 +79,4 @@ const Dashboard = () => {
     )
 }
 
-export default Dashboard
+export default Edit

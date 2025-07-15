@@ -32,11 +32,31 @@ let crudreducer = (state = initalstate, action) => {
             }
 
         case 'deleteuser':
-
-            let deleteuser = state.student.filter(val => val.id != action.payload.id)
+            let deleteuser = state.student.filter((val) => val.id !== action.payload);
+            localStorage.setItem('student', JSON.stringify(deleteuser));
             return {
                 ...state,
-                users: deleteuser
+                student: deleteuser
+            };
+        case 'edituser':
+
+            let single = state.student.find(val => val.id == action.payload.id)
+
+            return {
+                ...state,
+                single: single
+            }
+
+        case 'Updateuser':
+            let up = state.student.map((val) => {
+                if (val.id == action.payload.id) {
+                    return action.payload
+                }
+                return val
+            })
+            return {
+                ...state,
+                student: up,
             }
 
         default:

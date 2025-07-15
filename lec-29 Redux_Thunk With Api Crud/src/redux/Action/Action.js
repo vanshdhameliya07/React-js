@@ -52,7 +52,6 @@ let Delete_user = (id) => {
 
             let res = await data.json()
 
-
             return dispatch({
                 type: "deleteuser",
                 payload: res,
