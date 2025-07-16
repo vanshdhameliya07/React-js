@@ -116,7 +116,7 @@ const styles = {
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        height: '100vh',
+        height: '95vh',
         backgroundColor: '#f0f0f0',
     },
     card: {
