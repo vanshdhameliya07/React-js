@@ -14,6 +14,7 @@ let crudreducer = (state = initalstate, action) => {
             }
 
         case "login_user":
+            
             return {
                 ...state,
                 login: action.payload
@@ -50,8 +51,6 @@ let crudreducer = (state = initalstate, action) => {
             const updatedList = state.student.map((val) =>
                 val.id === action.payload.id ? action.payload : val
             );
-
-
             return {
                 ...state,
                 student: updatedList,

@@ -27,19 +27,11 @@ let Login_user = (login) => {
         try {
             const data = await fetch(`http://localhost:3000/register?email=${login.email}&password=${login.password}`)
             const res = await data.json();
-
-
             if (res.length > 0) {
-                alert("valid user")
                 return dispatch({
                     type: "login_user",
                     payload: res[0]
-
-
                 });
-            } else {
-                alert("Invalid email or password");
-                return false;
             }
 
 

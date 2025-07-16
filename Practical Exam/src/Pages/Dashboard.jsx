@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { Add_Student } from '../redux/action/Action';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Dashboard = () => {
     const dispatch = useDispatch();
@@ -11,7 +12,7 @@ const Dashboard = () => {
         sname: '',
         Class: '',
         email: '',
-        rollno: ""
+        rollno: ''
     });
 
     const changeInput = (e) => {
@@ -25,59 +26,105 @@ const Dashboard = () => {
         navigate("/view");
     };
 
+    const handleLogout = () => {
+        // Optional: Clear auth data if stored
+        // localStorage.removeItem('user');
+        navigate('/login');
+    };
+
     return (
-        <div style={styles.container}>
-            <div style={styles.card}>
-                <h2 style={styles.heading}>Add Student</h2>
-                <form onSubmit={handlesubmit} style={styles.form}>
-                    <div style={styles.formGroup}>
-                        <label style={styles.label}>Student Name</label>
-                        <input
-                            type="text"
-                            name="sname"
-                            value={forminput.sname}
-                            onChange={changeInput}
-                            style={styles.input}
-                            required
-                        />
-                    </div>
-                    <div style={styles.formGroup}>
-                        <label style={styles.label}>Class</label>
-                        <input
-                            type="text"
-                            name="Class"
-                            value={forminput.Class}
-                            onChange={changeInput}
-                            style={styles.input}
-                            required
-                        />
-                    </div>
-                    <div style={styles.formGroup}>
-                        <label style={styles.label}>Email</label>
-                        <input
-                            type="email"
-                            name="email"
-                            value={forminput.email}
-                            onChange={changeInput}
-                            style={styles.input}
-                            required
-                        />
-                    </div>
-                    <div style={styles.formGroup}>
-                        <label style={styles.label}>Roll no</label>
-                        <input
-                            type="number"
-                            name="rollno"
-                            value={forminput.rollno}
-                            onChange={changeInput}
-                            style={styles.input}
-                            required
-                        />
-                    </div>
-                    <button type="submit" style={styles.button}>Add Student</button>
-                </form>
+        <>
+            <Navbar onLogout={handleLogout} />
+            <div style={styles.container}>
+                <div style={styles.card}>
+                    <h2 style={styles.heading}>Add Student</h2>
+                    <form onSubmit={handlesubmit} style={styles.form}>
+                        <div style={styles.formGroup}>
+                            <label style={styles.label}>Student Name</label>
+                            <input
+                                type="text"
+                                name="sname"
+                                value={forminput.sname}
+                                onChange={changeInput}
+                                style={styles.input}
+                                required
+                            />
+                        </div>
+                        <div style={styles.formGroup}>
+                            <label style={styles.label}>Class</label>
+                            <input
+                                type="text"
+                                name="Class"
+                                value={forminput.Class}
+                                onChange={changeInput}
+                                style={styles.input}
+                                required
+                            />
+                        </div>
+                        <div style={styles.formGroup}>
+                            <label style={styles.label}>Email</label>
+                            <input
+                                type="email"
+                                name="email"
+                                value={forminput.email}
+                                onChange={changeInput}
+                                style={styles.input}
+                                required
+                            />
+                        </div>
+                        <div style={styles.formGroup}>
+                            <label style={styles.label}>Roll no</label>
+                            <input
+                                type="number"
+                                name="rollno"
+                                value={forminput.rollno}
+                                onChange={changeInput}
+                                style={styles.input}
+                                required
+                            />
+                        </div>
+                        <button type="submit" style={styles.button}>Add Student</button>
+                    </form>
+                </div>
             </div>
-        </div>
+        </>
+    );
+};
+
+// ✅ Bootstrap Navbar with Logout button
+const Navbar = ({ onLogout }) => {
+    return (
+        <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div className="container-fluid">
+                <Link className="navbar-brand" to="/dashboard">StudentApp</Link>
+                <button
+                    className="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav"
+                >
+                    <span className="navbar-toggler-icon"></span>
+                </button>
+                <div className="collapse navbar-collapse" id="navbarNav">
+                    <ul className="navbar-nav ms-auto">
+                        <li className="nav-item">
+                            <Link className="nav-link" to="/dashboard">Dashboard</Link>
+                        </li>
+                        <li className="nav-item">
+                            <Link className="nav-link" to="/view">View</Link>
+                        </li>
+                        <li className="nav-item">
+                            <button
+                                className="btn btn-outline-light ms-3"
+                                onClick={onLogout}
+                            >
+                                Logout
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
     );
 };
 
@@ -86,7 +133,7 @@ const styles = {
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        height: '100vh',
+        height: 'calc(100vh - 70px)',
         backgroundColor: '#f7f7f7',
     },
     card: {
